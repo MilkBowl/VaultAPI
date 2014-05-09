@@ -15,10 +15,9 @@
  */
 package net.milkbowl.vault.permission;
 
-import java.util.UUID;
 import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -144,15 +143,15 @@ public abstract class Permission {
      * Checks if player has a permission node.
      * 
      * @param world World Object
-     * @param playerId UUID of the player
+     * @param player to check
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerHas(World world, UUID playerId, String permission) {
+    public boolean playerHas(World world, OfflinePlayer player, String permission) {
     	if (world == null) {
-    		return has((String) null, Bukkit.getOfflinePlayer(playerId).getName(), permission);
+    		return has((String) null, player.getName(), permission);
     	}
-        return has(world.getName(), Bukkit.getOfflinePlayer(playerId).getName(), permission);
+        return has(world.getName(), player.getName(), permission);
     }
 
     /**
@@ -200,15 +199,15 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUId of the player
+     * @param player to add to
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerAdd(World world, UUID playerId, String permission) {
+    public boolean playerAdd(World world, OfflinePlayer player, String permission) {
         if (world == null) {
-            return playerAdd((String) null, Bukkit.getOfflinePlayer(playerId).getName(), permission);
+            return playerAdd((String) null, player.getName(), permission);
         }
-        return playerAdd(world.getName(), Bukkit.getOfflinePlayer(playerId).getName(), permission);
+        return playerAdd(world.getName(), player.getName(), permission);
     }
 
     /**
@@ -246,16 +245,15 @@ public abstract class Permission {
      * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
      * one that only needs the built-in Bukkit API to add transient permissions to a player.
      * 
-     * @param playerId UUID
+     * @param player to add to
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerAddTransient(UUID playerId, String permission) throws UnsupportedOperationException {
-		Player p = plugin.getServer().getPlayer(playerId);
-		if (p == null) {
-			throw new UnsupportedOperationException(getName() + " does not support offline player transient permissions!");
-		}
-		return playerAddTransient(p, permission);
+    public boolean playerAddTransient(OfflinePlayer player, String permission) throws UnsupportedOperationException {
+    	if (player.isOnline()) {
+    		return playerAddTransient((Player) player, permission);
+    	}
+		throw new UnsupportedOperationException(getName() + " does not support offline player transient permissions!");
 	}
 
     /**
@@ -284,12 +282,12 @@ public abstract class Permission {
      * Adds a world specific transient permission to the player - ONLY WORKS IN PEX/P3 - otherwise it defaults to GLOBAL!
      * 
      * @param worldName to check on
-     * @param playerId UUID
+     * @param player to add to
      * @param permission to test
      * @return Success or Failure
      */
-    public boolean playerAddTransient(String worldName, UUID playerId, String permission) {
-    	return playerAddTransient(playerId, permission);
+    public boolean playerAddTransient(String worldName, OfflinePlayer player, String permission) {
+    	return playerAddTransient(worldName, player.getName(), permission);
     }
     
     /**
@@ -335,13 +333,13 @@ public abstract class Permission {
 	
     /**
      * Removes a world specific transient permission from the player - Only works in PEX/P3 - otherwise it defaults to Global!
-     * @param worldName to check on
-     * @param playerId UUID to check
-     * @param permission to check for
+     * @param worldName to remove for
+     * @param player to remove for
+     * @param permission to remove
      * @return Success or Failure
      */
-    public boolean playerRemoveTransient(String worldName, UUID playerId, String permission) {
-    	return playerRemoveTransient(playerId, permission);
+    public boolean playerRemoveTransient(String worldName, OfflinePlayer player, String permission) {
+    	return playerRemoveTransient(player.getName(), permission);
     }
 	
     /**
@@ -415,12 +413,12 @@ public abstract class Permission {
     /**
      * Remove transient permission from a player.
      * 
-     * @param playerId UUID
+     * @param player to remove from
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerRemoveTransient(UUID playerId, String permission) {
-		return playerRemoveTransient(Bukkit.getPlayer(playerId), permission);
+    public boolean playerRemoveTransient(OfflinePlayer player, String permission) {
+		return playerRemoveTransient(player.getName(), permission);
     }
 
     /**
@@ -565,15 +563,15 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUID
+     * @param player to check
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerInGroup(World world, UUID playerId, String group) {
+    public boolean playerInGroup(World world, OfflinePlayer player, String group) {
         if (world == null) {
-            return playerInGroup((String) null, Bukkit.getOfflinePlayer(playerId).getName(), group);
+            return playerInGroup((String) null, player.getName(), group);
         }
-        return playerInGroup(world.getName(), Bukkit.getOfflinePlayer(playerId).getName(), group);
+        return playerInGroup(world.getName(), player.getName(), group);
     }
 
     /**
@@ -624,15 +622,15 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUID
+     * @param player to add
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerAddGroup(World world, UUID playerId, String group) {
+    public boolean playerAddGroup(World world, OfflinePlayer player, String group) {
         if (world == null) {
-            return playerAddGroup((String) null, Bukkit.getOfflinePlayer(playerId).getName(), group);
+            return playerAddGroup((String) null, player.getName(), group);
         }
-        return playerAddGroup(world.getName(), Bukkit.getOfflinePlayer(playerId).getName(), group);
+        return playerAddGroup(world.getName(), player.getName(), group);
     }
     
     /**
@@ -683,15 +681,15 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUID
+     * @param player to remove
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerRemoveGroup(World world, UUID playerId, String group) {
+    public boolean playerRemoveGroup(World world, OfflinePlayer player, String group) {
         if (world == null) {
-            return playerRemoveGroup((String) null, Bukkit.getOfflinePlayer(playerId).getName(), group);
+            return playerRemoveGroup((String) null, player.getName(), group);
         }
-        return playerRemoveGroup(world.getName(), Bukkit.getOfflinePlayer(playerId).getName(), group);
+        return playerRemoveGroup(world.getName(), player.getName(), group);
     }
 
     /**
@@ -740,11 +738,11 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUID
+     * @param player OfflinePlayer
      * @return Array of groups
      */
-    public String[] getPlayerGroups(World world, UUID playerId) {
-    	return getPlayerGroups(world, Bukkit.getOfflinePlayer(playerId).getName());
+    public String[] getPlayerGroups(World world, OfflinePlayer player) {
+    	return getPlayerGroups(world, player.getName());
     }
 
     /**
@@ -791,11 +789,11 @@ public abstract class Permission {
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
      * @param world World Object
-     * @param playerId UUID of the player
+     * @param player to get from
      * @return Players primary group
      */
-    public String getPrimaryGroup(World world, UUID playerId) {
-        return getPrimaryGroup(world, Bukkit.getOfflinePlayer(playerId).getName());
+    public String getPrimaryGroup(World world, OfflinePlayer player) {
+        return getPrimaryGroup(world, player.getName());
     }
 
     /**
