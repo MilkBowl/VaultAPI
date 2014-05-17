@@ -53,6 +53,7 @@ public abstract class Permission {
     abstract public boolean hasSuperPermsCompat();
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerHas(String, OfflinePlayer, String)} instead.
      * Checks if player has a permission node. (Short for playerHas(...)
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -62,6 +63,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean has(String world, String player, String permission) {
         if (world == null) {
             return playerHas((String) null, player, permission);
@@ -70,6 +72,7 @@ public abstract class Permission {
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerHas(String, OfflinePlayer, String)} instead.
      * Checks if player has a permission node. (Short for playerHas(...)
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -79,6 +82,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean has(World world, String player, String permission) {
         if (world == null) {
             return playerHas((String) null, player, permission);
@@ -111,6 +115,7 @@ public abstract class Permission {
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerHas(String, OfflinePlayer, String)} instead.
      * Checks if player has a permission node.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -120,9 +125,11 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerHas(String world, String player, String permission);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerHas(String, OfflinePlayer, String)} instead.
      * Checks if player has a permission node.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -132,6 +139,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerHas(World world, String player, String permission) {
         if (world == null) {
             return playerHas((String) null, player, permission);
@@ -142,16 +150,16 @@ public abstract class Permission {
     /**
      * Checks if player has a permission node.
      * 
-     * @param world World Object
+     * @param world String world name
      * @param player to check
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerHas(World world, OfflinePlayer player, String permission) {
+    public boolean playerHas(String world, OfflinePlayer player, String permission) {
     	if (world == null) {
     		return has((String) null, player.getName(), permission);
     	}
-        return has(world.getName(), player.getName(), permission);
+        return has(world, player.getName(), permission);
     }
 
     /**
@@ -165,6 +173,7 @@ public abstract class Permission {
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAdd(String, OfflinePlayer, String)} instead.
      * Add permission to a player.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -174,9 +183,11 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerAdd(String world, String player, String permission);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAdd(String, OfflinePlayer, String)} instead.
      * Add permission to a player.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -186,6 +197,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerAdd(World world, String player, String permission) {
         if (world == null) {
             return playerAdd((String) null, player, permission);
@@ -198,16 +210,16 @@ public abstract class Permission {
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
-     * @param world World Object
+     * @param world String world name
      * @param player to add to
      * @param permission Permission node
      * @return Success or Failure
      */
-    public boolean playerAdd(World world, OfflinePlayer player, String permission) {
+    public boolean playerAdd(String world, OfflinePlayer player, String permission) {
         if (world == null) {
             return playerAdd((String) null, player.getName(), permission);
         }
-        return playerAdd(world.getName(), player.getName(), permission);
+        return playerAdd(world, player.getName(), permission);
     }
 
     /**
@@ -219,10 +231,11 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerAdd(Player player, String permission) {
-        return playerAdd(player.getWorld().getName(), player.getName(), permission);
+        return playerAdd(player.getWorld().getName(), player, permission);
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAddTransient(OfflinePlayer, String)} instead.
      * Add transient permission to a player.
      * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
      * one that only needs the built-in Bukkit API to add transient permissions to a player.  Any subclass
@@ -232,6 +245,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerAddTransient(String player, String permission) throws UnsupportedOperationException {
 		Player p = plugin.getServer().getPlayer(player);
 		if (p == null) {
@@ -302,12 +316,14 @@ public abstract class Permission {
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAddTransient(String, OfflinePlayer, String)} instead.
      * Adds a world specific transient permission to the player - ONLY WORKS IN PEX/P3 - otherwise it defaults to GLOBAL!
      * @param worldName to check on
      * @param player to check
      * @param permission to check
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerAddTransient(String worldName, String player, String permission) {
 		Player p = plugin.getServer().getPlayer(player);
 		if (p == null) {
@@ -317,12 +333,14 @@ public abstract class Permission {
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveTransient(String, OfflinePlayer, String)} instead.
      * Removes a world specific transient permission from the player - Only works in PEX/P3 - otherwise it defaults to Global!
      * @param worldName to check on
      * @param player to check
      * @param permission to check for
      * @return Success or Failure
      */
+    @Deprecated
 	public boolean playerRemoveTransient(String worldName, String player, String permission) {
 		Player p = plugin.getServer().getPlayer(player);
 		if (p == null)
@@ -339,7 +357,7 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemoveTransient(String worldName, OfflinePlayer player, String permission) {
-    	return playerRemoveTransient(player.getName(), permission);
+    	return playerRemoveTransient(worldName, player.getName(), permission);
     }
 	
     /**
@@ -350,17 +368,36 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemoveTransient(String worldName, Player player, String permission) {
-    	return playerRemoveTransient(player, permission);
+    	return playerRemoveTransient(worldName, (OfflinePlayer) player, permission);
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemove(String, OfflinePlayer, String)} instead.
      * Remove permission from a player.
      * @param world World name
      * @param player Name of Player
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerRemove(String world, String player, String permission);
+
+    /**
+     * Remove permission from a player.
+     * Supports NULL value for World if the permission system registered supports global permissions.
+     * But May return odd values if the servers registered permission system does not have a global permission store.
+     * 
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param permission Permission node
+     * @return Success or Failure
+     */
+    public boolean playerRemove(String world, OfflinePlayer player, String permission) {
+        if (world == null) {
+            return playerRemove((String) null, player.getName(), permission);
+        }
+        return playerRemove(world, player.getName(), permission);
+    }
 
     /**
      * Remove permission from a player.
@@ -372,6 +409,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerRemove(World world, String player, String permission) {
         if (world == null) {
             return playerRemove((String) null, player, permission);
@@ -388,10 +426,11 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemove(Player player, String permission) {
-        return playerRemove(player.getWorld().getName(), player.getName(), permission);
+        return playerRemove(player.getWorld().getName(), player, permission);
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveTransient(OfflinePlayer, String)} instead
      * Remove transient permission from a player.
      * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
      * one that only needs the built-in Bukkit API to remove transient permissions from a player.  Any subclass
@@ -401,6 +440,7 @@ public abstract class Permission {
      * @param permission Permission node
      * @return Success or Failure
      */
+    @Deprecated
 	public boolean playerRemoveTransient(String player, String permission) {
 		Player p = plugin.getServer().getPlayer(player);
 		if (p == null)
@@ -408,18 +448,6 @@ public abstract class Permission {
 		
 		return playerRemoveTransient(p, permission);
 	}
-	
-
-    /**
-     * Remove transient permission from a player.
-     * 
-     * @param player to remove from
-     * @param permission Permission node
-     * @return Success or Failure
-     */
-    public boolean playerRemoveTransient(OfflinePlayer player, String permission) {
-		return playerRemoveTransient(player.getName(), permission);
-    }
 
     /**
      * Remove transient permission from a player.
@@ -526,6 +554,7 @@ public abstract class Permission {
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerInGroup(String, OfflinePlayer, String)} instead.
      * Check if player is member of a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -538,9 +567,11 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerInGroup(String world, String player, String group);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerInGroup(String, OfflinePlayer, String)} instead.
      * Check if player is member of a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -550,6 +581,7 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerInGroup(World world, String player, String group) {
         if (world == null) {
             return playerInGroup((String) null, player, group);
@@ -567,11 +599,11 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerInGroup(World world, OfflinePlayer player, String group) {
+    public boolean playerInGroup(String world, OfflinePlayer player, String group) {
         if (world == null) {
             return playerInGroup((String) null, player.getName(), group);
         }
-        return playerInGroup(world.getName(), player.getName(), group);
+        return playerInGroup(world, player.getName(), group);
     }
 
     /**
@@ -584,10 +616,11 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerInGroup(Player player, String group) {
-        return playerInGroup(player.getWorld().getName(), player.getName(), group);
+        return playerInGroup(player.getWorld().getName(), player, group);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAddGroup(String, OfflinePlayer, String)} instead.
      * Add player to a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -597,9 +630,11 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerAddGroup(String world, String player, String group);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerAddGroup(String, OfflinePlayer, String)} instead.
      * Add player to a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -609,6 +644,7 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerAddGroup(World world, String player, String group) {
         if (world == null) {
             return playerAddGroup((String) null, player, group);
@@ -621,16 +657,16 @@ public abstract class Permission {
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
-     * @param world World Object
+     * @param world String world name
      * @param player to add
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerAddGroup(World world, OfflinePlayer player, String group) {
+    public boolean playerAddGroup(String world, OfflinePlayer player, String group) {
         if (world == null) {
             return playerAddGroup((String) null, player.getName(), group);
         }
-        return playerAddGroup(world.getName(), player.getName(), group);
+        return playerAddGroup(world, player.getName(), group);
     }
     
     /**
@@ -643,10 +679,11 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerAddGroup(Player player, String group) {
-        return playerAddGroup(player.getWorld().getName(), player.getName(), group);
+        return playerAddGroup(player.getWorld().getName(), player, group);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveGroup(String, OfflinePlayer, String)} instead.
      * Remove player from a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -656,9 +693,11 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     abstract public boolean playerRemoveGroup(String world, String player, String group);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveGroup(String, OfflinePlayer, String)} instead.
      * Remove player from a group.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -668,6 +707,7 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerRemoveGroup(World world, String player, String group) {
         if (world == null) {
             return playerRemoveGroup((String) null, player, group);
@@ -685,11 +725,11 @@ public abstract class Permission {
      * @param group Group name
      * @return Success or Failure
      */
-    public boolean playerRemoveGroup(World world, OfflinePlayer player, String group) {
+    public boolean playerRemoveGroup(String world, OfflinePlayer player, String group) {
         if (world == null) {
             return playerRemoveGroup((String) null, player.getName(), group);
         }
-        return playerRemoveGroup(world.getName(), player.getName(), group);
+        return playerRemoveGroup(world, player.getName(), group);
     }
 
     /**
@@ -702,10 +742,11 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemoveGroup(Player player, String group) {
-        return playerRemoveGroup(player.getWorld().getName(), player.getName(), group);
+        return playerRemoveGroup(player.getWorld().getName(), player, group);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerGroups(String, OfflinePlayer)} instead.
      * Gets the list of groups that this player has.
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -714,9 +755,11 @@ public abstract class Permission {
      * @param player Player name
      * @return Array of groups
      */
+    @Deprecated
     abstract public String[] getPlayerGroups(String world, String player);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerGroups(String, OfflinePlayer)} instead.
      * Gets the list of groups that this player has
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -725,6 +768,7 @@ public abstract class Permission {
      * @param player Player name
      * @return Array of groups
      */
+    @Deprecated
     public String[] getPlayerGroups(World world, String player) {
         if (world == null) {
             return getPlayerGroups((String) null, player);
@@ -737,11 +781,11 @@ public abstract class Permission {
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
-     * @param world World Object
+     * @param world String world name
      * @param player OfflinePlayer
      * @return Array of groups
      */
-    public String[] getPlayerGroups(World world, OfflinePlayer player) {
+    public String[] getPlayerGroups(String world, OfflinePlayer player) {
     	return getPlayerGroups(world, player.getName());
     }
 
@@ -753,10 +797,11 @@ public abstract class Permission {
      * @return Array of groups
      */
     public String[] getPlayerGroups(Player player) {
-        return getPlayerGroups(player.getWorld().getName(), player.getName());
+        return getPlayerGroups(player.getWorld().getName(), player);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPrimaryGroup(String, OfflinePlayer)} instead.
      * Gets players primary group
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -765,9 +810,11 @@ public abstract class Permission {
      * @param player Player name
      * @return Players primary group
      */
+    @Deprecated
     abstract public String getPrimaryGroup(String world, String player);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPrimaryGroup(String, OfflinePlayer)} instead.
      * Gets players primary group
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
@@ -776,6 +823,7 @@ public abstract class Permission {
      * @param player Player name
      * @return Players primary group
      */
+    @Deprecated
     public String getPrimaryGroup(World world, String player) {
         if (world == null) {
             return getPrimaryGroup((String) null, player);
@@ -788,11 +836,11 @@ public abstract class Permission {
      * Supports NULL value for World if the permission system registered supports global permissions.
      * But May return odd values if the servers registered permission system does not have a global permission store.
      * 
-     * @param world World Object
+     * @param world String world name
      * @param player to get from
      * @return Players primary group
      */
-    public String getPrimaryGroup(World world, OfflinePlayer player) {
+    public String getPrimaryGroup(String world, OfflinePlayer player) {
         return getPrimaryGroup(world, player.getName());
     }
 
@@ -802,7 +850,7 @@ public abstract class Permission {
      * @return Players primary group
      */
     public String getPrimaryGroup(Player player) {
-        return getPrimaryGroup(player.getWorld().getName(), player.getName());
+        return getPrimaryGroup(player.getWorld().getName(), player);
     }
     
     /**

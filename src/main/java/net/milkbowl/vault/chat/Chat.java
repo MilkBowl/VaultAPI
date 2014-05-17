@@ -17,6 +17,7 @@ package net.milkbowl.vault.chat;
 
 import net.milkbowl.vault.permission.Permission;
 
+import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
@@ -44,111 +45,187 @@ public abstract class Chat {
     abstract public boolean isEnabled();
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerPrefix(String, OfflinePlayer)} instead.
+     * 
      * Get players prefix
      * @param world World name
      * @param player Player name
      * @return Prefix
      */
+    @Deprecated
     abstract public String getPlayerPrefix(String world, String player);
+    
+    /**
+     * Get a players prefix in the given world
+     * Use NULL for world if requesting a global prefix
+     * 
+     * @param world World name
+     * @param player OfflinePlayer
+     * @return Prefix
+     */
+    public String getPlayerPrefix(String world, OfflinePlayer player) {
+    	return getPlayerPrefix(world, player.getName());
+    }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerPrefix(String, OfflinePlayer)} instead.
+     * 
      * Get players prefix
      * @param world World Object
      * @param player Player name
      * @return Prefix
      */
+    @Deprecated
     public String getPlayerPrefix(World world, String player) {
         return getPlayerPrefix(world.getName(), player);
     }
 
     /**
-     * Get players prefix
+     * Get players prefix from the world they are currently in. 
+     * May or may not return the global prefix depending on implementation.
+     * 
      * @param player Player Object
      * @return Prefix
      */
     public String getPlayerPrefix(Player player) {
-        return getPlayerPrefix(player.getWorld().getName(), player.getName());
+        return getPlayerPrefix(player.getWorld().getName(), player);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerPrefix(String, OfflinePlayer, String)} instead.
+     * 
      * Set players prefix
      * @param world World name
      * @param player Player name
      * @param prefix Prefix
      */
+    @Deprecated
     abstract public void setPlayerPrefix(String world, String player, String prefix);
 
     /**
-     * Set players prefix
+     * Sets players prefix in the given world.
+     * Use NULL for world for setting in the Global scope.
+     * 
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param prefix Prefix
+     */
+    public void setPlayerPrefix(String world, OfflinePlayer player, String prefix) {
+    	setPlayerPrefix(world, player.getName(), prefix);
+    }
+
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerPrefix(String, OfflinePlayer, String)} instead.
+     * 
+     * Set players prefix in the given world.
+     * 
      * @param world World Object
      * @param player Player name
      * @param prefix Prefix
      */
+    @Deprecated
     public void setPlayerPrefix(World world, String player, String prefix) {
         setPlayerPrefix(world.getName(), player, prefix);
     }
 
     /**
-     * Set players prefix
+     * Set players prefix in the world they are currently in.
+     * 
      * @param player Player Object
      * @param prefix Prefix
      */
     public void setPlayerPrefix(Player player, String prefix) {
-        setPlayerPrefix(player.getWorld().getName(), player.getName(), prefix);
+        setPlayerPrefix(player.getWorld().getName(), player, prefix);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerSuffix(String, OfflinePlayer)} instead.
+     * 
      * Get players suffix
      * @param world World name
      * @param player Player name
      * @return Suffix
      */
+    @Deprecated
     abstract public String getPlayerSuffix(String world, String player);
 
     /**
+     * Get players suffix in the specified world.
+     * 
+     * @param world World name
+     * @param player OfflinePlayer name
+     * @return Suffix
+     */
+    public String getPlayerSuffix(String world, OfflinePlayer player) {
+    	return getPlayerSuffix(world, player.getName());
+    }
+
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerSuffix(String, OfflinePlayer)} instead.
+     * 
      * Get players suffix
      * @param world World Object
      * @param player Player name
      * @return Suffix
      */
+    @Deprecated
     public String getPlayerSuffix(World world, String player) {
         return getPlayerSuffix(world.getName(), player);
     }
 
     /**
-     * Get players suffix
+     * Get players suffix in the world they are currently in.
+     * 
      * @param player Player Object
      * @return Suffix
      */
     public String getPlayerSuffix(Player player) {
-        return getPlayerSuffix(player.getWorld().getName(), player.getName());
+        return getPlayerSuffix(player.getWorld().getName(), player);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerSuffix(String, OfflinePlayer, String)} instead.
+     * 
      * Set players suffix
      * @param world World name
      * @param player Player name
      * @param suffix Suffix
      */
+    @Deprecated
     abstract public void setPlayerSuffix(String world, String player, String suffix);
 
     /**
+     * Set players suffix for the world specified
+     * 
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param suffix Suffix
+     */
+    public void setPlayerSuffix(String world, OfflinePlayer player, String suffix) {
+    	setPlayerSuffix(world, player.getName(), suffix);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerSuffix(String, OfflinePlayer, String)} instead.
+     * 
      * Set players suffix
      * @param world World Object
      * @param player Player name
      * @param suffix Suffix
      */
+    @Deprecated
     public void setPlayerSuffix(World world, String player, String suffix) {
         setPlayerSuffix(world.getName(), player, suffix);
     }
 
     /**
-     * Set players suffix
+     * Set players suffix in the world they currently occupy.
+     * 
      * @param player Player Object
      * @param suffix Suffix
      */
     public void setPlayerSuffix(Player player, String suffix) {
-        setPlayerSuffix(player.getWorld().getName(), player.getName(), suffix);
+        setPlayerSuffix(player.getWorld().getName(), player, suffix);
     }
 
     /**
@@ -222,7 +299,21 @@ public abstract class Chat {
     public void setGroupSuffix(World world, String group, String suffix) {
         setGroupSuffix(world.getName(), group, suffix);
     }
-	   /**
+
+	/**
+     * Get a players informational node (Integer) value
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param defaultValue Default value
+     * @return Value
+     */
+    public int getPlayerInfoInteger(String world, OfflinePlayer player, String node, int defaultValue) {
+    	return getPlayerInfoInteger(world, player.getName(), node, defaultValue);
+    }
+
+	/**
+	 * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
      * Get a players informational node (Integer) value
      * @param world World name
      * @param player Player name
@@ -230,9 +321,12 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     abstract public int getPlayerInfoInteger(String world, String player, String node, int defaultValue);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
+     * 
      * Get a players informational node (Integer) value
      * @param world World Object
      * @param player Player name
@@ -240,6 +334,7 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     public int getPlayerInfoInteger(World world, String player, String node, int defaultValue) {
         return getPlayerInfoInteger(world.getName(), player, node, defaultValue);
     }
@@ -252,25 +347,42 @@ public abstract class Chat {
      * @return Value
      */
     public int getPlayerInfoInteger(Player player, String node, int defaultValue) {
-        return getPlayerInfoInteger(player.getWorld().getName(), player.getName(), node, defaultValue);
+        return getPlayerInfoInteger(player.getWorld().getName(), player, node, defaultValue);
     }
 
     /**
+     * Set a players informational node (Integer) value
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param value Value to set
+     */
+    public void setPlayerInfoInteger(String world, OfflinePlayer player, String node, int value) {
+    	setPlayerInfoInteger(world, player.getName(), node, value);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
+     * 
      * Set a players informational node (Integer) value
      * @param world World name
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     abstract public void setPlayerInfoInteger(String world, String player, String node, int value);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoInteger(String, OfflinePlayer, String, int)} instead.
+     *
      * Set a players informational node (Integer) value
      * @param world World Object
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     public void setPlayerInfoInteger(World world, String player, String node, int value) {
         setPlayerInfoInteger(world.getName(), player, node, value);
     }
@@ -282,7 +394,7 @@ public abstract class Chat {
      * @param value Value to set
      */
     public void setPlayerInfoInteger(Player player, String node, int value) {
-        setPlayerInfoInteger(player.getWorld().getName(), player.getName(), node, value);
+        setPlayerInfoInteger(player.getWorld().getName(), player, node, value);
     }
 
     /**
@@ -330,14 +442,31 @@ public abstract class Chat {
     /**
      * Get a players informational node (Double) value
      * @param world World name
-     * @param player Group name
+     * @param player OfflinePlayer
      * @param node Permission node
      * @param defaultValue Default value
      * @return Value
      */
+    public double getPlayerInfoDouble(String world, OfflinePlayer player, String node, double defaultValue) {
+    	return getPlayerInfoDouble(world, player.getName(), node, defaultValue);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoDouble(String, OfflinePlayer, String, double)} instead.
+     * 
+     * Get a players informational node (Double) value
+     * @param world World name
+     * @param player Player name
+     * @param node Permission node
+     * @param defaultValue Default value
+     * @return Value
+     */
+    @Deprecated
     abstract public double getPlayerInfoDouble(String world, String player, String node, double defaultValue);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoDouble(String, OfflinePlayer, String, double)} instead
+     * 
      * Get a players informational node (Double) value
      * @param world World Object
      * @param player Player name
@@ -345,6 +474,7 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     public double getPlayerInfoDouble(World world, String player, String node, double defaultValue) {
         return getPlayerInfoDouble(world.getName(), player, node, defaultValue);
     }
@@ -357,25 +487,40 @@ public abstract class Chat {
      * @return Value
      */
     public double getPlayerInfoDouble(Player player, String node, double defaultValue) {
-        return getPlayerInfoDouble(player.getWorld().getName(), player.getName(), node, defaultValue);
+        return getPlayerInfoDouble(player.getWorld().getName(), player, node, defaultValue);
     }
 
     /**
      * Set a players informational node (Double) value
      * @param world World name
-     * @param player Group name
+     * @param player OfflinePlayer
      * @param node Permission node
      * @param value Value to set
      */
+    public void setPlayerInfoDouble(String world, OfflinePlayer player, String node, double value) {
+    	setPlayerInfoDouble(world, player.getName(), node, value);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoDouble(String, OfflinePlayer, String, double)} instead.
+     * Set a players informational node (Double) value
+     * @param world World name
+     * @param player Player name
+     * @param node Permission node
+     * @param value Value to set
+     */
+    @Deprecated
     abstract public void setPlayerInfoDouble(String world, String player, String node, double value);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoDouble(String, OfflinePlayer, String, double)} instead.
      * Set a players informational node (Double) value
      * @param world World Object
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     public void setPlayerInfoDouble(World world, String player, String node, double value) {
         setPlayerInfoDouble(world.getName(), player, node, value);
     }
@@ -387,7 +532,7 @@ public abstract class Chat {
      * @param value Value to set
      */
     public void setPlayerInfoDouble(Player player, String node, double value) {
-        setPlayerInfoDouble(player.getWorld().getName(), player.getName(), node, value);
+        setPlayerInfoDouble(player.getWorld().getName(), player, node, value);
     }
 
     /**
@@ -435,14 +580,31 @@ public abstract class Chat {
     /**
      * Get a players informational node (Boolean) value
      * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param defaultValue Default value
+     * @return Value
+     */
+    public boolean getPlayerInfoBoolean(String world, OfflinePlayer player, String node, boolean defaultValue) {
+    	return getPlayerInfoBoolean(world, player.getName(), node, defaultValue);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
+     * 
+     * Get a players informational node (Boolean) value
+     * @param world World name
      * @param player Player name
      * @param node Permission node
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     abstract public boolean getPlayerInfoBoolean(String world, String player, String node, boolean defaultValue);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
+     * 
      * Get a players informational node (Boolean) value
      * @param world World Object
      * @param player Player name
@@ -450,6 +612,7 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     public boolean getPlayerInfoBoolean(World world, String player, String node, boolean defaultValue) {
         return getPlayerInfoBoolean(world.getName(), player, node, defaultValue);
     }
@@ -462,25 +625,40 @@ public abstract class Chat {
      * @return Value
      */
     public boolean getPlayerInfoBoolean(Player player, String node, boolean defaultValue) {
-        return getPlayerInfoBoolean(player.getWorld().getName(), player.getName(), node, defaultValue);
+        return getPlayerInfoBoolean(player.getWorld().getName(), player, node, defaultValue);
     }
 
     /**
+     * Set a players informational node (Boolean) value
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param value Value to set
+     */
+    public void setPlayerInfoBoolean(String world, OfflinePlayer player, String node, boolean value) {
+    	setPlayerInfoBoolean(world, player.getName(), node, value);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
      * Set a players informational node (Boolean) value
      * @param world World name
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     abstract public void setPlayerInfoBoolean(String world, String player, String node, boolean value);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoBoolean(String, OfflinePlayer, String, boolean)} instead.
      * Set a players informational node (Boolean) value
      * @param world World Object
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     public void setPlayerInfoBoolean(World world, String player, String node, boolean value) {
         setPlayerInfoBoolean(world.getName(), player, node, value);
     }
@@ -492,7 +670,7 @@ public abstract class Chat {
      * @param value Value to set
      */
     public void setPlayerInfoBoolean(Player player, String node, boolean value) {
-        setPlayerInfoBoolean(player.getWorld().getName(), player.getName(), node, value);
+        setPlayerInfoBoolean(player.getWorld().getName(), player, node, value);
     }
 
     /**
@@ -536,8 +714,22 @@ public abstract class Chat {
     public void setGroupInfoBoolean(World world, String group, String node, boolean value) {
         setGroupInfoBoolean(world.getName(), group, node, value);
     }
+    
+    /**
+     * Get a players informational node (String) value
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param defaultValue Default value
+     * @return Value
+     */
+    public String getPlayerInfoString(String world, OfflinePlayer player, String node, String defaultValue) {
+    	return getPlayerInfoString(world, player.getName(), node, defaultValue);
+    }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoString(String, OfflinePlayer, String, String)} instead.
+     *
      * Get a players informational node (String) value
      * @param world World name
      * @param player Player name
@@ -545,9 +737,11 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     abstract public String getPlayerInfoString(String world, String player, String node, String defaultValue);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerInfoString(String, OfflinePlayer, String, String)} instead.
      * Get a players informational node (String) value
      * @param world World Object
      * @param player Player name
@@ -555,6 +749,7 @@ public abstract class Chat {
      * @param defaultValue Default value
      * @return Value
      */
+    @Deprecated
     public String getPlayerInfoString(World world, String player, String node, String defaultValue) {
         return getPlayerInfoString(world.getName(), player, node, defaultValue);
     }
@@ -567,25 +762,40 @@ public abstract class Chat {
      * @return Value
      */
     public String getPlayerInfoString(Player player, String node, String defaultValue) {
-        return getPlayerInfoString(player.getWorld().getName(), player.getName(), node, defaultValue);
+        return getPlayerInfoString(player.getWorld().getName(), player, node, defaultValue);
+    }
+    
+    /**
+     * Set a players informational node (String) value
+     * @param world World name
+     * @param player OfflinePlayer
+     * @param node Permission node
+     * @param value Value to set
+     */
+    public void setPlayerInfoString(String world, OfflinePlayer player, String node, String value) {
+    	setPlayerInfoString(world, player.getName(), node, value);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoString(String, OfflinePlayer, String, String)} instead.
      * Set a players informational node (String) value
      * @param world World name
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     abstract public void setPlayerInfoString(String world, String player, String node, String value);
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #setPlayerInfoString(String, OfflinePlayer, String, String)} instead.
      * Set a players informational node (String) value
      * @param world World name
      * @param player Player name
      * @param node Permission node
      * @param value Value to set
      */
+    @Deprecated
     public void setPlayerInfoString(World world, String player, String node, String value) {
         setPlayerInfoString(world.getName(), player, node, value);
     }
@@ -597,7 +807,7 @@ public abstract class Chat {
      * @param value Value ot set
      */
     public void setPlayerInfoString(Player player, String node, String value) {
-        setPlayerInfoString(player.getWorld().getName(), player.getName(), node, value);
+        setPlayerInfoString(player.getWorld().getName(), player, node, value);
     }
 
     /**
@@ -645,21 +855,36 @@ public abstract class Chat {
     /**
      * Check if player is member of a group.
      * @param world World name
+     * @param player OfflinePlayer
+     * @param group Group name
+     * @return Success or Failure
+     */
+    public boolean playerInGroup(String world, OfflinePlayer player, String group) {
+    	return perms.playerInGroup(world, player, group);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerInGroup(String, OfflinePlayer, String)} instead.
+     * Check if player is member of a group.
+     * @param world World name
      * @param player Player name
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerInGroup(String world, String player, String group) {
     	return perms.playerInGroup(world, player, group);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #playerInGroup(String, OfflinePlayer, String)} instead.
      * Check if player is member of a group.
      * @param world World Object
      * @param player Player name
      * @param group Group name
      * @return Success or Failure
      */
+    @Deprecated
     public boolean playerInGroup(World world, String player, String group) {
         return playerInGroup(world.getName(), player, group);
     }
@@ -671,25 +896,39 @@ public abstract class Chat {
      * @return Success or Failure
      */
     public boolean playerInGroup(Player player, String group) {
-        return playerInGroup(player.getWorld().getName(), player.getName(), group);
+        return playerInGroup(player.getWorld().getName(), player, group);
     }
     
     /**
      * Gets the list of groups that this player has
      * @param world World name
+     * @param player OfflinePlayer
+     * @return Array of groups
+     */
+    public String[] getPlayerGroups(String world, OfflinePlayer player) {
+    	return perms.getPlayerGroups(world, player);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerGroups(String, OfflinePlayer)} instead.
+     * Gets the list of groups that this player has
+     * @param world World name
      * @param player Player name
      * @return Array of groups
      */
+    @Deprecated
     public String[] getPlayerGroups(String world, String player) {
     	return perms.getPlayerGroups(world, player);
     }
 
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPlayerGroups(String, OfflinePlayer)} instead.
      * Gets the list of groups that this player has
      * @param world World Object
      * @param player Player name
      * @return Array of groups
      */
+    @Deprecated
     public String[] getPlayerGroups(World world, String player) {
         return getPlayerGroups(world.getName(), player);
     }
@@ -700,25 +939,39 @@ public abstract class Chat {
      * @return Array of groups
      */
     public String[] getPlayerGroups(Player player) {
-        return getPlayerGroups(player.getWorld().getName(), player.getName());
+        return getPlayerGroups(player.getWorld().getName(), player);
     }
     
     /**
      * Gets players primary group
      * @param world World name
+     * @param player OfflinePlayer
+     * @return Players primary group
+     */
+    public String getPrimaryGroup(String world, OfflinePlayer player) {
+    	return perms.getPrimaryGroup(world, player);
+    }
+    
+    /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPrimaryGroup(String, OfflinePlayer)} instead. 
+     * Gets players primary group
+     * @param world World name
      * @param player Player name
      * @return Players primary group
      */
+    @Deprecated
     public String getPrimaryGroup(String world, String player) {
     	return perms.getPrimaryGroup(world, player);
     }
     
     /**
+     * @deprecated As of Vault 1.3.01 use {{@link #getPrimaryGroup(String, OfflinePlayer)} instead.
      * Gets players primary group
      * @param world World Object
      * @param player Player name
      * @return Players primary group
      */
+    @Deprecated
     public String getPrimaryGroup(World world, String player) {
         return getPrimaryGroup(world.getName(), player);
     }
@@ -729,7 +982,7 @@ public abstract class Chat {
      * @return Players primary group
      */
     public String getPrimaryGroup(Player player) {
-        return getPrimaryGroup(player.getWorld().getName(), player.getName());
+        return getPrimaryGroup(player.getWorld().getName(), player);
     }
     
     /**
