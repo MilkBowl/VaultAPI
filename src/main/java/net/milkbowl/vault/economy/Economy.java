@@ -282,7 +282,7 @@ public interface Economy {
      * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
      * @param playerName Name of player
-     * @param worldname Name of the world
+     * @param worldName Name of the world
      * @param amount Amount to deposit
      * @return Detailed response of transaction
      */
@@ -293,6 +293,7 @@ public interface Economy {
      * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
      * @param player to deposit to
+     * @param worldName name of the world
      * @param amount Amount to deposit
      * @return Detailed response of transaction
      */
