@@ -150,7 +150,7 @@ public interface Economy {
      * 
      * Gets balance of a player on the specified world.
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * @param playerName
+     * @param playerName name of the player
      * @param world name of the world
      * @return Amount currently held in players account
      */
@@ -282,6 +282,7 @@ public interface Economy {
      * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
      * @param playerName Name of player
+     * @param worldname Name of the world
      * @param amount Amount to deposit
      * @return Detailed response of transaction
      */
@@ -409,6 +410,7 @@ public interface Economy {
      * @deprecated As of Vault 1.3.01 use {{@link #createPlayerAccount(OfflinePlayer)} instead.
      * 
      * Attempts to create a player account for the given player
+     * @param playerName name of the player
      * @return if the account creation was successful
      */
     @Deprecated
@@ -416,6 +418,7 @@ public interface Economy {
     
     /**
      * Attempts to create a player account for the given player
+     * @param player OfflinePlayer
      * @return if the account creation was successful
      */
     public boolean createPlayerAccount(OfflinePlayer player);
@@ -425,6 +428,8 @@ public interface Economy {
      * 
      * Attempts to create a player account for the given player on the specified world
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
+     * @param playerName String name of the player
+     * @param worldName String name of the world
      * @return if the account creation was successful
      */
     @Deprecated
@@ -433,6 +438,8 @@ public interface Economy {
     /**
      * Attempts to create a player account for the given player on the specified world
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
+     * @param player OfflinePlayer
+     * @param worldName String name of the world
      * @return if the account creation was successful
      */
     public boolean createPlayerAccount(OfflinePlayer player, String worldName);

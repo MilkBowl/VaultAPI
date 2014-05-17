@@ -430,7 +430,7 @@ public abstract class Permission {
     }
     
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveTransient(OfflinePlayer, String)} instead
+     * @deprecated As of Vault 1.3.01 use {{@link #playerRemoveTransient(OfflinePlayer, String)} instead.
      * Remove transient permission from a player.
      * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
      * one that only needs the built-in Bukkit API to remove transient permissions from a player.  Any subclass
@@ -449,6 +449,24 @@ public abstract class Permission {
 		return playerRemoveTransient(p, permission);
 	}
 
+    /**
+     * Remove transient permission from a player.
+     * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
+     * one that only needs the built-in Bukkit API to remove transient permissions from a player.  Any subclass
+     * implementing a plugin which provides its own API for this needs to override this method.
+     * 
+     * @param player OfflinePlayer
+     * @param permission Permission node
+     * @return Success or Failure
+     */
+	public boolean playerRemoveTransient(OfflinePlayer player, String permission) {
+		if (player.isOnline()) {
+			return playerRemoveTransient((Player) player, permission);
+		} else {
+			return false;
+		}
+	}
+    
     /**
      * Remove transient permission from a player.
      * 
