@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.milkbowl.vault</groupId>
 	<artifactId>VaultAPI</artifactId>
-	<version>1.3.2</version>
+	<version>1.4</version>
 	<name>VaultAPI</name>
 	<url>http://dev.bukkit.org/server-mods/vault/</url>
 
