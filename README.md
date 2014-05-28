@@ -1,6 +1,6 @@
 # VaultAPI - Abstraction Library API for Bukkit Plugins
 
-How to use with maven:
+How to use with maven: note that the VaultAPI version is 2 numerals, unlike Vault versions which are 3.  The 2 numerals in the VaultAPI will always correspond to the 2 beginning numerals in a Vault version to make it clear what versions your plugin will for sure work with.
 ```
     <repositories>
         <repository>
@@ -12,7 +12,7 @@ How to use with maven:
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.3.0.2</version>
+            <version>1.4</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
