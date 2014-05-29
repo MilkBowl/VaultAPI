@@ -80,14 +80,7 @@ public interface Economy {
 
     /**
      * 
-     * @deprecated As of Vault 1.3.01 use {@link #hasAccount(OfflinePlayer)} instead.
-     * 
-     * Checks if this player has an account on the server yet
-     * This will always return true if the player has joined the server at least once
-     * as all major economy plugins auto-generate a player account when the player joins the server
-     * 
-     * @param playerName to check
-     * @return if the player has an account
+     * @deprecated As of VaultAPI 1.4 use {@link #hasAccount(OfflinePlayer)} instead.
      */
     @Deprecated
     public boolean hasAccount(String playerName);
@@ -103,15 +96,7 @@ public interface Economy {
     public boolean hasAccount(OfflinePlayer player);
     
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #hasAccount(OfflinePlayer, String)} instead.
-     * 
-     * Checks if this player has an account on the server yet on the given world
-     * This will always return true if the player has joined the server at least once
-     * as all major economy plugins auto-generate a player account when the player joins the server
-     * 
-     * @param playerName to check in the world
-     * @param worldName world-specific account
-     * @return if the player has an account
+     * @deprecated As of VaultAPI 1.4 use {@link #hasAccount(OfflinePlayer, String)} instead.
      */
     @Deprecated
     public boolean hasAccount(String playerName, String worldName);
@@ -128,11 +113,7 @@ public interface Economy {
     public boolean hasAccount(OfflinePlayer player, String worldName);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #getBalance(OfflinePlayer)} instead.
-     * Gets balance of a player
-     * 
-     * @param playerName of the player
-     * @return Amount currently held in players account
+     * @deprecated As of VaultAPI 1.4 use {@link #getBalance(OfflinePlayer)} instead.
      */
     @Deprecated
     public double getBalance(String playerName);
@@ -146,13 +127,7 @@ public interface Economy {
     public double getBalance(OfflinePlayer player);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #getBalance(OfflinePlayer, String)} instead.
-     * 
-     * Gets balance of a player on the specified world.
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * @param playerName name of the player
-     * @param world name of the world
-     * @return Amount currently held in players account
+     * @deprecated As of VaultAPI 1.4 use {@link #getBalance(OfflinePlayer, String)} instead.
      */
     @Deprecated
     public double getBalance(String playerName, String world);
@@ -167,13 +142,7 @@ public interface Economy {
     public double getBalance(OfflinePlayer player, String world);
     
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #has(OfflinePlayer, double)} instead.
-     * 
-     * Checks if the player account has the amount - DO NOT USE NEGATIVE AMOUNTS
-     * 
-     * @param playerName to check
-     * @param amount to check for
-     * @return True if <b>playerName</b> has <b>amount</b>, False else wise
+     * @deprecated As of VaultAPI 1.4 use {@link #has(OfflinePlayer, double)} instead.
      */
     @Deprecated
     public boolean has(String playerName, double amount);
@@ -188,15 +157,7 @@ public interface Economy {
     public boolean has(OfflinePlayer player, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use @{link {@link #has(OfflinePlayer, String, double)} instead.
-     * 
-     * Checks if the player account has the amount in a given world - DO NOT USE NEGATIVE AMOUNTS
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * 
-     * @param playerName to check
-     * @param worldName to check with
-     * @param amount to check for
-     * @return True if <b>playerName</b> has <b>amount</b>, False else wise
+     * @deprecated As of VaultAPI 1.4 use @{link {@link #has(OfflinePlayer, String, double)} instead.
      */
     @Deprecated
     public boolean has(String playerName, String worldName, double amount);
@@ -213,12 +174,7 @@ public interface Economy {
     public boolean has(OfflinePlayer player, String worldName, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #withdrawPlayer(OfflinePlayer, double)} instead.
-     * Withdraw an amount from a player - DO NOT USE NEGATIVE AMOUNTS
-     * 
-     * @param playerName Name of player
-     * @param amount Amount to withdraw
-     * @return Detailed response of transaction
+     * @deprecated As of VaultAPI 1.4 use {@link #withdrawPlayer(OfflinePlayer, double)} instead.
      */
     @Deprecated
     public EconomyResponse withdrawPlayer(String playerName, double amount);
@@ -233,14 +189,7 @@ public interface Economy {
     public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #withdrawPlayer(OfflinePlayer, String, double)} instead.
-     * 
-     * Withdraw an amount from a player on a given world - DO NOT USE NEGATIVE AMOUNTS
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * @param playerName Name of player
-     * @param worldName - name of the world
-     * @param amount Amount to withdraw
-     * @return Detailed response of transaction
+     * @deprecated As of VaultAPI 1.4 use {@link #withdrawPlayer(OfflinePlayer, String, double)} instead.
      */
     @Deprecated
     public EconomyResponse withdrawPlayer(String playerName, String worldName, double amount);
@@ -256,13 +205,7 @@ public interface Economy {
     public EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #depositPlayer(OfflinePlayer, double)} instead.
-     * 
-     * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
-     * 
-     * @param playerName Name of player
-     * @param amount Amount to deposit
-     * @return Detailed response of transaction
+     * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, double)} instead.
      */
     @Deprecated
     public EconomyResponse depositPlayer(String playerName, double amount);
@@ -277,14 +220,7 @@ public interface Economy {
     public EconomyResponse depositPlayer(OfflinePlayer player, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {@link #depositPlayer(OfflinePlayer, String, double)} instead.
-     * 
-     * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * @param playerName Name of player
-     * @param worldName Name of the world
-     * @param amount Amount to deposit
-     * @return Detailed response of transaction
+     * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, String, double)} instead.
      */
     @Deprecated
     public EconomyResponse depositPlayer(String playerName, String worldName, double amount);
@@ -292,6 +228,7 @@ public interface Economy {
     /**
      * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
+     * 
      * @param player to deposit to
      * @param worldName name of the world
      * @param amount Amount to deposit
@@ -300,12 +237,7 @@ public interface Economy {
     public EconomyResponse depositPlayer(OfflinePlayer player, String worldName, double amount);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #createBank(String, OfflinePlayer)} instead.
-     * 
-     * Creates a bank account with the specified name and the player as the owner
-     * @param name of account
-     * @param player the account should be linked to
-     * @return EconomyResponse Object
+     * @deprecated As of VaultAPI 1.4 use {{@link #createBank(String, OfflinePlayer)} instead.
      */
     @Deprecated
     public EconomyResponse createBank(String name, String player);
@@ -360,13 +292,7 @@ public interface Economy {
     public EconomyResponse bankDeposit(String name, double amount);
     
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #isBankOwner(String, OfflinePlayer)} instead.
-     * 
-     * Check if a player is the owner of a bank account
-     * 
-     * @param name of the account
-     * @param playerName to check for ownership
-     * @return EconomyResponse Object
+     * @deprecated As of VaultAPI 1.4 use {{@link #isBankOwner(String, OfflinePlayer)} instead.
      */
     @Deprecated
     public EconomyResponse isBankOwner(String name, String playerName);
@@ -381,13 +307,7 @@ public interface Economy {
     public EconomyResponse isBankOwner(String name, OfflinePlayer player);
 
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #isBankMember(String, OfflinePlayer)} instead.
-     * 
-     * Check if the player is a member of the bank account
-     * 
-     * @param name of the account
-     * @param playerName to check membership
-     * @return EconomyResponse Object
+     * @deprecated As of VaultAPI 1.4 use {{@link #isBankMember(String, OfflinePlayer)} instead.
      */
     @Deprecated
     public EconomyResponse isBankMember(String name, String playerName);
@@ -408,11 +328,7 @@ public interface Economy {
     public List<String> getBanks();
 
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #createPlayerAccount(OfflinePlayer)} instead.
-     * 
-     * Attempts to create a player account for the given player
-     * @param playerName name of the player
-     * @return if the account creation was successful
+     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer)} instead.
      */
     @Deprecated
     public boolean createPlayerAccount(String playerName);
@@ -425,13 +341,7 @@ public interface Economy {
     public boolean createPlayerAccount(OfflinePlayer player);
     
     /**
-     * @deprecated As of Vault 1.3.01 use {{@link #createPlayerAccount(OfflinePlayer, String)} instead.
-     * 
-     * Attempts to create a player account for the given player on the specified world
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
-     * @param playerName String name of the player
-     * @param worldName String name of the world
-     * @return if the account creation was successful
+     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer, String)} instead.
      */
     @Deprecated
     public boolean createPlayerAccount(String playerName, String worldName);
