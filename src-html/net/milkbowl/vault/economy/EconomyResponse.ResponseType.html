@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<title>Source code</title>
+<link rel="stylesheet" type="text/css" href="../../../../../stylesheet.css" title="Style">
+</head>
+<body>
+<div class="sourceContainer">
+<pre><span class="sourceLineNo">001</span>/* This file is part of Vault.<a name="line.1"></a>
+<span class="sourceLineNo">002</span><a name="line.2"></a>
+<span class="sourceLineNo">003</span>    Vault is free software: you can redistribute it and/or modify<a name="line.3"></a>
+<span class="sourceLineNo">004</span>    it under the terms of the GNU Lesser General Public License as published by<a name="line.4"></a>
+<span class="sourceLineNo">005</span>    the Free Software Foundation, either version 3 of the License, or<a name="line.5"></a>
+<span class="sourceLineNo">006</span>    (at your option) any later version.<a name="line.6"></a>
+<span class="sourceLineNo">007</span><a name="line.7"></a>
+<span class="sourceLineNo">008</span>    Vault is distributed in the hope that it will be useful,<a name="line.8"></a>
+<span class="sourceLineNo">009</span>    but WITHOUT ANY WARRANTY; without even the implied warranty of<a name="line.9"></a>
+<span class="sourceLineNo">010</span>    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<a name="line.10"></a>
+<span class="sourceLineNo">011</span>    GNU Lesser General Public License for more details.<a name="line.11"></a>
+<span class="sourceLineNo">012</span><a name="line.12"></a>
+<span class="sourceLineNo">013</span>    You should have received a copy of the GNU Lesser General Public License<a name="line.13"></a>
+<span class="sourceLineNo">014</span>    along with Vault.  If not, see &lt;http://www.gnu.org/licenses/&gt;.<a name="line.14"></a>
+<span class="sourceLineNo">015</span> */<a name="line.15"></a>
+<span class="sourceLineNo">016</span>package net.milkbowl.vault.economy;<a name="line.16"></a>
+<span class="sourceLineNo">017</span><a name="line.17"></a>
+<span class="sourceLineNo">018</span>/**<a name="line.18"></a>
+<span class="sourceLineNo">019</span> * Indicates a typical Return for an Economy method.  <a name="line.19"></a>
+<span class="sourceLineNo">020</span> * It includes a {@link ResponseType} indicating whether the plugin currently being used for Economy actually allows<a name="line.20"></a>
+<span class="sourceLineNo">021</span> * the method, or if the operation was a success or failure.<a name="line.21"></a>
+<span class="sourceLineNo">022</span> *<a name="line.22"></a>
+<span class="sourceLineNo">023</span> */<a name="line.23"></a>
+<span class="sourceLineNo">024</span>public class EconomyResponse {<a name="line.24"></a>
+<span class="sourceLineNo">025</span><a name="line.25"></a>
+<span class="sourceLineNo">026</span>    /**<a name="line.26"></a>
+<span class="sourceLineNo">027</span>     * Enum for types of Responses indicating the status of a method call.<a name="line.27"></a>
+<span class="sourceLineNo">028</span>     */<a name="line.28"></a>
+<span class="sourceLineNo">029</span>    public static enum ResponseType {<a name="line.29"></a>
+<span class="sourceLineNo">030</span>        SUCCESS(1),<a name="line.30"></a>
+<span class="sourceLineNo">031</span>        FAILURE(2),<a name="line.31"></a>
+<span class="sourceLineNo">032</span>        NOT_IMPLEMENTED(3);<a name="line.32"></a>
+<span class="sourceLineNo">033</span><a name="line.33"></a>
+<span class="sourceLineNo">034</span>        private int id;<a name="line.34"></a>
+<span class="sourceLineNo">035</span><a name="line.35"></a>
+<span class="sourceLineNo">036</span>        ResponseType(int id) {<a name="line.36"></a>
+<span class="sourceLineNo">037</span>            this.id = id;<a name="line.37"></a>
+<span class="sourceLineNo">038</span>        }<a name="line.38"></a>
+<span class="sourceLineNo">039</span><a name="line.39"></a>
+<span class="sourceLineNo">040</span>        int getId() {<a name="line.40"></a>
+<span class="sourceLineNo">041</span>            return id;<a name="line.41"></a>
+<span class="sourceLineNo">042</span>        }<a name="line.42"></a>
+<span class="sourceLineNo">043</span>    }<a name="line.43"></a>
+<span class="sourceLineNo">044</span><a name="line.44"></a>
+<span class="sourceLineNo">045</span>    /**<a name="line.45"></a>
+<span class="sourceLineNo">046</span>     * Amount modified by calling method<a name="line.46"></a>
+<span class="sourceLineNo">047</span>     */<a name="line.47"></a>
+<span class="sourceLineNo">048</span>    public final double amount;<a name="line.48"></a>
+<span class="sourceLineNo">049</span>    /**<a name="line.49"></a>
+<span class="sourceLineNo">050</span>     * New balance of account<a name="line.50"></a>
+<span class="sourceLineNo">051</span>     */<a name="line.51"></a>
+<span class="sourceLineNo">052</span>    public final double balance;<a name="line.52"></a>
+<span class="sourceLineNo">053</span>    /**<a name="line.53"></a>
+<span class="sourceLineNo">054</span>     * Success or failure of call. Using Enum of ResponseType to determine valid<a name="line.54"></a>
+<span class="sourceLineNo">055</span>     * outcomes<a name="line.55"></a>
+<span class="sourceLineNo">056</span>     */<a name="line.56"></a>
+<span class="sourceLineNo">057</span>    public final ResponseType type;<a name="line.57"></a>
+<span class="sourceLineNo">058</span>    /**<a name="line.58"></a>
+<span class="sourceLineNo">059</span>     * Error message if the variable 'type' is ResponseType.FAILURE<a name="line.59"></a>
+<span class="sourceLineNo">060</span>     */<a name="line.60"></a>
+<span class="sourceLineNo">061</span>    public final String errorMessage;<a name="line.61"></a>
+<span class="sourceLineNo">062</span><a name="line.62"></a>
+<span class="sourceLineNo">063</span>    /**<a name="line.63"></a>
+<span class="sourceLineNo">064</span>     * Constructor for EconomyResponse<a name="line.64"></a>
+<span class="sourceLineNo">065</span>     * @param amount Amount modified during operation<a name="line.65"></a>
+<span class="sourceLineNo">066</span>     * @param balance New balance of account<a name="line.66"></a>
+<span class="sourceLineNo">067</span>     * @param type Success or failure type of the operation<a name="line.67"></a>
+<span class="sourceLineNo">068</span>     * @param errorMessage Error message if necessary (commonly null)<a name="line.68"></a>
+<span class="sourceLineNo">069</span>     */<a name="line.69"></a>
+<span class="sourceLineNo">070</span>    public EconomyResponse(double amount, double balance, ResponseType type, String errorMessage) {<a name="line.70"></a>
+<span class="sourceLineNo">071</span>        this.amount = amount;<a name="line.71"></a>
+<span class="sourceLineNo">072</span>        this.balance = balance;<a name="line.72"></a>
+<span class="sourceLineNo">073</span>        this.type = type;<a name="line.73"></a>
+<span class="sourceLineNo">074</span>        this.errorMessage = errorMessage;<a name="line.74"></a>
+<span class="sourceLineNo">075</span>    }<a name="line.75"></a>
+<span class="sourceLineNo">076</span><a name="line.76"></a>
+<span class="sourceLineNo">077</span>    /**<a name="line.77"></a>
+<span class="sourceLineNo">078</span>     * Checks if an operation was successful<a name="line.78"></a>
+<span class="sourceLineNo">079</span>     * @return Value<a name="line.79"></a>
+<span class="sourceLineNo">080</span>     */<a name="line.80"></a>
+<span class="sourceLineNo">081</span>    public boolean transactionSuccess() {<a name="line.81"></a>
+<span class="sourceLineNo">082</span>        switch (type) {<a name="line.82"></a>
+<span class="sourceLineNo">083</span>        case SUCCESS:<a name="line.83"></a>
+<span class="sourceLineNo">084</span>            return true;<a name="line.84"></a>
+<span class="sourceLineNo">085</span>        default:<a name="line.85"></a>
+<span class="sourceLineNo">086</span>            return false;<a name="line.86"></a>
+<span class="sourceLineNo">087</span>        }<a name="line.87"></a>
+<span class="sourceLineNo">088</span>    }<a name="line.88"></a>
+<span class="sourceLineNo">089</span>}<a name="line.89"></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+</div>
+</body>
+</html>
