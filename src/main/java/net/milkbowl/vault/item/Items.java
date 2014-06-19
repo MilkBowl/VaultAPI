@@ -248,6 +248,7 @@ public class Items {
         items.add(new ItemInfo("Cooked Porkchop", new String[][]{{"pork", "cook"}, {"baco"}}, Material.GRILLED_PORK));
         items.add(new ItemInfo("Paintings", new String[][]{{"paint"}}, Material.PAINTING));
         items.add(new ItemInfo("Golden Apple", new String[][]{{"appl", "go"}}, Material.GOLDEN_APPLE));
+        items.add(new ItemInfo("Enchanted Golden Apple", new String[][]{{"appl", "go", "ench"}}, Material.GOLDEN_APPLE, (short) 1));
         items.add(new ItemInfo("Sign", new String[][]{{"sign"}}, Material.SIGN));
         items.add(new ItemInfo("Wooden Door", new String[][]{{"door", "wood"}, {"door"}}, Material.WOOD_DOOR));
         items.add(new ItemInfo("Bucket", new String[][]{{"buck"}, {"bukk"}}, Material.BUCKET));
