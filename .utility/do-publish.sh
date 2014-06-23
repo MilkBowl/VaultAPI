@@ -15,7 +15,7 @@ git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/MilkBowl/Vaul
 # Commit and Push the Changes
 cd gh-pages
 git rm -rf *
-cp -Rf $HOME/VaultAPI/target/javadoc-latest/* ./
+cp -Rfv $HOME/MilkBowl/VaultAPI/target/javadoc-latest/* ./
 git add -f .
 git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
 git push -fq origin gh-pages > /dev/null
