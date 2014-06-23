@@ -34,7 +34,7 @@ public interface Economy {
 
     /**
      * Gets name of economy method
-     * @return Name of Ecoomy Method
+     * @return Name of Economy Method
      */
     public String getName();
 
