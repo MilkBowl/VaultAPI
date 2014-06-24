@@ -95,6 +95,7 @@
 					<author>true</author>
 					<version>true</version>
 					<linksource>true</linksource>
+					<notimestamp>true</notimestamp>
 					<bottom><![CDATA[<b>Milkbowl, 2014</b>]]></bottom>
 					<reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
 					<destDir>javadoc-latest</destDir>
