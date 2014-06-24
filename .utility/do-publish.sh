@@ -1,13 +1,13 @@
 #!/bin/bash
 current_dir=`pwd`
 
-mvn javadoc:javadoc
-
 if [[ "$TRAVIS_REPO_SLUG" != "MilkBowl/VaultAPI" || "$TRAVIS_PULL_REQUEST" == "true" || "$TRAVIS_BRANCH" != "master" ]]
 then
         echo 'Travis can only publish docs for release builds.'
         return 0
 fi
+
+mvn clean javadoc:javadoc javadoc:jar deploy --settings .utility/settings.xml
 
 # Get to the Travis build directory, configure git and clone the repo
 cd $HOME
