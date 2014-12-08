@@ -139,7 +139,7 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#createBank(java.lang.String, org.bukkit.OfflinePlayer)">createBank</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#createBank(java.lang.String,%20org.bukkit.OfflinePlayer)">createBank</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                     org.bukkit.OfflinePlayer&nbsp;player)</code>
 <div class="block">Creates a bank account with the specified name and the player as the owner</div>
 </td>
@@ -152,7 +152,7 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#createPlayerAccount(org.bukkit.OfflinePlayer, java.lang.String)">createPlayerAccount</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#createPlayerAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">createPlayerAccount</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                                       <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName)</code>
 <div class="block">Attempts to create a player account for the given player on the specified world
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
@@ -160,14 +160,14 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#depositPlayer(org.bukkit.OfflinePlayer, double)">depositPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#depositPlayer(org.bukkit.OfflinePlayer,%20double)">depositPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                           double&nbsp;amount)</code>
 <div class="block">Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#depositPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">depositPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#depositPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">depositPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                           <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
                           double&nbsp;amount)</code>
 <div class="block">Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
@@ -182,21 +182,21 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>double</code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#getBalance(org.bukkit.OfflinePlayer, java.lang.String)">getBalance</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#getBalance(org.bukkit.OfflinePlayer,%20java.lang.String)">getBalance</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                     <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;world)</code>
 <div class="block">Gets balance of a player on the specified world.</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#has(org.bukkit.OfflinePlayer, double)">has</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#has(org.bukkit.OfflinePlayer,%20double)">has</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
       double&nbsp;amount)</code>
 <div class="block">Checks if the player account has the amount - DO NOT USE NEGATIVE AMOUNTS</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#has(org.bukkit.OfflinePlayer, java.lang.String, double)">has</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#has(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">has</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
       <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
       double&nbsp;amount)</code>
 <div class="block">Checks if the player account has the amount in a given world - DO NOT USE NEGATIVE AMOUNTS
@@ -213,7 +213,7 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#hasAccount(org.bukkit.OfflinePlayer, java.lang.String)">hasAccount</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#hasAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">hasAccount</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                     <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName)</code>
 <div class="block">Checks if this player has an account on the server yet on the given world
  This will always return true if the player has joined the server at least once
@@ -222,28 +222,28 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#isBankMember(java.lang.String, org.bukkit.OfflinePlayer)">isBankMember</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#isBankMember(java.lang.String,%20org.bukkit.OfflinePlayer)">isBankMember</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                         org.bukkit.OfflinePlayer&nbsp;player)</code>
 <div class="block">Check if the player is a member of the bank account</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#isBankOwner(java.lang.String, org.bukkit.OfflinePlayer)">isBankOwner</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#isBankOwner(java.lang.String,%20org.bukkit.OfflinePlayer)">isBankOwner</a></strong>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                       org.bukkit.OfflinePlayer&nbsp;player)</code>
 <div class="block">Check if a player is the owner of a bank account</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#withdrawPlayer(org.bukkit.OfflinePlayer, double)">withdrawPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20double)">withdrawPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                             double&nbsp;amount)</code>
 <div class="block">Withdraw an amount from a player - DO NOT USE NEGATIVE AMOUNTS</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a></code></td>
-<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#withdrawPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">withdrawPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
+<td class="colLast"><code><strong><a href="../../../../net/milkbowl/vault/economy/AbstractEconomy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">withdrawPlayer</a></strong>(org.bukkit.OfflinePlayer&nbsp;player,
                             <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
                             double&nbsp;amount)</code>
 <div class="block">Withdraw an amount from a player on a given world - DO NOT USE NEGATIVE AMOUNTS
@@ -256,14 +256,14 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></h3>
-<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long, int)" title="class or interface in java.lang">wait</a></code></li>
+<code><a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#equals(java.lang.Object)" title="class or interface in java.lang">equals</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#getClass()" title="class or interface in java.lang">getClass</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#hashCode()" title="class or interface in java.lang">hashCode</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notify()" title="class or interface in java.lang">notify</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#notifyAll()" title="class or interface in java.lang">notifyAll</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#toString()" title="class or interface in java.lang">toString</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait()" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long)" title="class or interface in java.lang">wait</a>, <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/Object.html?is-external=true#wait(long,%20int)" title="class or interface in java.lang">wait</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods_inherited_from_class_net.milkbowl.vault.economy.Economy">
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;net.milkbowl.vault.economy.<a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></h3>
-<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#bankBalance(java.lang.String)">bankBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankDeposit(java.lang.String, double)">bankDeposit</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankHas(java.lang.String, double)">bankHas</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankWithdraw(java.lang.String, double)">bankWithdraw</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String, java.lang.String)">createBank</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(java.lang.String)">createPlayerAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(java.lang.String, java.lang.String)">createPlayerAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#currencyNamePlural()">currencyNamePlural</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#currencyNameSingular()">currencyNameSingular</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#deleteBank(java.lang.String)">deleteBank</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(java.lang.String, double)">depositPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(java.lang.String, java.lang.String, double)">depositPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#format(double)">format</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#fractionalDigits()">fractionalDigits</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(java.lang.String)">getBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(java.lang.String, java.lang.String)">getBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBanks()">getBanks</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getName()">getName</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#has(java.lang.String, double)">has</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#has(java.lang.String, java.lang.String, double)">has</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(java.lang.String)">hasAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(java.lang.String, java.lang.String)">hasAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasBankSupport()">hasBankSupport</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String, java.lang.String)">isBankMember</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String, java.lang.String)">isBankOwner</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isEnabled()">isEnabled</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(java.lang.String, double)">withdrawPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(java.lang.String, java.lang.String, double)">withdrawPlayer</a></code></li>
+<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#bankBalance(java.lang.String)">bankBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankDeposit(java.lang.String,%20double)">bankDeposit</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankHas(java.lang.String,%20double)">bankHas</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#bankWithdraw(java.lang.String,%20double)">bankWithdraw</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String,%20java.lang.String)">createBank</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(java.lang.String)">createPlayerAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(java.lang.String,%20java.lang.String)">createPlayerAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#currencyNamePlural()">currencyNamePlural</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#currencyNameSingular()">currencyNameSingular</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#deleteBank(java.lang.String)">deleteBank</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(java.lang.String,%20double)">depositPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(java.lang.String,%20java.lang.String,%20double)">depositPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#format(double)">format</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#fractionalDigits()">fractionalDigits</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(java.lang.String)">getBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(java.lang.String,%20java.lang.String)">getBalance</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getBanks()">getBanks</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#getName()">getName</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#has(java.lang.String,%20double)">has</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#has(java.lang.String,%20java.lang.String,%20double)">has</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(java.lang.String)">hasAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(java.lang.String,%20java.lang.String)">hasAccount</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#hasBankSupport()">hasBankSupport</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String,%20java.lang.String)">isBankMember</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String,%20java.lang.String)">isBankOwner</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#isEnabled()">isEnabled</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(java.lang.String,%20double)">withdrawPlayer</a>, <a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(java.lang.String,%20java.lang.String,%20double)">withdrawPlayer</a></code></li>
 </ul>
 </li>
 </ul>
@@ -322,13 +322,13 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>hasAccount</h4>
 <pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.14">hasAccount</a>(org.bukkit.OfflinePlayer&nbsp;player,
                  <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(org.bukkit.OfflinePlayer, java.lang.String)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">Economy</a></code></strong></div>
 <div class="block">Checks if this player has an account on the server yet on the given world
  This will always return true if the player has joined the server at least once
  as all major economy plugins auto-generate a player account when the player joins the server</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(org.bukkit.OfflinePlayer, java.lang.String)">hasAccount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#hasAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">hasAccount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to check in the world</dd><dd><code>worldName</code> - world-specific account</dd>
 <dt><span class="strong">Returns:</span></dt><dd>if the player has an account</dd></dl>
 </li>
@@ -357,12 +357,12 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>getBalance</h4>
 <pre>public&nbsp;double&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.24">getBalance</a>(org.bukkit.OfflinePlayer&nbsp;player,
                 <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;world)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(org.bukkit.OfflinePlayer, java.lang.String)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(org.bukkit.OfflinePlayer,%20java.lang.String)">Economy</a></code></strong></div>
 <div class="block">Gets balance of a player on the specified world.
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(org.bukkit.OfflinePlayer, java.lang.String)">getBalance</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#getBalance(org.bukkit.OfflinePlayer,%20java.lang.String)">getBalance</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to check</dd><dd><code>world</code> - name of the world</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Amount currently held in players account</dd></dl>
 </li>
@@ -375,11 +375,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>has</h4>
 <pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.29">has</a>(org.bukkit.OfflinePlayer&nbsp;player,
           double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer,%20double)">Economy</a></code></strong></div>
 <div class="block">Checks if the player account has the amount - DO NOT USE NEGATIVE AMOUNTS</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer, double)">has</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer,%20double)">has</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to check</dd><dd><code>amount</code> - to check for</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if <b>player</b> has <b>amount</b>, False else wise</dd></dl>
 </li>
@@ -393,12 +393,12 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.34">has</a>(org.bukkit.OfflinePlayer&nbsp;player,
           <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
           double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer, java.lang.String, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">Economy</a></code></strong></div>
 <div class="block">Checks if the player account has the amount in a given world - DO NOT USE NEGATIVE AMOUNTS
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer, java.lang.String, double)">has</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#has(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">has</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to check</dd><dd><code>worldName</code> - to check with</dd><dd><code>amount</code> - to check for</dd>
 <dt><span class="strong">Returns:</span></dt><dd>True if <b>player</b> has <b>amount</b>, False else wise</dd></dl>
 </li>
@@ -411,11 +411,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>withdrawPlayer</h4>
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.39">withdrawPlayer</a>(org.bukkit.OfflinePlayer&nbsp;player,
                              double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20double)">Economy</a></code></strong></div>
 <div class="block">Withdraw an amount from a player - DO NOT USE NEGATIVE AMOUNTS</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer, double)">withdrawPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20double)">withdrawPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to withdraw from</dd><dd><code>amount</code> - Amount to withdraw</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Detailed response of transaction</dd></dl>
 </li>
@@ -429,12 +429,12 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.44">withdrawPlayer</a>(org.bukkit.OfflinePlayer&nbsp;player,
                              <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
                              double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">Economy</a></code></strong></div>
 <div class="block">Withdraw an amount from a player on a given world - DO NOT USE NEGATIVE AMOUNTS
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">withdrawPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#withdrawPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">withdrawPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to withdraw from</dd><dd><code>worldName</code> - - name of the world</dd><dd><code>amount</code> - Amount to withdraw</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Detailed response of transaction</dd></dl>
 </li>
@@ -447,11 +447,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>depositPlayer</h4>
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.49">depositPlayer</a>(org.bukkit.OfflinePlayer&nbsp;player,
                             double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer,%20double)">Economy</a></code></strong></div>
 <div class="block">Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer, double)">depositPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer,%20double)">depositPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to deposit to</dd><dd><code>amount</code> - Amount to deposit</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Detailed response of transaction</dd></dl>
 </li>
@@ -465,12 +465,12 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.54">depositPlayer</a>(org.bukkit.OfflinePlayer&nbsp;player,
                             <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName,
                             double&nbsp;amount)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">Economy</a></code></strong></div>
 <div class="block">Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer, java.lang.String, double)">depositPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#depositPlayer(org.bukkit.OfflinePlayer,%20java.lang.String,%20double)">depositPlayer</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - to deposit to</dd><dd><code>worldName</code> - name of the world</dd><dd><code>amount</code> - Amount to deposit</dd>
 <dt><span class="strong">Returns:</span></dt><dd>Detailed response of transaction</dd></dl>
 </li>
@@ -483,11 +483,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>createBank</h4>
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.59">createBank</a>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                          org.bukkit.OfflinePlayer&nbsp;player)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String, org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String,%20org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
 <div class="block">Creates a bank account with the specified name and the player as the owner</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String, org.bukkit.OfflinePlayer)">createBank</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createBank(java.lang.String,%20org.bukkit.OfflinePlayer)">createBank</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - of account</dd><dd><code>player</code> - the account should be linked to</dd>
 <dt><span class="strong">Returns:</span></dt><dd>EconomyResponse Object</dd></dl>
 </li>
@@ -500,11 +500,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>isBankOwner</h4>
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.64">isBankOwner</a>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                           org.bukkit.OfflinePlayer&nbsp;player)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String, org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String,%20org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
 <div class="block">Check if a player is the owner of a bank account</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String, org.bukkit.OfflinePlayer)">isBankOwner</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankOwner(java.lang.String,%20org.bukkit.OfflinePlayer)">isBankOwner</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - of the account</dd><dd><code>player</code> - to check for ownership</dd>
 <dt><span class="strong">Returns:</span></dt><dd>EconomyResponse Object</dd></dl>
 </li>
@@ -517,11 +517,11 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>isBankMember</h4>
 <pre>public&nbsp;<a href="../../../../net/milkbowl/vault/economy/EconomyResponse.html" title="class in net.milkbowl.vault.economy">EconomyResponse</a>&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.69">isBankMember</a>(<a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;name,
                            org.bukkit.OfflinePlayer&nbsp;player)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String, org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String,%20org.bukkit.OfflinePlayer)">Economy</a></code></strong></div>
 <div class="block">Check if the player is a member of the bank account</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String, org.bukkit.OfflinePlayer)">isBankMember</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#isBankMember(java.lang.String,%20org.bukkit.OfflinePlayer)">isBankMember</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>name</code> - of the account</dd><dd><code>player</code> - to check membership</dd>
 <dt><span class="strong">Returns:</span></dt><dd>EconomyResponse Object</dd></dl>
 </li>
@@ -550,12 +550,12 @@ implements <a href="../../../../net/milkbowl/vault/economy/Economy.html" title="
 <h4>createPlayerAccount</h4>
 <pre>public&nbsp;boolean&nbsp;<a href="../../../../src-html/net/milkbowl/vault/economy/AbstractEconomy.html#line.79">createPlayerAccount</a>(org.bukkit.OfflinePlayer&nbsp;player,
                           <a href="http://docs.oracle.com/javase/6/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;worldName)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(org.bukkit.OfflinePlayer, java.lang.String)">Economy</a></code></strong></div>
+<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">Economy</a></code></strong></div>
 <div class="block">Attempts to create a player account for the given player on the specified world
  IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(org.bukkit.OfflinePlayer, java.lang.String)">createPlayerAccount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
+<dd><code><a href="../../../../net/milkbowl/vault/economy/Economy.html#createPlayerAccount(org.bukkit.OfflinePlayer,%20java.lang.String)">createPlayerAccount</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../net/milkbowl/vault/economy/Economy.html" title="interface in net.milkbowl.vault.economy">Economy</a></code></dd>
 <dt><span class="strong">Parameters:</span></dt><dd><code>player</code> - OfflinePlayer</dd><dd><code>worldName</code> - String name of the world</dd>
 <dt><span class="strong">Returns:</span></dt><dd>if the account creation was successful</dd></dl>
 </li>
