@@ -1,7 +1,6 @@
 package net.milkbowl.vault.test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -17,7 +16,7 @@ import net.milkbowl.vault.item.Items;
 @SuppressWarnings("deprecation")
 public class ItemTest {
 
-    // Static list of materials we shouldn't be testing for as they are now longer able to be help in inventory.
+    // Static list of materials we shouldn't be testing for as they are now longer able to be held in inventory.
     private static final Set<Material> ignoreMats = EnumSet.noneOf(Material.class);
     {
         ignoreMats.add(Material.STATIONARY_WATER);
@@ -43,6 +42,18 @@ public class ItemTest {
         ignoreMats.add(Material.SKULL);
         ignoreMats.add(Material.REDSTONE_COMPARATOR_OFF);
         ignoreMats.add(Material.REDSTONE_COMPARATOR_ON);
+        // 1.8 technical blocks
+        ignoreMats.add(Material.STANDING_BANNER);
+        ignoreMats.add(Material.WALL_BANNER);
+        ignoreMats.add(Material.SPRUCE_DOOR);
+        ignoreMats.add(Material.BIRCH_DOOR);
+        ignoreMats.add(Material.JUNGLE_DOOR);
+        ignoreMats.add(Material.ACACIA_DOOR);
+        ignoreMats.add(Material.DARK_OAK_DOOR);
+        ignoreMats.add(Material.DAYLIGHT_DETECTOR_INVERTED);
+        ignoreMats.add(Material.DOUBLE_STEP);
+        ignoreMats.add(Material.WOOD_DOUBLE_STEP);
+        ignoreMats.add(Material.DOUBLE_STONE_SLAB2);
     }
 
     @Test
@@ -77,10 +88,14 @@ public class ItemTest {
     
     @Test
     public void MissingMaterialtest() {
+    	boolean missing = false;
         for (Material mat : Material.values()) {
             if (ignoreMats.contains(mat)) continue;
-            
-            assertNotNull("Missing " + mat.toString() + " in item search list", Items.itemByType(mat));
+            if (Items.itemByType(mat) == null) {
+            	missing = true;
+            	System.out.println("Missing " + mat.toString() + " in item search list");
+            }
         }
+        assertEquals(missing, false);
     }
 }

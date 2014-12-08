@@ -3,13 +3,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.milkbowl.vault</groupId>
 	<artifactId>VaultAPI</artifactId>
-	<version>1.4</version>
+	<version>1.5</version>
 	<name>VaultAPI</name>
 	<url>http://dev.bukkit.org/server-mods/vault/</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<bukkitVersion>1.7.9-R0.1-SNAPSHOT</bukkitVersion>
+		<bukkitVersion>1.8-R0.1-SNAPSHOT</bukkitVersion>
 	</properties>
 
 	<!-- Organization -->
@@ -36,8 +36,8 @@
 
 	<repositories>
 		<repository>
-			<id>bukkit-repo</id>
-			<url>http://repo.bukkit.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
 		</repository>
 	</repositories>
 

@@ -110,13 +110,16 @@ public class Items {
         items.add(new ItemInfo("Red Mushroom", new String[][]{{"mush", "red"}}, Material.RED_MUSHROOM));
         items.add(new ItemInfo("Gold Block", new String[][]{{"gold", "bl"}}, Material.GOLD_BLOCK));
         items.add(new ItemInfo("Iron Block", new String[][]{{"iron", "bl"}}, Material.IRON_BLOCK));
-        items.add(new ItemInfo("Double Stone Slab", new String[][]{{"doub", "slab"}, {"doub", "slab", "sto"}, {"doub", "step", "sto"}}, Material.DOUBLE_STEP));
-        items.add(new ItemInfo("Double Sandstone Slab", new String[][]{{"doub", "slab", "sand", "sto"}, {"doub", "step", "sand", "sto"}}, Material.DOUBLE_STEP, (short) 1));
-        items.add(new ItemInfo("Double Wooden Slab", new String[][]{{"doub", "slab", "wood"}, {"doub", "step", "wood"}}, Material.DOUBLE_STEP, (short) 2));
-        items.add(new ItemInfo("Double Cobblestone Slab", new String[][]{{"doub", "slab", "cob", "sto"}, {"doub", "slab", "cob"}, {"doub", "step", "cob"}}, Material.DOUBLE_STEP, (short) 3));
-        items.add(new ItemInfo("Double Brick Slab", new String[][]{{"doub", "slab", "bri"}}, Material.DOUBLE_STEP, (short) 4));
-        items.add(new ItemInfo("Double Stone Brick Slab", new String[][]{{"doub", "slab", "smoo"}, {"doub", "slab", "sto", "bri"}}, Material.DOUBLE_STEP, (short) 5));
-        items.add(new ItemInfo("Double Smooth Sandstone Slab", new String[][]{{"doub", "slab", "sand", "smoo"}}, Material.DOUBLE_STEP, (short) 9));
+        /* 
+         * No longer obtainable in inventory in 1.8
+         * items.add(new ItemInfo("Double Stone Slab", new String[][]{{"doub", "slab"}, {"doub", "slab", "sto"}, {"doub", "step", "sto"}}, Material.DOUBLE_STEP));
+         * items.add(new ItemInfo("Double Sandstone Slab", new String[][]{{"doub", "slab", "sand", "sto"}, {"doub", "step", "sand", "sto"}}, Material.DOUBLE_STEP, (short) 1));
+         * items.add(new ItemInfo("Double Wooden Slab", new String[][]{{"doub", "slab", "wood"}, {"doub", "step", "wood"}}, Material.DOUBLE_STEP, (short) 2));
+         * items.add(new ItemInfo("Double Cobblestone Slab", new String[][]{{"doub", "slab", "cob", "sto"}, {"doub", "slab", "cob"}, {"doub", "step", "cob"}}, Material.DOUBLE_STEP, (short) 3));
+         * items.add(new ItemInfo("Double Brick Slab", new String[][]{{"doub", "slab", "bri"}}, Material.DOUBLE_STEP, (short) 4));
+         * items.add(new ItemInfo("Double Stone Brick Slab", new String[][]{{"doub", "slab", "smoo"}, {"doub", "slab", "sto", "bri"}}, Material.DOUBLE_STEP, (short) 5));
+         * items.add(new ItemInfo("Double Smooth Sandstone Slab", new String[][]{{"doub", "slab", "sand", "smoo"}}, Material.DOUBLE_STEP, (short) 9));
+        **/
         items.add(new ItemInfo("Stone Slab", new String[][]{{"slab", "sto"}, {"slab"}, {"step", "ston"}}, Material.STEP));
         items.add(new ItemInfo("Sandstone Slab", new String[][]{{"slab", "sand", "sto"}, {"step", "sand", "sto"}}, Material.STEP, (short) 1));
         items.add(new ItemInfo("Wooden Slab", new String[][]{{"slab", "woo"}, {"step", "woo"}}, Material.STEP, (short) 2));
@@ -156,14 +159,14 @@ public class Items {
         items.add(new ItemInfo("Cactus", new String[][]{{"cact"}}, Material.CACTUS));
         items.add(new ItemInfo("Clay Block", new String[][]{{"clay", "blo"}}, Material.CLAY));
         items.add(new ItemInfo("Jukebox", new String[][]{{"jukeb"}}, Material.JUKEBOX));
-        items.add(new ItemInfo("Fence", new String[][]{{"fence"}}, Material.FENCE));
+        items.add(new ItemInfo("Oak Fence", new String[][]{{"oak", "fence"}, {"fence"}}, Material.FENCE));
         items.add(new ItemInfo("Pumpkin", new String[][]{{"pump"}}, Material.PUMPKIN));
         items.add(new ItemInfo("Netherrack", new String[][]{{"netherr"}, {"netherst"}, {"hellst"}}, Material.NETHERRACK));
         items.add(new ItemInfo("Soul Sand", new String[][]{{"soul", "sand"}, {"soul"}, {"slowsa"}, {"nether", "mud"}, {"slow", "sand"}, {"quick", "sand"}, {"mud"}}, Material.SOUL_SAND));
         items.add(new ItemInfo("Glowstone", new String[][]{{"glow", "stone"}, {"light", "stone"}}, Material.GLOWSTONE));
         items.add(new ItemInfo("Portal", new String[][]{{"port"}}, Material.PORTAL));
         items.add(new ItemInfo("Jack-O-Lantern", new String[][]{{"jack"}, {"lante"}}, Material.JACK_O_LANTERN));
-        items.add(new ItemInfo("Trapdoor", new String[][]{{"trap", "doo"}, {"hatc"}}, Material.TRAP_DOOR));
+        items.add(new ItemInfo("Wooden Trapdoor", new String[][]{{"trap", "doo"}, {"woo", "hatc"}, {"woo", "trap", "door"}}, Material.TRAP_DOOR));
         items.add(new ItemInfo("Stone Monster Egg", new String[][]{{"mons","egg"},{"sto","mons", "egg"}, {"hid", "silver"}}, Material.MONSTER_EGGS));
         items.add(new ItemInfo("Stone Brick Monster Egg", new String[][]{{"sto", "bri", "mons", "egg"}, {"hid", "silver","sto","bri"}}, Material.MONSTER_EGGS, (short) 2));
         items.add(new ItemInfo("Mossy Stone Brick Monster Egg", new String[][]{{"moss", "sto", "bri", "mons", "egg"}, {"hid", "silver","mos","sto","bri"}}, Material.MONSTER_EGGS, (short) 3));
@@ -444,10 +447,14 @@ public class Items {
         items.add(new ItemInfo("Tripwire Hook", new String[][]{{"hoo", "trip"}}, Material.TRIPWIRE_HOOK));
         items.add(new ItemInfo("Tripwire", new String[][]{{"trip"}}, Material.TRIPWIRE));
         items.add(new ItemInfo("Sandstone Stair", new String[][]{{"stair", "sand", "sto"}, {"stair", "sand"}}, Material.SANDSTONE_STAIRS));
-        items.add(new ItemInfo("Double Oak Slab", new String[][]{{"doub", "slab", "oak"}, {"doub", "step", "oak"}}, Material.WOOD_DOUBLE_STEP));
-        items.add(new ItemInfo("Double Spruce Slab", new String[][]{{"doub", "slab", "spru"}, {"doub", "step", "spru"}}, Material.WOOD_DOUBLE_STEP, (short) 1));
-        items.add(new ItemInfo("Double Birch Slab", new String[][]{{"doub", "slab", "birc"}, {"doub", "step", "birc"}}, Material.WOOD_DOUBLE_STEP, (short) 2));
-        items.add(new ItemInfo("Double Jungle Wood Slab", new String[][]{{"doub", "slab", "jungl"}, {"doub", "step", "jung"}}, Material.WOOD_DOUBLE_STEP, (short) 3));
+        /*
+         * Double slabs removed from Inventory in 1.8
+         * 
+         * items.add(new ItemInfo("Double Oak Slab", new String[][]{{"doub", "slab", "oak"}, {"doub", "step", "oak"}}, Material.WOOD_DOUBLE_STEP));
+         * items.add(new ItemInfo("Double Spruce Slab", new String[][]{{"doub", "slab", "spru"}, {"doub", "step", "spru"}}, Material.WOOD_DOUBLE_STEP, (short) 1));
+         * items.add(new ItemInfo("Double Birch Slab", new String[][]{{"doub", "slab", "birc"}, {"doub", "step", "birc"}}, Material.WOOD_DOUBLE_STEP, (short) 2));
+         * items.add(new ItemInfo("Double Jungle Wood Slab", new String[][]{{"doub", "slab", "jungl"}, {"doub", "step", "jung"}}, Material.WOOD_DOUBLE_STEP, (short) 3));
+        **/
         items.add(new ItemInfo("Oak Slab", new String[][]{{"slab", "oak"}, {"step", "oak"}}, Material.WOOD_STEP));
         items.add(new ItemInfo("Spruce Slab", new String[][]{{"slab", "spru"}, {"step", "spru"}}, Material.WOOD_STEP, (short) 1));
         items.add(new ItemInfo("Birch Slab", new String[][]{{"slab", "birc"}, {"step", "birc"}}, Material.WOOD_STEP, (short) 2));
@@ -571,7 +578,9 @@ public class Items {
         items.add(new ItemInfo("Red Carpet", new String[][]{{"carpet", "red"}}, Material.CARPET, (short) 14));
         items.add(new ItemInfo("Black Carpet", new String[][]{{"carpet", "bla"}}, Material.CARPET, (short) 15));
         //1.7 Blocks and Items
-        items.add(new ItemInfo("Grassless Dirt", new String[][]{{"less", "dirt"}}, Material.DIRT, (short) 1));
+        items.add(new ItemInfo("Packed Ice", new String[][]{{"pack", "ice"}}, Material.PACKED_ICE));
+        // renamed from grassless dirt in 1.8 to Coarse Dirt.
+        items.add(new ItemInfo("Coarse Dirt", new String[][]{{"coar", "dirt"}, {"less", "dirt"}}, Material.DIRT, (short) 1)); 
         items.add(new ItemInfo("Acacia Log", new String[][]{{"acac"}, {"log", "acac"}}, Material.LOG_2));
         items.add(new ItemInfo("Dark Oak Log", new String[][]{{"oak", "dar"}, {"log", "oak", "dar"}}, Material.LOG_2, (short) 1));
         items.add(new ItemInfo("Acacia Plank", new String[][]{{"acac", "plank"}, {"acac", "wood"}}, Material.WOOD, (short) 4));
@@ -648,6 +657,61 @@ public class Items {
         items.add(new ItemInfo("Pufferfish", new String[][]{{"fish", "puff"}, {"fish", "blo"}, {"fish", "glob"}}, Material.RAW_FISH, (short) 3));
         items.add(new ItemInfo("Acacia Slab", new String[][]{{"slab", "aca"}, {"step", "aca"}}, Material.WOOD_STEP, (short) 4));
         items.add(new ItemInfo("Dark Oak Slab", new String[][]{{"slab", "dar", "oak"}, {"step", "dar", "oak"}}, Material.WOOD_STEP, (short) 5));
+        // items added in 1.8
+        items.add(new ItemInfo("Granite", new String[][]{{"gran"}}, Material.STONE, (short) 1));
+        items.add(new ItemInfo("Polished Granite", new String[][]{{"pol", "gran"}, {"smoo", "gran"}}, Material.STONE, (short) 2));
+        items.add(new ItemInfo("Diorite", new String[][]{{"dior"}}, Material.STONE, (short) 3));
+        items.add(new ItemInfo("Polished Diorite", new String[][]{{"pol", "dior"}, {"smoo", "dior"}}, Material.STONE, (short) 4));
+        items.add(new ItemInfo("Andesite", new String[][]{{"ande"}}, Material.STONE, (short) 5));
+        items.add(new ItemInfo("Polished Andesite", new String[][]{{"pol", "ande"}, {"smoo", "ande"}}, Material.STONE, (short) 6));
+        items.add(new ItemInfo("Slime Block", new String[][]{{"sli", "blo"}}, Material.SLIME_BLOCK));
+        items.add(new ItemInfo("Wet Sponge", new String[][]{{"wet", "spon"}}, Material.SPONGE, (short) 1));
+        items.add(new ItemInfo("Barrier", new String[][]{{"barri"}}, Material.BARRIER));
+        items.add(new ItemInfo("Iron Trapdoor", new String[][]{{"tra", "doo", "iron"}, {"iron", "hatc"}}, Material.IRON_TRAPDOOR));
+        items.add(new ItemInfo("Prismarine", new String[][]{{"pris", "mar"}}, Material.PRISMARINE));
+        items.add(new ItemInfo("Prismarine Bricks", new String[][]{{"bri", "pris", "mar"}}, Material.PRISMARINE, (short) 1));
+        items.add(new ItemInfo("Dark Prismarine", new String[][]{{"dar", "pris", "mar"}}, Material.PRISMARINE, (short) 2));
+        items.add(new ItemInfo("Sea Lantern", new String[][]{{"sea", "lan"}}, Material.SEA_LANTERN));
+        items.add(new ItemInfo("Red Sandstone", new String[][]{{"red", "san", "sto"}}, Material.RED_SANDSTONE));
+        items.add(new ItemInfo("Chiseled Red Sandstone", new String[][]{{"red", "chi", "san", "sto"}}, Material.RED_SANDSTONE, (short) 1));
+        items.add(new ItemInfo("Smooth Red Sandstone", new String[][]{{"red", "smoo", "san", "sto"}}, Material.RED_SANDSTONE, (short) 2));
+        items.add(new ItemInfo("Red Sandstone Stairs", new String[][]{{"red", "san", "ston", "stai"}, {"red", "san", "ston", "step"}}, Material.RED_SANDSTONE_STAIRS));
+        items.add(new ItemInfo("Red Sandstone Slab", new String[][]{{"red", "san", "ston", "slab"}, {"red", "san", "ston", "step"}}, Material.STONE_SLAB2));
+        items.add(new ItemInfo("Spruce Fence Gate", new String[][]{{"gate", "spru", "fence"}}, Material.SPRUCE_FENCE_GATE));
+        items.add(new ItemInfo("Birch Fence Gate", new String[][]{{"gate", "birc", "fence"}}, Material.BIRCH_FENCE_GATE));
+        items.add(new ItemInfo("Jungle Fence Gate", new String[][]{{"gate", "jung", "fence"}}, Material.JUNGLE_FENCE_GATE));
+        items.add(new ItemInfo("Dark Oak Fence Gate", new String[][]{{"gate", "dark", "oak", "fence"}}, Material.DARK_OAK_FENCE_GATE));
+        items.add(new ItemInfo("Acacia Fence Gate", new String[][]{{"gate", "acac", "fence"}}, Material.ACACIA_FENCE_GATE));
+        items.add(new ItemInfo("Spruce Fence", new String[][]{{"spru", "fence"}}, Material.SPRUCE_FENCE));
+        items.add(new ItemInfo("Birch Fence", new String[][]{{"birc", "fence"}}, Material.BIRCH_FENCE));
+        items.add(new ItemInfo("Jungle Fence", new String[][]{{"jung", "fence"}}, Material.JUNGLE_FENCE));
+        items.add(new ItemInfo("Dark Oak Fence", new String[][]{{"dark", "oak", "fence"}}, Material.DARK_OAK_FENCE));
+        items.add(new ItemInfo("Acacia Fence", new String[][]{{"acac", "fence"}}, Material.ACACIA_FENCE));
+        items.add(new ItemInfo("Spruce Door", new String[][]{{"spru", "door"}}, Material.SPRUCE_DOOR_ITEM));
+        items.add(new ItemInfo("Birch Door", new String[][]{{"birc", "door"}}, Material.BIRCH_DOOR_ITEM));
+        items.add(new ItemInfo("Jungle Door", new String[][]{{"jung", "door"}}, Material.JUNGLE_DOOR_ITEM));
+        items.add(new ItemInfo("Dark Oak Door", new String[][]{{"dark", "oak", "door"}}, Material.DARK_OAK_DOOR_ITEM));
+        items.add(new ItemInfo("Acacia Door", new String[][]{{"acac", "door"}}, Material.ACACIA_DOOR_ITEM));
+        items.add(new ItemInfo("Prismarine Shard", new String[][]{{"shar", "pris"}} , Material.PRISMARINE_SHARD));
+        items.add(new ItemInfo("Prismarine Crystal", new String[][]{{"pris", "crys"}}, Material.PRISMARINE_CRYSTALS));
+        items.add(new ItemInfo("Raw Rabbit", new String[][]{{"raw", "rabb"}, {"rabb"}}, Material.RABBIT));
+        items.add(new ItemInfo("Cooked Rabbit", new String[][]{{"cook", "rabb"}}, Material.COOKED_RABBIT));
+        items.add(new ItemInfo("Rabbit Stew", new String[][]{{"rabb", "stew"}}, Material.RABBIT_STEW));
+        items.add(new ItemInfo("Rabbit Foot", new String[][]{{"rabb", "foot"}}, Material.RABBIT_FOOT));
+        items.add(new ItemInfo("Rabbit Hide", new String[][]{{"hide", "rab"}}, Material.RABBIT_HIDE));
+        items.add(new ItemInfo("Armor Stand", new String[][]{{"armo", "stan"}}, Material.ARMOR_STAND));
+        items.add(new ItemInfo("Raw Mutton", new String[][]{{"mutt"}, {"raw", "mutt"}}, Material.MUTTON));
+        items.add(new ItemInfo("Cooked Mutton", new String[][]{{"cook", "mutt"}}, Material.COOKED_MUTTON));
+        items.add(new ItemInfo("Banner", new String[][]{{"banner"}}, Material.BANNER));
+        items.add(new ItemInfo("Potion of Leaping", new String[][] {{"poti", "leap"}}, Material.POTION, (short) 8203));
+        items.add(new ItemInfo("Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "ext"}}, Material.POTION, (short) 8267));
+        items.add(new ItemInfo("Potion of Leaping II", new String[][] {{"poti", "leap", "ii"}, {"poti", "leap", "2"}}, Material.POTION, (short) 8235));
+        items.add(new ItemInfo("Splash Potion of Leaping", new String[][] {{"spl", "poti", "leap"}}, Material.POTION, (short) 16395));
+        items.add(new ItemInfo("Splash Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "spl", "ext"}}, Material.POTION, (short) 16459));
+        items.add(new ItemInfo("Splash Potion of Leaping II", new String[][] {{"poti", "leap", "spl", "2"}, {"poti", "leap", "spl", "ii"}}, Material.POTION, (short) 16427));
+        items.add(new ItemInfo("Guardian Spawn Egg", new String[][] {{"guard", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 68));
+        items.add(new ItemInfo("Endermite Spawn Egg", new String[][] {{"mite", "end", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 67));
+        items.add(new ItemInfo("Rabbit Spawn Egg", new String[][] {{"rabb", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 101));
     }
 
     @Deprecated
