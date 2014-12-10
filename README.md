@@ -12,7 +12,7 @@ How to use with maven: note that the VaultAPI version is 2 numerals, unlike Vaul
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.4</version>
+            <version>1.5</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
