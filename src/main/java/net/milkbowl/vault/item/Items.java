@@ -709,9 +709,12 @@ public class Items {
         items.add(new ItemInfo("Splash Potion of Leaping", new String[][] {{"spl", "poti", "leap"}}, Material.POTION, (short) 16395));
         items.add(new ItemInfo("Splash Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "spl", "ext"}}, Material.POTION, (short) 16459));
         items.add(new ItemInfo("Splash Potion of Leaping II", new String[][] {{"poti", "leap", "spl", "2"}, {"poti", "leap", "spl", "ii"}}, Material.POTION, (short) 16427));
-        items.add(new ItemInfo("Guardian Spawn Egg", new String[][] {{"guard", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 68));
+        items.add(new ItemInfo("Bat Spawn Egg", new String[][] {{"bat", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 65));
+        items.add(new ItemInfo("Witch Spawn Egg", new String[][] {{"witc", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 66));
         items.add(new ItemInfo("Endermite Spawn Egg", new String[][] {{"mite", "end", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 67));
+        items.add(new ItemInfo("Guardian Spawn Egg", new String[][] {{"guard", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 68));
         items.add(new ItemInfo("Rabbit Spawn Egg", new String[][] {{"rabb", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 101));
+
     }
 
     @Deprecated
