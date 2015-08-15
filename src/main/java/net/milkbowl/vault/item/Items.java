@@ -962,6 +962,25 @@ public class Items {
                     break;
                 }
             }
+        } else if (searchString.matches("\\w+:\\d+")) {
+            // Match on string:short to get typeId and subTypeId
+
+            // Retrieve/parse data
+            String[] params = searchString.split(":");
+            short subTypeId = Short.parseShort(params[1]);
+            ItemInfo namedItem = itemByName(params[0]);
+
+            if (namedItem != null) {
+                int typeId = namedItem.getId();
+                // Iterate through items
+                for (ItemInfo item : items) {
+                    // Test for match
+                    if (item.getId() == typeId && item.getSubTypeId() == subTypeId) {
+                        matchedItem = item;
+                        break;
+                    }
+                }
+            }
         } else {
             // Else this must be a string that we need to identify
 
