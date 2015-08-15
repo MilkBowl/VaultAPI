@@ -710,242 +710,242 @@
 <span class="sourceLineNo">702</span>        items.add(new ItemInfo("Armor Stand", new String[][]{{"armo", "stan"}}, Material.ARMOR_STAND));<a name="line.702"></a>
 <span class="sourceLineNo">703</span>        items.add(new ItemInfo("Raw Mutton", new String[][]{{"mutt"}, {"raw", "mutt"}}, Material.MUTTON));<a name="line.703"></a>
 <span class="sourceLineNo">704</span>        items.add(new ItemInfo("Cooked Mutton", new String[][]{{"cook", "mutt"}}, Material.COOKED_MUTTON));<a name="line.704"></a>
-<span class="sourceLineNo">705</span>        items.add(new ItemInfo("Banner", new String[][]{{"banner"}}, Material.BANNER));<a name="line.705"></a>
-<span class="sourceLineNo">706</span>        items.add(new ItemInfo("Potion of Leaping", new String[][] {{"poti", "leap"}}, Material.POTION, (short) 8203));<a name="line.706"></a>
-<span class="sourceLineNo">707</span>        items.add(new ItemInfo("Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "ext"}}, Material.POTION, (short) 8267));<a name="line.707"></a>
-<span class="sourceLineNo">708</span>        items.add(new ItemInfo("Potion of Leaping II", new String[][] {{"poti", "leap", "ii"}, {"poti", "leap", "2"}}, Material.POTION, (short) 8235));<a name="line.708"></a>
-<span class="sourceLineNo">709</span>        items.add(new ItemInfo("Splash Potion of Leaping", new String[][] {{"spl", "poti", "leap"}}, Material.POTION, (short) 16395));<a name="line.709"></a>
-<span class="sourceLineNo">710</span>        items.add(new ItemInfo("Splash Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "spl", "ext"}}, Material.POTION, (short) 16459));<a name="line.710"></a>
-<span class="sourceLineNo">711</span>        items.add(new ItemInfo("Splash Potion of Leaping II", new String[][] {{"poti", "leap", "spl", "2"}, {"poti", "leap", "spl", "ii"}}, Material.POTION, (short) 16427));<a name="line.711"></a>
-<span class="sourceLineNo">712</span>        items.add(new ItemInfo("Bat Spawn Egg", new String[][] {{"bat", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 65));<a name="line.712"></a>
-<span class="sourceLineNo">713</span>        items.add(new ItemInfo("Witch Spawn Egg", new String[][] {{"witc", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 66));<a name="line.713"></a>
-<span class="sourceLineNo">714</span>        items.add(new ItemInfo("Endermite Spawn Egg", new String[][] {{"mite", "end", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 67));<a name="line.714"></a>
-<span class="sourceLineNo">715</span>        items.add(new ItemInfo("Guardian Spawn Egg", new String[][] {{"guard", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 68));<a name="line.715"></a>
-<span class="sourceLineNo">716</span>        items.add(new ItemInfo("Rabbit Spawn Egg", new String[][] {{"rabb", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 101));<a name="line.716"></a>
-<span class="sourceLineNo">717</span><a name="line.717"></a>
-<span class="sourceLineNo">718</span>    }<a name="line.718"></a>
-<span class="sourceLineNo">719</span><a name="line.719"></a>
-<span class="sourceLineNo">720</span>    @Deprecated<a name="line.720"></a>
-<span class="sourceLineNo">721</span>    public static ItemInfo itemById(int typeId) {<a name="line.721"></a>
-<span class="sourceLineNo">722</span>        return itemByType(Material.getMaterial(typeId), (short) 0);<a name="line.722"></a>
-<span class="sourceLineNo">723</span>    }<a name="line.723"></a>
-<span class="sourceLineNo">724</span><a name="line.724"></a>
-<span class="sourceLineNo">725</span>    @Deprecated<a name="line.725"></a>
-<span class="sourceLineNo">726</span>    public static ItemInfo itemById(int typeId, short subType) {<a name="line.726"></a>
-<span class="sourceLineNo">727</span>        return itemByType(Material.getMaterial(typeId), subType);<a name="line.727"></a>
-<span class="sourceLineNo">728</span>    }<a name="line.728"></a>
-<span class="sourceLineNo">729</span><a name="line.729"></a>
-<span class="sourceLineNo">730</span>    /**<a name="line.730"></a>
-<span class="sourceLineNo">731</span>     * Searchs for an ItemInfo from the given ItemStack<a name="line.731"></a>
-<span class="sourceLineNo">732</span>     * @param itemStack to search on<a name="line.732"></a>
-<span class="sourceLineNo">733</span>     * @return ItemInfo found, or null<a name="line.733"></a>
-<span class="sourceLineNo">734</span>     */<a name="line.734"></a>
-<span class="sourceLineNo">735</span>    public static ItemInfo itemByStack(ItemStack itemStack) {<a name="line.735"></a>
-<span class="sourceLineNo">736</span>        if (itemStack == null) {<a name="line.736"></a>
-<span class="sourceLineNo">737</span>            return null;<a name="line.737"></a>
-<span class="sourceLineNo">738</span>        }<a name="line.738"></a>
+<span class="sourceLineNo">705</span>        items.add(new ItemInfo("White Banner", new String[][]{{"banner", "whit"}, {"banner"}}, Material.BANNER));<a name="line.705"></a>
+<span class="sourceLineNo">706</span>        items.add(new ItemInfo("Orange Banner", new String[][]{{"banner", "ora"}}, Material.BANNER, (short) 1));<a name="line.706"></a>
+<span class="sourceLineNo">707</span>        items.add(new ItemInfo("Magenta Banner", new String[][]{{"banner", "mag"}}, Material.BANNER, (short) 2));<a name="line.707"></a>
+<span class="sourceLineNo">708</span>        items.add(new ItemInfo("Light Blue Banner", new String[][]{{"banner", "lig", "blue"}}, Material.BANNER, (short) 3));<a name="line.708"></a>
+<span class="sourceLineNo">709</span>        items.add(new ItemInfo("Yellow Banner", new String[][]{{"banner", "yell"}}, Material.BANNER, (short) 4));<a name="line.709"></a>
+<span class="sourceLineNo">710</span>        items.add(new ItemInfo("Lime Banner", new String[][]{{"banner", "lime"}, {"banner", "lime"}}, Material.BANNER, (short) 5));<a name="line.710"></a>
+<span class="sourceLineNo">711</span>        items.add(new ItemInfo("Pink Banner", new String[][]{{"banner", "pink"}}, Material.BANNER, (short) 6));<a name="line.711"></a>
+<span class="sourceLineNo">712</span>        items.add(new ItemInfo("Gray Banner", new String[][]{{"banner", "gray"}, {"banner", "grey"}}, Material.BANNER, (short) 7));<a name="line.712"></a>
+<span class="sourceLineNo">713</span>        items.add(new ItemInfo("Light Gray Banner", new String[][]{{"lig", "banner", "gra"}, {"lig", "banner", "gre"}}, Material.BANNER, (short) 8));<a name="line.713"></a>
+<span class="sourceLineNo">714</span>        items.add(new ItemInfo("Cyan Banner", new String[][]{{"banner", "cya"}}, Material.BANNER, (short) 9));<a name="line.714"></a>
+<span class="sourceLineNo">715</span>        items.add(new ItemInfo("Purple Banner", new String[][]{{"banner", "pur"}}, Material.BANNER, (short) 10));<a name="line.715"></a>
+<span class="sourceLineNo">716</span>        items.add(new ItemInfo("Blue Banner", new String[][]{{"banner", "blue"}}, Material.BANNER, (short) 11));<a name="line.716"></a>
+<span class="sourceLineNo">717</span>        items.add(new ItemInfo("Brown Banner", new String[][]{{"banner", "brow"}}, Material.BANNER, (short) 12));<a name="line.717"></a>
+<span class="sourceLineNo">718</span>        items.add(new ItemInfo("Green Banner", new String[][]{{"banner", "gree"}, {"banner", "gree"}}, Material.BANNER, (short) 13));<a name="line.718"></a>
+<span class="sourceLineNo">719</span>        items.add(new ItemInfo("Red Banner", new String[][]{{"banner", "red"}}, Material.BANNER, (short) 14));<a name="line.719"></a>
+<span class="sourceLineNo">720</span>        items.add(new ItemInfo("Black Banner", new String[][]{{"banner", "bla"}}, Material.BANNER, (short) 15));<a name="line.720"></a>
+<span class="sourceLineNo">721</span>        items.add(new ItemInfo("Potion of Leaping", new String[][] {{"poti", "leap"}}, Material.POTION, (short) 8203));<a name="line.721"></a>
+<span class="sourceLineNo">722</span>        items.add(new ItemInfo("Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "ext"}}, Material.POTION, (short) 8267));<a name="line.722"></a>
+<span class="sourceLineNo">723</span>        items.add(new ItemInfo("Potion of Leaping II", new String[][] {{"poti", "leap", "ii"}, {"poti", "leap", "2"}}, Material.POTION, (short) 8235));<a name="line.723"></a>
+<span class="sourceLineNo">724</span>        items.add(new ItemInfo("Splash Potion of Leaping", new String[][] {{"spl", "poti", "leap"}}, Material.POTION, (short) 16395));<a name="line.724"></a>
+<span class="sourceLineNo">725</span>        items.add(new ItemInfo("Splash Potion of Leaping (Extended)", new String[][] {{"poti", "leap", "spl", "ext"}}, Material.POTION, (short) 16459));<a name="line.725"></a>
+<span class="sourceLineNo">726</span>        items.add(new ItemInfo("Splash Potion of Leaping II", new String[][] {{"poti", "leap", "spl", "2"}, {"poti", "leap", "spl", "ii"}}, Material.POTION, (short) 16427));<a name="line.726"></a>
+<span class="sourceLineNo">727</span>        items.add(new ItemInfo("Bat Spawn Egg", new String[][] {{"bat", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 65));<a name="line.727"></a>
+<span class="sourceLineNo">728</span>        items.add(new ItemInfo("Witch Spawn Egg", new String[][] {{"witc", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 66));<a name="line.728"></a>
+<span class="sourceLineNo">729</span>        items.add(new ItemInfo("Endermite Spawn Egg", new String[][] {{"mite", "end", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 67));<a name="line.729"></a>
+<span class="sourceLineNo">730</span>        items.add(new ItemInfo("Guardian Spawn Egg", new String[][] {{"guard", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 68));<a name="line.730"></a>
+<span class="sourceLineNo">731</span>        items.add(new ItemInfo("Rabbit Spawn Egg", new String[][] {{"rabb", "spaw", "egg"}}, Material.MONSTER_EGG, (short) 101));<a name="line.731"></a>
+<span class="sourceLineNo">732</span><a name="line.732"></a>
+<span class="sourceLineNo">733</span>    }<a name="line.733"></a>
+<span class="sourceLineNo">734</span><a name="line.734"></a>
+<span class="sourceLineNo">735</span>    @Deprecated<a name="line.735"></a>
+<span class="sourceLineNo">736</span>    public static ItemInfo itemById(int typeId) {<a name="line.736"></a>
+<span class="sourceLineNo">737</span>        return itemByType(Material.getMaterial(typeId), (short) 0);<a name="line.737"></a>
+<span class="sourceLineNo">738</span>    }<a name="line.738"></a>
 <span class="sourceLineNo">739</span><a name="line.739"></a>
-<span class="sourceLineNo">740</span>        for (ItemInfo item : items) {<a name="line.740"></a>
-<span class="sourceLineNo">741</span>            if (itemStack.getType().equals(item.getType()) &amp;&amp; item.isDurable()) {<a name="line.741"></a>
-<span class="sourceLineNo">742</span>                return item;<a name="line.742"></a>
-<span class="sourceLineNo">743</span>            } else if (itemStack.getType().equals(item.getType()) &amp;&amp; item.getSubTypeId() == itemStack.getDurability()) {<a name="line.743"></a>
-<span class="sourceLineNo">744</span>                return item;<a name="line.744"></a>
-<span class="sourceLineNo">745</span>            }<a name="line.745"></a>
-<span class="sourceLineNo">746</span>        }<a name="line.746"></a>
-<span class="sourceLineNo">747</span><a name="line.747"></a>
-<span class="sourceLineNo">748</span>        return null;<a name="line.748"></a>
-<span class="sourceLineNo">749</span>    }<a name="line.749"></a>
-<span class="sourceLineNo">750</span><a name="line.750"></a>
-<span class="sourceLineNo">751</span>    public static ItemInfo itemByItem(ItemInfo item) {<a name="line.751"></a>
-<span class="sourceLineNo">752</span>        for (ItemInfo i : items) {<a name="line.752"></a>
-<span class="sourceLineNo">753</span>            if (item.equals(i)) {<a name="line.753"></a>
-<span class="sourceLineNo">754</span>                return i;<a name="line.754"></a>
-<span class="sourceLineNo">755</span>            }<a name="line.755"></a>
-<span class="sourceLineNo">756</span>        }<a name="line.756"></a>
-<span class="sourceLineNo">757</span>        return null;<a name="line.757"></a>
-<span class="sourceLineNo">758</span>    }<a name="line.758"></a>
-<span class="sourceLineNo">759</span><a name="line.759"></a>
-<span class="sourceLineNo">760</span>    /**<a name="line.760"></a>
-<span class="sourceLineNo">761</span>     * Gets a relevant ItemInfo by it's Material<a name="line.761"></a>
-<span class="sourceLineNo">762</span>     * @param type of Material<a name="line.762"></a>
-<span class="sourceLineNo">763</span>     * @return ItemInfo record found or null if none<a name="line.763"></a>
-<span class="sourceLineNo">764</span>     */<a name="line.764"></a>
-<span class="sourceLineNo">765</span>    public static ItemInfo itemByType(Material type) {<a name="line.765"></a>
-<span class="sourceLineNo">766</span>        return itemByType(type, (short) 0);<a name="line.766"></a>
-<span class="sourceLineNo">767</span>    }<a name="line.767"></a>
-<span class="sourceLineNo">768</span><a name="line.768"></a>
-<span class="sourceLineNo">769</span>    /**<a name="line.769"></a>
-<span class="sourceLineNo">770</span>     * Searches for an ItemInfo record by Material and SubTypeID<a name="line.770"></a>
-<span class="sourceLineNo">771</span>     * @param type of Material<a name="line.771"></a>
-<span class="sourceLineNo">772</span>     * @param subType to check for<a name="line.772"></a>
-<span class="sourceLineNo">773</span>     * @return ItemInfo record found or null if none<a name="line.773"></a>
-<span class="sourceLineNo">774</span>     */<a name="line.774"></a>
-<span class="sourceLineNo">775</span>    public static ItemInfo itemByType(Material type, short subType) {<a name="line.775"></a>
-<span class="sourceLineNo">776</span>        for (ItemInfo item : items) {<a name="line.776"></a>
-<span class="sourceLineNo">777</span>            if (item.getType() == type &amp;&amp; item.getSubTypeId() == subType) {<a name="line.777"></a>
-<span class="sourceLineNo">778</span>                return item;<a name="line.778"></a>
-<span class="sourceLineNo">779</span>            }<a name="line.779"></a>
-<span class="sourceLineNo">780</span>        }<a name="line.780"></a>
-<span class="sourceLineNo">781</span>        return null;<a name="line.781"></a>
+<span class="sourceLineNo">740</span>    @Deprecated<a name="line.740"></a>
+<span class="sourceLineNo">741</span>    public static ItemInfo itemById(int typeId, short subType) {<a name="line.741"></a>
+<span class="sourceLineNo">742</span>        return itemByType(Material.getMaterial(typeId), subType);<a name="line.742"></a>
+<span class="sourceLineNo">743</span>    }<a name="line.743"></a>
+<span class="sourceLineNo">744</span><a name="line.744"></a>
+<span class="sourceLineNo">745</span>    /**<a name="line.745"></a>
+<span class="sourceLineNo">746</span>     * Searchs for an ItemInfo from the given ItemStack<a name="line.746"></a>
+<span class="sourceLineNo">747</span>     * @param itemStack to search on<a name="line.747"></a>
+<span class="sourceLineNo">748</span>     * @return ItemInfo found, or null<a name="line.748"></a>
+<span class="sourceLineNo">749</span>     */<a name="line.749"></a>
+<span class="sourceLineNo">750</span>    public static ItemInfo itemByStack(ItemStack itemStack) {<a name="line.750"></a>
+<span class="sourceLineNo">751</span>        if (itemStack == null) {<a name="line.751"></a>
+<span class="sourceLineNo">752</span>            return null;<a name="line.752"></a>
+<span class="sourceLineNo">753</span>        }<a name="line.753"></a>
+<span class="sourceLineNo">754</span><a name="line.754"></a>
+<span class="sourceLineNo">755</span>        for (ItemInfo item : items) {<a name="line.755"></a>
+<span class="sourceLineNo">756</span>            if (itemStack.getType().equals(item.getType()) &amp;&amp; item.isDurable()) {<a name="line.756"></a>
+<span class="sourceLineNo">757</span>                return item;<a name="line.757"></a>
+<span class="sourceLineNo">758</span>            } else if (itemStack.getType().equals(item.getType()) &amp;&amp; item.getSubTypeId() == itemStack.getDurability()) {<a name="line.758"></a>
+<span class="sourceLineNo">759</span>                return item;<a name="line.759"></a>
+<span class="sourceLineNo">760</span>            }<a name="line.760"></a>
+<span class="sourceLineNo">761</span>        }<a name="line.761"></a>
+<span class="sourceLineNo">762</span><a name="line.762"></a>
+<span class="sourceLineNo">763</span>        return null;<a name="line.763"></a>
+<span class="sourceLineNo">764</span>    }<a name="line.764"></a>
+<span class="sourceLineNo">765</span><a name="line.765"></a>
+<span class="sourceLineNo">766</span>    public static ItemInfo itemByItem(ItemInfo item) {<a name="line.766"></a>
+<span class="sourceLineNo">767</span>        for (ItemInfo i : items) {<a name="line.767"></a>
+<span class="sourceLineNo">768</span>            if (item.equals(i)) {<a name="line.768"></a>
+<span class="sourceLineNo">769</span>                return i;<a name="line.769"></a>
+<span class="sourceLineNo">770</span>            }<a name="line.770"></a>
+<span class="sourceLineNo">771</span>        }<a name="line.771"></a>
+<span class="sourceLineNo">772</span>        return null;<a name="line.772"></a>
+<span class="sourceLineNo">773</span>    }<a name="line.773"></a>
+<span class="sourceLineNo">774</span><a name="line.774"></a>
+<span class="sourceLineNo">775</span>    /**<a name="line.775"></a>
+<span class="sourceLineNo">776</span>     * Gets a relevant ItemInfo by it's Material<a name="line.776"></a>
+<span class="sourceLineNo">777</span>     * @param type of Material<a name="line.777"></a>
+<span class="sourceLineNo">778</span>     * @return ItemInfo record found or null if none<a name="line.778"></a>
+<span class="sourceLineNo">779</span>     */<a name="line.779"></a>
+<span class="sourceLineNo">780</span>    public static ItemInfo itemByType(Material type) {<a name="line.780"></a>
+<span class="sourceLineNo">781</span>        return itemByType(type, (short) 0);<a name="line.781"></a>
 <span class="sourceLineNo">782</span>    }<a name="line.782"></a>
 <span class="sourceLineNo">783</span><a name="line.783"></a>
 <span class="sourceLineNo">784</span>    /**<a name="line.784"></a>
-<span class="sourceLineNo">785</span>     * Search for an item from a given string, useful for user input.  Uses 3 different types of reg-exp searching.<a name="line.785"></a>
-<span class="sourceLineNo">786</span>     *  Checks first for an ItemID.<a name="line.786"></a>
-<span class="sourceLineNo">787</span>     *  Checks second for ItemID:SubType<a name="line.787"></a>
-<span class="sourceLineNo">788</span>     *  Last, it will run a by-name item search assuming the string is the name of an item.<a name="line.788"></a>
-<span class="sourceLineNo">789</span>     *   <a name="line.789"></a>
-<span class="sourceLineNo">790</span>     * @param string to parse<a name="line.790"></a>
-<span class="sourceLineNo">791</span>     * @return ItemInfo found or null<a name="line.791"></a>
-<span class="sourceLineNo">792</span>     */<a name="line.792"></a>
-<span class="sourceLineNo">793</span>    public static ItemInfo itemByString(String string) {<a name="line.793"></a>
-<span class="sourceLineNo">794</span><a name="line.794"></a>
-<span class="sourceLineNo">795</span>        // int<a name="line.795"></a>
-<span class="sourceLineNo">796</span>        Pattern pattern = Pattern.compile("(?i)^(\\d+)$");<a name="line.796"></a>
-<span class="sourceLineNo">797</span>        Matcher matcher = pattern.matcher(string);<a name="line.797"></a>
-<span class="sourceLineNo">798</span>        if (matcher.find()) {<a name="line.798"></a>
-<span class="sourceLineNo">799</span>            int id = Integer.parseInt(matcher.group(1));<a name="line.799"></a>
-<span class="sourceLineNo">800</span>            return itemById(id);<a name="line.800"></a>
-<span class="sourceLineNo">801</span>        }<a name="line.801"></a>
-<span class="sourceLineNo">802</span><a name="line.802"></a>
-<span class="sourceLineNo">803</span>        // int:int<a name="line.803"></a>
-<span class="sourceLineNo">804</span>        matcher.reset();<a name="line.804"></a>
-<span class="sourceLineNo">805</span>        pattern = Pattern.compile("(?i)^(\\d+):(\\d+)$");<a name="line.805"></a>
-<span class="sourceLineNo">806</span>        matcher = pattern.matcher(string);<a name="line.806"></a>
-<span class="sourceLineNo">807</span>        if (matcher.find()) {<a name="line.807"></a>
-<span class="sourceLineNo">808</span>            int id = Integer.parseInt(matcher.group(1));<a name="line.808"></a>
-<span class="sourceLineNo">809</span>            short type = Short.parseShort(matcher.group(2));<a name="line.809"></a>
-<span class="sourceLineNo">810</span>            return itemById(id, type);<a name="line.810"></a>
-<span class="sourceLineNo">811</span>        }<a name="line.811"></a>
-<span class="sourceLineNo">812</span><a name="line.812"></a>
-<span class="sourceLineNo">813</span>        // name<a name="line.813"></a>
-<span class="sourceLineNo">814</span>        matcher.reset();<a name="line.814"></a>
-<span class="sourceLineNo">815</span>        pattern = Pattern.compile("(?i)^(.*)$");<a name="line.815"></a>
-<span class="sourceLineNo">816</span>        matcher = pattern.matcher(string);<a name="line.816"></a>
-<span class="sourceLineNo">817</span>        if (matcher.find()) {<a name="line.817"></a>
-<span class="sourceLineNo">818</span>            String name = matcher.group(1);<a name="line.818"></a>
-<span class="sourceLineNo">819</span>            return itemByName(name);<a name="line.819"></a>
-<span class="sourceLineNo">820</span>        }<a name="line.820"></a>
-<span class="sourceLineNo">821</span><a name="line.821"></a>
-<span class="sourceLineNo">822</span>        return null;<a name="line.822"></a>
-<span class="sourceLineNo">823</span>    }<a name="line.823"></a>
-<span class="sourceLineNo">824</span><a name="line.824"></a>
-<span class="sourceLineNo">825</span>    public static ItemInfo itemByName(ArrayList&lt;String&gt; search) {<a name="line.825"></a>
-<span class="sourceLineNo">826</span>        String searchString = join(search, " ");<a name="line.826"></a>
-<span class="sourceLineNo">827</span>        return itemByName(searchString);<a name="line.827"></a>
-<span class="sourceLineNo">828</span>    }<a name="line.828"></a>
-<span class="sourceLineNo">829</span><a name="line.829"></a>
-<span class="sourceLineNo">830</span>    public static ItemInfo[] itemByNames(ArrayList&lt;String&gt; search, boolean multi) {<a name="line.830"></a>
-<span class="sourceLineNo">831</span>        String searchString = join(search, " ");<a name="line.831"></a>
-<span class="sourceLineNo">832</span>        return itemsByName(searchString, multi);<a name="line.832"></a>
-<span class="sourceLineNo">833</span>    }<a name="line.833"></a>
-<span class="sourceLineNo">834</span><a name="line.834"></a>
-<span class="sourceLineNo">835</span>    /**<a name="line.835"></a>
-<span class="sourceLineNo">836</span>     * Multi-Item return search for dumping all items with the search string to the player<a name="line.836"></a>
-<span class="sourceLineNo">837</span>     *<a name="line.837"></a>
-<span class="sourceLineNo">838</span>     *<a name="line.838"></a>
-<span class="sourceLineNo">839</span>     * @param searchString to search for<a name="line.839"></a>
-<span class="sourceLineNo">840</span>     * @param multi whether to return a list of items or just the first<a name="line.840"></a>
-<span class="sourceLineNo">841</span>     * @return Array of items found<a name="line.841"></a>
-<span class="sourceLineNo">842</span>     */<a name="line.842"></a>
-<span class="sourceLineNo">843</span>    public static ItemInfo[] itemsByName(String searchString, boolean multi) {<a name="line.843"></a>
-<span class="sourceLineNo">844</span>        if (multi == false) {<a name="line.844"></a>
-<span class="sourceLineNo">845</span>            return new ItemInfo[]{itemByName(searchString)};<a name="line.845"></a>
-<span class="sourceLineNo">846</span>        }<a name="line.846"></a>
-<span class="sourceLineNo">847</span><a name="line.847"></a>
-<span class="sourceLineNo">848</span>        ItemInfo[] itemList = new ItemInfo[]{};<a name="line.848"></a>
+<span class="sourceLineNo">785</span>     * Searches for an ItemInfo record by Material and SubTypeID<a name="line.785"></a>
+<span class="sourceLineNo">786</span>     * @param type of Material<a name="line.786"></a>
+<span class="sourceLineNo">787</span>     * @param subType to check for<a name="line.787"></a>
+<span class="sourceLineNo">788</span>     * @return ItemInfo record found or null if none<a name="line.788"></a>
+<span class="sourceLineNo">789</span>     */<a name="line.789"></a>
+<span class="sourceLineNo">790</span>    public static ItemInfo itemByType(Material type, short subType) {<a name="line.790"></a>
+<span class="sourceLineNo">791</span>        for (ItemInfo item : items) {<a name="line.791"></a>
+<span class="sourceLineNo">792</span>            if (item.getType() == type &amp;&amp; item.getSubTypeId() == subType) {<a name="line.792"></a>
+<span class="sourceLineNo">793</span>                return item;<a name="line.793"></a>
+<span class="sourceLineNo">794</span>            }<a name="line.794"></a>
+<span class="sourceLineNo">795</span>        }<a name="line.795"></a>
+<span class="sourceLineNo">796</span>        return null;<a name="line.796"></a>
+<span class="sourceLineNo">797</span>    }<a name="line.797"></a>
+<span class="sourceLineNo">798</span><a name="line.798"></a>
+<span class="sourceLineNo">799</span>    /**<a name="line.799"></a>
+<span class="sourceLineNo">800</span>     * Search for an item from a given string, useful for user input.  Uses 3 different types of reg-exp searching.<a name="line.800"></a>
+<span class="sourceLineNo">801</span>     *  Checks first for an ItemID.<a name="line.801"></a>
+<span class="sourceLineNo">802</span>     *  Checks second for ItemID:SubType<a name="line.802"></a>
+<span class="sourceLineNo">803</span>     *  Last, it will run a by-name item search assuming the string is the name of an item.<a name="line.803"></a>
+<span class="sourceLineNo">804</span>     *   <a name="line.804"></a>
+<span class="sourceLineNo">805</span>     * @param string to parse<a name="line.805"></a>
+<span class="sourceLineNo">806</span>     * @return ItemInfo found or null<a name="line.806"></a>
+<span class="sourceLineNo">807</span>     */<a name="line.807"></a>
+<span class="sourceLineNo">808</span>    public static ItemInfo itemByString(String string) {<a name="line.808"></a>
+<span class="sourceLineNo">809</span><a name="line.809"></a>
+<span class="sourceLineNo">810</span>        // int<a name="line.810"></a>
+<span class="sourceLineNo">811</span>        Pattern pattern = Pattern.compile("(?i)^(\\d+)$");<a name="line.811"></a>
+<span class="sourceLineNo">812</span>        Matcher matcher = pattern.matcher(string);<a name="line.812"></a>
+<span class="sourceLineNo">813</span>        if (matcher.find()) {<a name="line.813"></a>
+<span class="sourceLineNo">814</span>            int id = Integer.parseInt(matcher.group(1));<a name="line.814"></a>
+<span class="sourceLineNo">815</span>            return itemById(id);<a name="line.815"></a>
+<span class="sourceLineNo">816</span>        }<a name="line.816"></a>
+<span class="sourceLineNo">817</span><a name="line.817"></a>
+<span class="sourceLineNo">818</span>        // int:int<a name="line.818"></a>
+<span class="sourceLineNo">819</span>        matcher.reset();<a name="line.819"></a>
+<span class="sourceLineNo">820</span>        pattern = Pattern.compile("(?i)^(\\d+):(\\d+)$");<a name="line.820"></a>
+<span class="sourceLineNo">821</span>        matcher = pattern.matcher(string);<a name="line.821"></a>
+<span class="sourceLineNo">822</span>        if (matcher.find()) {<a name="line.822"></a>
+<span class="sourceLineNo">823</span>            int id = Integer.parseInt(matcher.group(1));<a name="line.823"></a>
+<span class="sourceLineNo">824</span>            short type = Short.parseShort(matcher.group(2));<a name="line.824"></a>
+<span class="sourceLineNo">825</span>            return itemById(id, type);<a name="line.825"></a>
+<span class="sourceLineNo">826</span>        }<a name="line.826"></a>
+<span class="sourceLineNo">827</span><a name="line.827"></a>
+<span class="sourceLineNo">828</span>        // name<a name="line.828"></a>
+<span class="sourceLineNo">829</span>        matcher.reset();<a name="line.829"></a>
+<span class="sourceLineNo">830</span>        pattern = Pattern.compile("(?i)^(.*)$");<a name="line.830"></a>
+<span class="sourceLineNo">831</span>        matcher = pattern.matcher(string);<a name="line.831"></a>
+<span class="sourceLineNo">832</span>        if (matcher.find()) {<a name="line.832"></a>
+<span class="sourceLineNo">833</span>            String name = matcher.group(1);<a name="line.833"></a>
+<span class="sourceLineNo">834</span>            return itemByName(name);<a name="line.834"></a>
+<span class="sourceLineNo">835</span>        }<a name="line.835"></a>
+<span class="sourceLineNo">836</span><a name="line.836"></a>
+<span class="sourceLineNo">837</span>        return null;<a name="line.837"></a>
+<span class="sourceLineNo">838</span>    }<a name="line.838"></a>
+<span class="sourceLineNo">839</span><a name="line.839"></a>
+<span class="sourceLineNo">840</span>    public static ItemInfo itemByName(ArrayList&lt;String&gt; search) {<a name="line.840"></a>
+<span class="sourceLineNo">841</span>        String searchString = join(search, " ");<a name="line.841"></a>
+<span class="sourceLineNo">842</span>        return itemByName(searchString);<a name="line.842"></a>
+<span class="sourceLineNo">843</span>    }<a name="line.843"></a>
+<span class="sourceLineNo">844</span><a name="line.844"></a>
+<span class="sourceLineNo">845</span>    public static ItemInfo[] itemByNames(ArrayList&lt;String&gt; search, boolean multi) {<a name="line.845"></a>
+<span class="sourceLineNo">846</span>        String searchString = join(search, " ");<a name="line.846"></a>
+<span class="sourceLineNo">847</span>        return itemsByName(searchString, multi);<a name="line.847"></a>
+<span class="sourceLineNo">848</span>    }<a name="line.848"></a>
 <span class="sourceLineNo">849</span><a name="line.849"></a>
-<span class="sourceLineNo">850</span>        if (searchString.matches("\\d+:\\d+")) {<a name="line.850"></a>
-<span class="sourceLineNo">851</span>            // Match on integer:short to get typeId and subTypeId<a name="line.851"></a>
-<span class="sourceLineNo">852</span><a name="line.852"></a>
-<span class="sourceLineNo">853</span>            // Retrieve/parse data<a name="line.853"></a>
-<span class="sourceLineNo">854</span>            String[] params = searchString.split(":");<a name="line.854"></a>
-<span class="sourceLineNo">855</span>            int typeId = Integer.parseInt(params[0]);<a name="line.855"></a>
-<span class="sourceLineNo">856</span>            short subTypeId = Short.parseShort(params[1]);<a name="line.856"></a>
-<span class="sourceLineNo">857</span><a name="line.857"></a>
-<span class="sourceLineNo">858</span>            // Iterate through Items<a name="line.858"></a>
-<span class="sourceLineNo">859</span>            for (ItemInfo item : items) {<a name="line.859"></a>
-<span class="sourceLineNo">860</span>                // Test for match<a name="line.860"></a>
-<span class="sourceLineNo">861</span>                if (item.getId() == typeId &amp;&amp; item.getSubTypeId() == subTypeId) {<a name="line.861"></a>
-<span class="sourceLineNo">862</span>                    itemList[0] = item;<a name="line.862"></a>
-<span class="sourceLineNo">863</span>                    break;<a name="line.863"></a>
-<span class="sourceLineNo">864</span>                }<a name="line.864"></a>
-<span class="sourceLineNo">865</span>            }<a name="line.865"></a>
-<span class="sourceLineNo">866</span>        } else if (searchString.matches("\\d+")) {<a name="line.866"></a>
+<span class="sourceLineNo">850</span>    /**<a name="line.850"></a>
+<span class="sourceLineNo">851</span>     * Multi-Item return search for dumping all items with the search string to the player<a name="line.851"></a>
+<span class="sourceLineNo">852</span>     *<a name="line.852"></a>
+<span class="sourceLineNo">853</span>     *<a name="line.853"></a>
+<span class="sourceLineNo">854</span>     * @param searchString to search for<a name="line.854"></a>
+<span class="sourceLineNo">855</span>     * @param multi whether to return a list of items or just the first<a name="line.855"></a>
+<span class="sourceLineNo">856</span>     * @return Array of items found<a name="line.856"></a>
+<span class="sourceLineNo">857</span>     */<a name="line.857"></a>
+<span class="sourceLineNo">858</span>    public static ItemInfo[] itemsByName(String searchString, boolean multi) {<a name="line.858"></a>
+<span class="sourceLineNo">859</span>        if (multi == false) {<a name="line.859"></a>
+<span class="sourceLineNo">860</span>            return new ItemInfo[]{itemByName(searchString)};<a name="line.860"></a>
+<span class="sourceLineNo">861</span>        }<a name="line.861"></a>
+<span class="sourceLineNo">862</span><a name="line.862"></a>
+<span class="sourceLineNo">863</span>        ItemInfo[] itemList = new ItemInfo[]{};<a name="line.863"></a>
+<span class="sourceLineNo">864</span><a name="line.864"></a>
+<span class="sourceLineNo">865</span>        if (searchString.matches("\\d+:\\d+")) {<a name="line.865"></a>
+<span class="sourceLineNo">866</span>            // Match on integer:short to get typeId and subTypeId<a name="line.866"></a>
 <span class="sourceLineNo">867</span><a name="line.867"></a>
 <span class="sourceLineNo">868</span>            // Retrieve/parse data<a name="line.868"></a>
-<span class="sourceLineNo">869</span>            int typeId = Integer.parseInt(searchString);<a name="line.869"></a>
-<span class="sourceLineNo">870</span><a name="line.870"></a>
-<span class="sourceLineNo">871</span>            // Iterate through Items<a name="line.871"></a>
-<span class="sourceLineNo">872</span>            int i = 0;<a name="line.872"></a>
-<span class="sourceLineNo">873</span>            for (ItemInfo item : items) {<a name="line.873"></a>
-<span class="sourceLineNo">874</span>                // Test for match<a name="line.874"></a>
-<span class="sourceLineNo">875</span>                if (item.getId() == typeId) {<a name="line.875"></a>
-<span class="sourceLineNo">876</span>                    itemList[i] = item;<a name="line.876"></a>
-<span class="sourceLineNo">877</span>                    i++;<a name="line.877"></a>
-<span class="sourceLineNo">878</span>                }<a name="line.878"></a>
-<span class="sourceLineNo">879</span>            }<a name="line.879"></a>
-<span class="sourceLineNo">880</span>        } else {<a name="line.880"></a>
-<span class="sourceLineNo">881</span>            // Else this must be a string that we need to identify<a name="line.881"></a>
+<span class="sourceLineNo">869</span>            String[] params = searchString.split(":");<a name="line.869"></a>
+<span class="sourceLineNo">870</span>            int typeId = Integer.parseInt(params[0]);<a name="line.870"></a>
+<span class="sourceLineNo">871</span>            short subTypeId = Short.parseShort(params[1]);<a name="line.871"></a>
+<span class="sourceLineNo">872</span><a name="line.872"></a>
+<span class="sourceLineNo">873</span>            // Iterate through Items<a name="line.873"></a>
+<span class="sourceLineNo">874</span>            for (ItemInfo item : items) {<a name="line.874"></a>
+<span class="sourceLineNo">875</span>                // Test for match<a name="line.875"></a>
+<span class="sourceLineNo">876</span>                if (item.getId() == typeId &amp;&amp; item.getSubTypeId() == subTypeId) {<a name="line.876"></a>
+<span class="sourceLineNo">877</span>                    itemList[0] = item;<a name="line.877"></a>
+<span class="sourceLineNo">878</span>                    break;<a name="line.878"></a>
+<span class="sourceLineNo">879</span>                }<a name="line.879"></a>
+<span class="sourceLineNo">880</span>            }<a name="line.880"></a>
+<span class="sourceLineNo">881</span>        } else if (searchString.matches("\\d+")) {<a name="line.881"></a>
 <span class="sourceLineNo">882</span><a name="line.882"></a>
-<span class="sourceLineNo">883</span>            // Iterate through Items<a name="line.883"></a>
-<span class="sourceLineNo">884</span>            int i = 0;<a name="line.884"></a>
-<span class="sourceLineNo">885</span>            for (ItemInfo item : items) {<a name="line.885"></a>
-<span class="sourceLineNo">886</span>                // Look through each possible match criteria<a name="line.886"></a>
-<span class="sourceLineNo">887</span>                for (String[] attributes : item.search) {<a name="line.887"></a>
-<span class="sourceLineNo">888</span>                    boolean match = false;<a name="line.888"></a>
-<span class="sourceLineNo">889</span>                    // Loop through entire criteria strings<a name="line.889"></a>
-<span class="sourceLineNo">890</span>                    for (String attribute : attributes) {<a name="line.890"></a>
-<span class="sourceLineNo">891</span>                        if (searchString.toLowerCase().contains(attribute)) {<a name="line.891"></a>
-<span class="sourceLineNo">892</span>                            match = true;<a name="line.892"></a>
-<span class="sourceLineNo">893</span>                            break;<a name="line.893"></a>
-<span class="sourceLineNo">894</span>                        }<a name="line.894"></a>
-<span class="sourceLineNo">895</span>                    }<a name="line.895"></a>
-<span class="sourceLineNo">896</span>                    // THIS was a match<a name="line.896"></a>
-<span class="sourceLineNo">897</span>                    if (match) {<a name="line.897"></a>
-<span class="sourceLineNo">898</span>                        itemList[i] = item;<a name="line.898"></a>
-<span class="sourceLineNo">899</span>                        i++;<a name="line.899"></a>
-<span class="sourceLineNo">900</span>                    }<a name="line.900"></a>
-<span class="sourceLineNo">901</span>                }<a name="line.901"></a>
-<span class="sourceLineNo">902</span>            }<a name="line.902"></a>
-<span class="sourceLineNo">903</span>        }<a name="line.903"></a>
-<span class="sourceLineNo">904</span><a name="line.904"></a>
-<span class="sourceLineNo">905</span>        return itemList;<a name="line.905"></a>
-<span class="sourceLineNo">906</span>    }<a name="line.906"></a>
-<span class="sourceLineNo">907</span><a name="line.907"></a>
-<span class="sourceLineNo">908</span>    /**<a name="line.908"></a>
-<span class="sourceLineNo">909</span>     * Single item search function, for when we only ever want to return 1 result<a name="line.909"></a>
-<span class="sourceLineNo">910</span>     *<a name="line.910"></a>
-<span class="sourceLineNo">911</span>     * @param searchString to search for<a name="line.911"></a>
-<span class="sourceLineNo">912</span>     * @return ItemInfo Object<a name="line.912"></a>
-<span class="sourceLineNo">913</span>     */<a name="line.913"></a>
-<span class="sourceLineNo">914</span>    public static ItemInfo itemByName(String searchString) {<a name="line.914"></a>
-<span class="sourceLineNo">915</span>        ItemInfo matchedItem = null;<a name="line.915"></a>
-<span class="sourceLineNo">916</span>        int matchedItemStrength = 0;<a name="line.916"></a>
-<span class="sourceLineNo">917</span>        int matchedValue = 0;<a name="line.917"></a>
-<span class="sourceLineNo">918</span><a name="line.918"></a>
-<span class="sourceLineNo">919</span>        if (searchString.matches("\\d+:\\d+")) {<a name="line.919"></a>
-<span class="sourceLineNo">920</span>            // Match on integer:short to get typeId and subTypeId<a name="line.920"></a>
-<span class="sourceLineNo">921</span><a name="line.921"></a>
-<span class="sourceLineNo">922</span>            // Retrieve/parse data<a name="line.922"></a>
-<span class="sourceLineNo">923</span>            String[] params = searchString.split(":");<a name="line.923"></a>
-<span class="sourceLineNo">924</span>            int typeId = Integer.parseInt(params[0]);<a name="line.924"></a>
-<span class="sourceLineNo">925</span>            short subTypeId = Short.parseShort(params[1]);<a name="line.925"></a>
-<span class="sourceLineNo">926</span><a name="line.926"></a>
-<span class="sourceLineNo">927</span>            // Iterate through Items<a name="line.927"></a>
-<span class="sourceLineNo">928</span>            for (ItemInfo item : items) {<a name="line.928"></a>
-<span class="sourceLineNo">929</span>                // Test for match<a name="line.929"></a>
-<span class="sourceLineNo">930</span>                if (item.getId() == typeId &amp;&amp; item.getSubTypeId() == subTypeId) {<a name="line.930"></a>
-<span class="sourceLineNo">931</span>                    matchedItem = item;<a name="line.931"></a>
-<span class="sourceLineNo">932</span>                    break;<a name="line.932"></a>
-<span class="sourceLineNo">933</span>                }<a name="line.933"></a>
-<span class="sourceLineNo">934</span>            }<a name="line.934"></a>
-<span class="sourceLineNo">935</span>        } else if (searchString.matches("\\d+")) {<a name="line.935"></a>
-<span class="sourceLineNo">936</span>            // Match an integer only, assume subTypeId = 0<a name="line.936"></a>
-<span class="sourceLineNo">937</span><a name="line.937"></a>
-<span class="sourceLineNo">938</span>            // Retrieve/parse data<a name="line.938"></a>
-<span class="sourceLineNo">939</span>            int typeId = Integer.parseInt(searchString);<a name="line.939"></a>
-<span class="sourceLineNo">940</span>            short subTypeId = 0;<a name="line.940"></a>
+<span class="sourceLineNo">883</span>            // Retrieve/parse data<a name="line.883"></a>
+<span class="sourceLineNo">884</span>            int typeId = Integer.parseInt(searchString);<a name="line.884"></a>
+<span class="sourceLineNo">885</span><a name="line.885"></a>
+<span class="sourceLineNo">886</span>            // Iterate through Items<a name="line.886"></a>
+<span class="sourceLineNo">887</span>            int i = 0;<a name="line.887"></a>
+<span class="sourceLineNo">888</span>            for (ItemInfo item : items) {<a name="line.888"></a>
+<span class="sourceLineNo">889</span>                // Test for match<a name="line.889"></a>
+<span class="sourceLineNo">890</span>                if (item.getId() == typeId) {<a name="line.890"></a>
+<span class="sourceLineNo">891</span>                    itemList[i] = item;<a name="line.891"></a>
+<span class="sourceLineNo">892</span>                    i++;<a name="line.892"></a>
+<span class="sourceLineNo">893</span>                }<a name="line.893"></a>
+<span class="sourceLineNo">894</span>            }<a name="line.894"></a>
+<span class="sourceLineNo">895</span>        } else {<a name="line.895"></a>
+<span class="sourceLineNo">896</span>            // Else this must be a string that we need to identify<a name="line.896"></a>
+<span class="sourceLineNo">897</span><a name="line.897"></a>
+<span class="sourceLineNo">898</span>            // Iterate through Items<a name="line.898"></a>
+<span class="sourceLineNo">899</span>            int i = 0;<a name="line.899"></a>
+<span class="sourceLineNo">900</span>            for (ItemInfo item : items) {<a name="line.900"></a>
+<span class="sourceLineNo">901</span>                // Look through each possible match criteria<a name="line.901"></a>
+<span class="sourceLineNo">902</span>                for (String[] attributes : item.search) {<a name="line.902"></a>
+<span class="sourceLineNo">903</span>                    boolean match = false;<a name="line.903"></a>
+<span class="sourceLineNo">904</span>                    // Loop through entire criteria strings<a name="line.904"></a>
+<span class="sourceLineNo">905</span>                    for (String attribute : attributes) {<a name="line.905"></a>
+<span class="sourceLineNo">906</span>                        if (searchString.toLowerCase().contains(attribute)) {<a name="line.906"></a>
+<span class="sourceLineNo">907</span>                            match = true;<a name="line.907"></a>
+<span class="sourceLineNo">908</span>                            break;<a name="line.908"></a>
+<span class="sourceLineNo">909</span>                        }<a name="line.909"></a>
+<span class="sourceLineNo">910</span>                    }<a name="line.910"></a>
+<span class="sourceLineNo">911</span>                    // THIS was a match<a name="line.911"></a>
+<span class="sourceLineNo">912</span>                    if (match) {<a name="line.912"></a>
+<span class="sourceLineNo">913</span>                        itemList[i] = item;<a name="line.913"></a>
+<span class="sourceLineNo">914</span>                        i++;<a name="line.914"></a>
+<span class="sourceLineNo">915</span>                    }<a name="line.915"></a>
+<span class="sourceLineNo">916</span>                }<a name="line.916"></a>
+<span class="sourceLineNo">917</span>            }<a name="line.917"></a>
+<span class="sourceLineNo">918</span>        }<a name="line.918"></a>
+<span class="sourceLineNo">919</span><a name="line.919"></a>
+<span class="sourceLineNo">920</span>        return itemList;<a name="line.920"></a>
+<span class="sourceLineNo">921</span>    }<a name="line.921"></a>
+<span class="sourceLineNo">922</span><a name="line.922"></a>
+<span class="sourceLineNo">923</span>    /**<a name="line.923"></a>
+<span class="sourceLineNo">924</span>     * Single item search function, for when we only ever want to return 1 result<a name="line.924"></a>
+<span class="sourceLineNo">925</span>     *<a name="line.925"></a>
+<span class="sourceLineNo">926</span>     * @param searchString to search for<a name="line.926"></a>
+<span class="sourceLineNo">927</span>     * @return ItemInfo Object<a name="line.927"></a>
+<span class="sourceLineNo">928</span>     */<a name="line.928"></a>
+<span class="sourceLineNo">929</span>    public static ItemInfo itemByName(String searchString) {<a name="line.929"></a>
+<span class="sourceLineNo">930</span>        ItemInfo matchedItem = null;<a name="line.930"></a>
+<span class="sourceLineNo">931</span>        int matchedItemStrength = 0;<a name="line.931"></a>
+<span class="sourceLineNo">932</span>        int matchedValue = 0;<a name="line.932"></a>
+<span class="sourceLineNo">933</span><a name="line.933"></a>
+<span class="sourceLineNo">934</span>        if (searchString.matches("\\d+:\\d+")) {<a name="line.934"></a>
+<span class="sourceLineNo">935</span>            // Match on integer:short to get typeId and subTypeId<a name="line.935"></a>
+<span class="sourceLineNo">936</span><a name="line.936"></a>
+<span class="sourceLineNo">937</span>            // Retrieve/parse data<a name="line.937"></a>
+<span class="sourceLineNo">938</span>            String[] params = searchString.split(":");<a name="line.938"></a>
+<span class="sourceLineNo">939</span>            int typeId = Integer.parseInt(params[0]);<a name="line.939"></a>
+<span class="sourceLineNo">940</span>            short subTypeId = Short.parseShort(params[1]);<a name="line.940"></a>
 <span class="sourceLineNo">941</span><a name="line.941"></a>
 <span class="sourceLineNo">942</span>            // Iterate through Items<a name="line.942"></a>
 <span class="sourceLineNo">943</span>            for (ItemInfo item : items) {<a name="line.943"></a>
@@ -955,87 +955,121 @@
 <span class="sourceLineNo">947</span>                    break;<a name="line.947"></a>
 <span class="sourceLineNo">948</span>                }<a name="line.948"></a>
 <span class="sourceLineNo">949</span>            }<a name="line.949"></a>
-<span class="sourceLineNo">950</span>        } else {<a name="line.950"></a>
-<span class="sourceLineNo">951</span>            // Else this must be a string that we need to identify<a name="line.951"></a>
+<span class="sourceLineNo">950</span>        } else if (searchString.matches("\\d+")) {<a name="line.950"></a>
+<span class="sourceLineNo">951</span>            // Match an integer only, assume subTypeId = 0<a name="line.951"></a>
 <span class="sourceLineNo">952</span><a name="line.952"></a>
-<span class="sourceLineNo">953</span>            // Iterate through Items<a name="line.953"></a>
-<span class="sourceLineNo">954</span>            for (ItemInfo item : items) {<a name="line.954"></a>
-<span class="sourceLineNo">955</span>                // Look through each possible match criteria<a name="line.955"></a>
-<span class="sourceLineNo">956</span>                for (String[] attributes : item.search) {<a name="line.956"></a>
-<span class="sourceLineNo">957</span>                    int val = 0;<a name="line.957"></a>
-<span class="sourceLineNo">958</span>                    boolean match = false;<a name="line.958"></a>
-<span class="sourceLineNo">959</span>                    // Loop through entire criteria strings<a name="line.959"></a>
-<span class="sourceLineNo">960</span>                    for (String attribute : attributes) {<a name="line.960"></a>
-<span class="sourceLineNo">961</span>                        if (searchString.toLowerCase().contains(attribute)) {<a name="line.961"></a>
-<span class="sourceLineNo">962</span>                            val += attribute.length();<a name="line.962"></a>
-<span class="sourceLineNo">963</span>                            match = true;<a name="line.963"></a>
-<span class="sourceLineNo">964</span>                        } else {<a name="line.964"></a>
-<span class="sourceLineNo">965</span>                            match = false;<a name="line.965"></a>
-<span class="sourceLineNo">966</span>                            break;<a name="line.966"></a>
-<span class="sourceLineNo">967</span>                        }<a name="line.967"></a>
-<span class="sourceLineNo">968</span>                    }<a name="line.968"></a>
-<span class="sourceLineNo">969</span><a name="line.969"></a>
-<span class="sourceLineNo">970</span>                    // THIS was a match<a name="line.970"></a>
-<span class="sourceLineNo">971</span>                    if (match) {<a name="line.971"></a>
-<span class="sourceLineNo">972</span>                        if (matchedItem == null || val &gt; matchedValue || attributes.length &gt; matchedItemStrength) {<a name="line.972"></a>
-<span class="sourceLineNo">973</span>                            matchedItem = item;<a name="line.973"></a>
-<span class="sourceLineNo">974</span>                            matchedValue = val;<a name="line.974"></a>
-<span class="sourceLineNo">975</span>                            matchedItemStrength = attributes.length;<a name="line.975"></a>
-<span class="sourceLineNo">976</span>                        }<a name="line.976"></a>
-<span class="sourceLineNo">977</span>                    }<a name="line.977"></a>
-<span class="sourceLineNo">978</span>                }<a name="line.978"></a>
-<span class="sourceLineNo">979</span>            }<a name="line.979"></a>
-<span class="sourceLineNo">980</span>        }<a name="line.980"></a>
-<span class="sourceLineNo">981</span><a name="line.981"></a>
-<span class="sourceLineNo">982</span>        return matchedItem;<a name="line.982"></a>
-<span class="sourceLineNo">983</span>    }<a name="line.983"></a>
-<span class="sourceLineNo">984</span><a name="line.984"></a>
-<span class="sourceLineNo">985</span>    /**<a name="line.985"></a>
-<span class="sourceLineNo">986</span>     * Joins elements of a String array with the glue between them into a String.<a name="line.986"></a>
-<span class="sourceLineNo">987</span>     * @param array of elements to join together<a name="line.987"></a>
-<span class="sourceLineNo">988</span>     * @param glue what to put between each element<a name="line.988"></a>
-<span class="sourceLineNo">989</span>     * @return Concacted Array combined with glue<a name="line.989"></a>
-<span class="sourceLineNo">990</span>     */<a name="line.990"></a>
-<span class="sourceLineNo">991</span>    public static String join(String[] array, String glue) {<a name="line.991"></a>
-<span class="sourceLineNo">992</span>        String joined = null;<a name="line.992"></a>
-<span class="sourceLineNo">993</span>        for (String element : array) {<a name="line.993"></a>
-<span class="sourceLineNo">994</span>            if (joined == null) {<a name="line.994"></a>
-<span class="sourceLineNo">995</span>                joined = element;<a name="line.995"></a>
-<span class="sourceLineNo">996</span>            } else {<a name="line.996"></a>
-<span class="sourceLineNo">997</span>                joined += glue + element;<a name="line.997"></a>
-<span class="sourceLineNo">998</span>            }<a name="line.998"></a>
-<span class="sourceLineNo">999</span>        }<a name="line.999"></a>
-<span class="sourceLineNo">1000</span><a name="line.1000"></a>
-<span class="sourceLineNo">1001</span>        if (joined == null) {<a name="line.1001"></a>
-<span class="sourceLineNo">1002</span>            return "";<a name="line.1002"></a>
-<span class="sourceLineNo">1003</span>        } else {<a name="line.1003"></a>
-<span class="sourceLineNo">1004</span>            return joined;<a name="line.1004"></a>
-<span class="sourceLineNo">1005</span>        }<a name="line.1005"></a>
-<span class="sourceLineNo">1006</span>    }<a name="line.1006"></a>
-<span class="sourceLineNo">1007</span><a name="line.1007"></a>
-<span class="sourceLineNo">1008</span>    /**<a name="line.1008"></a>
-<span class="sourceLineNo">1009</span>     * Joins elements of a String array with the glue between them into a String.<a name="line.1009"></a>
-<span class="sourceLineNo">1010</span>     * @param list of items to join together<a name="line.1010"></a>
-<span class="sourceLineNo">1011</span>     * @param glue what to put between each element<a name="line.1011"></a>
-<span class="sourceLineNo">1012</span>     * @return Concacted Array combined with glue<a name="line.1012"></a>
-<span class="sourceLineNo">1013</span>     */<a name="line.1013"></a>
-<span class="sourceLineNo">1014</span>    public static String join(List&lt;String&gt; list, String glue) {<a name="line.1014"></a>
-<span class="sourceLineNo">1015</span>        String joined = null;<a name="line.1015"></a>
-<span class="sourceLineNo">1016</span>        for (String element : list) {<a name="line.1016"></a>
-<span class="sourceLineNo">1017</span>            if (joined == null) {<a name="line.1017"></a>
-<span class="sourceLineNo">1018</span>                joined = element;<a name="line.1018"></a>
-<span class="sourceLineNo">1019</span>            } else {<a name="line.1019"></a>
-<span class="sourceLineNo">1020</span>                joined += glue + element;<a name="line.1020"></a>
-<span class="sourceLineNo">1021</span>            }<a name="line.1021"></a>
-<span class="sourceLineNo">1022</span>        }<a name="line.1022"></a>
-<span class="sourceLineNo">1023</span><a name="line.1023"></a>
-<span class="sourceLineNo">1024</span>        if (joined == null) {<a name="line.1024"></a>
-<span class="sourceLineNo">1025</span>            return "";<a name="line.1025"></a>
-<span class="sourceLineNo">1026</span>        } else {<a name="line.1026"></a>
-<span class="sourceLineNo">1027</span>            return joined;<a name="line.1027"></a>
-<span class="sourceLineNo">1028</span>        }<a name="line.1028"></a>
-<span class="sourceLineNo">1029</span>    }<a name="line.1029"></a>
-<span class="sourceLineNo">1030</span>}<a name="line.1030"></a>
+<span class="sourceLineNo">953</span>            // Retrieve/parse data<a name="line.953"></a>
+<span class="sourceLineNo">954</span>            int typeId = Integer.parseInt(searchString);<a name="line.954"></a>
+<span class="sourceLineNo">955</span>            short subTypeId = 0;<a name="line.955"></a>
+<span class="sourceLineNo">956</span><a name="line.956"></a>
+<span class="sourceLineNo">957</span>            // Iterate through Items<a name="line.957"></a>
+<span class="sourceLineNo">958</span>            for (ItemInfo item : items) {<a name="line.958"></a>
+<span class="sourceLineNo">959</span>                // Test for match<a name="line.959"></a>
+<span class="sourceLineNo">960</span>                if (item.getId() == typeId &amp;&amp; item.getSubTypeId() == subTypeId) {<a name="line.960"></a>
+<span class="sourceLineNo">961</span>                    matchedItem = item;<a name="line.961"></a>
+<span class="sourceLineNo">962</span>                    break;<a name="line.962"></a>
+<span class="sourceLineNo">963</span>                }<a name="line.963"></a>
+<span class="sourceLineNo">964</span>            }<a name="line.964"></a>
+<span class="sourceLineNo">965</span>        } else if (searchString.matches("\\w+:\\d+")) {<a name="line.965"></a>
+<span class="sourceLineNo">966</span>            // Match on string:short to get typeId and subTypeId<a name="line.966"></a>
+<span class="sourceLineNo">967</span><a name="line.967"></a>
+<span class="sourceLineNo">968</span>            // Retrieve/parse data<a name="line.968"></a>
+<span class="sourceLineNo">969</span>            String[] params = searchString.split(":");<a name="line.969"></a>
+<span class="sourceLineNo">970</span>            short subTypeId = Short.parseShort(params[1]);<a name="line.970"></a>
+<span class="sourceLineNo">971</span>            ItemInfo namedItem = itemByName(params[0]);<a name="line.971"></a>
+<span class="sourceLineNo">972</span><a name="line.972"></a>
+<span class="sourceLineNo">973</span>            if (namedItem != null) {<a name="line.973"></a>
+<span class="sourceLineNo">974</span>                int typeId = namedItem.getId();<a name="line.974"></a>
+<span class="sourceLineNo">975</span>                // Iterate through items<a name="line.975"></a>
+<span class="sourceLineNo">976</span>                for (ItemInfo item : items) {<a name="line.976"></a>
+<span class="sourceLineNo">977</span>                    // Test for match<a name="line.977"></a>
+<span class="sourceLineNo">978</span>                    if (item.getId() == typeId &amp;&amp; item.getSubTypeId() == subTypeId) {<a name="line.978"></a>
+<span class="sourceLineNo">979</span>                        matchedItem = item;<a name="line.979"></a>
+<span class="sourceLineNo">980</span>                        break;<a name="line.980"></a>
+<span class="sourceLineNo">981</span>                    }<a name="line.981"></a>
+<span class="sourceLineNo">982</span>                }<a name="line.982"></a>
+<span class="sourceLineNo">983</span>            }<a name="line.983"></a>
+<span class="sourceLineNo">984</span>        } else {<a name="line.984"></a>
+<span class="sourceLineNo">985</span>            // Else this must be a string that we need to identify<a name="line.985"></a>
+<span class="sourceLineNo">986</span><a name="line.986"></a>
+<span class="sourceLineNo">987</span>            // Iterate through Items<a name="line.987"></a>
+<span class="sourceLineNo">988</span>            for (ItemInfo item : items) {<a name="line.988"></a>
+<span class="sourceLineNo">989</span>                // Look through each possible match criteria<a name="line.989"></a>
+<span class="sourceLineNo">990</span>                for (String[] attributes : item.search) {<a name="line.990"></a>
+<span class="sourceLineNo">991</span>                    int val = 0;<a name="line.991"></a>
+<span class="sourceLineNo">992</span>                    boolean match = false;<a name="line.992"></a>
+<span class="sourceLineNo">993</span>                    // Loop through entire criteria strings<a name="line.993"></a>
+<span class="sourceLineNo">994</span>                    for (String attribute : attributes) {<a name="line.994"></a>
+<span class="sourceLineNo">995</span>                        if (searchString.toLowerCase().contains(attribute)) {<a name="line.995"></a>
+<span class="sourceLineNo">996</span>                            val += attribute.length();<a name="line.996"></a>
+<span class="sourceLineNo">997</span>                            match = true;<a name="line.997"></a>
+<span class="sourceLineNo">998</span>                        } else {<a name="line.998"></a>
+<span class="sourceLineNo">999</span>                            match = false;<a name="line.999"></a>
+<span class="sourceLineNo">1000</span>                            break;<a name="line.1000"></a>
+<span class="sourceLineNo">1001</span>                        }<a name="line.1001"></a>
+<span class="sourceLineNo">1002</span>                    }<a name="line.1002"></a>
+<span class="sourceLineNo">1003</span><a name="line.1003"></a>
+<span class="sourceLineNo">1004</span>                    // THIS was a match<a name="line.1004"></a>
+<span class="sourceLineNo">1005</span>                    if (match) {<a name="line.1005"></a>
+<span class="sourceLineNo">1006</span>                        if (matchedItem == null || val &gt; matchedValue || attributes.length &gt; matchedItemStrength) {<a name="line.1006"></a>
+<span class="sourceLineNo">1007</span>                            matchedItem = item;<a name="line.1007"></a>
+<span class="sourceLineNo">1008</span>                            matchedValue = val;<a name="line.1008"></a>
+<span class="sourceLineNo">1009</span>                            matchedItemStrength = attributes.length;<a name="line.1009"></a>
+<span class="sourceLineNo">1010</span>                        }<a name="line.1010"></a>
+<span class="sourceLineNo">1011</span>                    }<a name="line.1011"></a>
+<span class="sourceLineNo">1012</span>                }<a name="line.1012"></a>
+<span class="sourceLineNo">1013</span>            }<a name="line.1013"></a>
+<span class="sourceLineNo">1014</span>        }<a name="line.1014"></a>
+<span class="sourceLineNo">1015</span><a name="line.1015"></a>
+<span class="sourceLineNo">1016</span>        return matchedItem;<a name="line.1016"></a>
+<span class="sourceLineNo">1017</span>    }<a name="line.1017"></a>
+<span class="sourceLineNo">1018</span><a name="line.1018"></a>
+<span class="sourceLineNo">1019</span>    /**<a name="line.1019"></a>
+<span class="sourceLineNo">1020</span>     * Joins elements of a String array with the glue between them into a String.<a name="line.1020"></a>
+<span class="sourceLineNo">1021</span>     * @param array of elements to join together<a name="line.1021"></a>
+<span class="sourceLineNo">1022</span>     * @param glue what to put between each element<a name="line.1022"></a>
+<span class="sourceLineNo">1023</span>     * @return Concacted Array combined with glue<a name="line.1023"></a>
+<span class="sourceLineNo">1024</span>     */<a name="line.1024"></a>
+<span class="sourceLineNo">1025</span>    public static String join(String[] array, String glue) {<a name="line.1025"></a>
+<span class="sourceLineNo">1026</span>        String joined = null;<a name="line.1026"></a>
+<span class="sourceLineNo">1027</span>        for (String element : array) {<a name="line.1027"></a>
+<span class="sourceLineNo">1028</span>            if (joined == null) {<a name="line.1028"></a>
+<span class="sourceLineNo">1029</span>                joined = element;<a name="line.1029"></a>
+<span class="sourceLineNo">1030</span>            } else {<a name="line.1030"></a>
+<span class="sourceLineNo">1031</span>                joined += glue + element;<a name="line.1031"></a>
+<span class="sourceLineNo">1032</span>            }<a name="line.1032"></a>
+<span class="sourceLineNo">1033</span>        }<a name="line.1033"></a>
+<span class="sourceLineNo">1034</span><a name="line.1034"></a>
+<span class="sourceLineNo">1035</span>        if (joined == null) {<a name="line.1035"></a>
+<span class="sourceLineNo">1036</span>            return "";<a name="line.1036"></a>
+<span class="sourceLineNo">1037</span>        } else {<a name="line.1037"></a>
+<span class="sourceLineNo">1038</span>            return joined;<a name="line.1038"></a>
+<span class="sourceLineNo">1039</span>        }<a name="line.1039"></a>
+<span class="sourceLineNo">1040</span>    }<a name="line.1040"></a>
+<span class="sourceLineNo">1041</span><a name="line.1041"></a>
+<span class="sourceLineNo">1042</span>    /**<a name="line.1042"></a>
+<span class="sourceLineNo">1043</span>     * Joins elements of a String array with the glue between them into a String.<a name="line.1043"></a>
+<span class="sourceLineNo">1044</span>     * @param list of items to join together<a name="line.1044"></a>
+<span class="sourceLineNo">1045</span>     * @param glue what to put between each element<a name="line.1045"></a>
+<span class="sourceLineNo">1046</span>     * @return Concacted Array combined with glue<a name="line.1046"></a>
+<span class="sourceLineNo">1047</span>     */<a name="line.1047"></a>
+<span class="sourceLineNo">1048</span>    public static String join(List&lt;String&gt; list, String glue) {<a name="line.1048"></a>
+<span class="sourceLineNo">1049</span>        String joined = null;<a name="line.1049"></a>
+<span class="sourceLineNo">1050</span>        for (String element : list) {<a name="line.1050"></a>
+<span class="sourceLineNo">1051</span>            if (joined == null) {<a name="line.1051"></a>
+<span class="sourceLineNo">1052</span>                joined = element;<a name="line.1052"></a>
+<span class="sourceLineNo">1053</span>            } else {<a name="line.1053"></a>
+<span class="sourceLineNo">1054</span>                joined += glue + element;<a name="line.1054"></a>
+<span class="sourceLineNo">1055</span>            }<a name="line.1055"></a>
+<span class="sourceLineNo">1056</span>        }<a name="line.1056"></a>
+<span class="sourceLineNo">1057</span><a name="line.1057"></a>
+<span class="sourceLineNo">1058</span>        if (joined == null) {<a name="line.1058"></a>
+<span class="sourceLineNo">1059</span>            return "";<a name="line.1059"></a>
+<span class="sourceLineNo">1060</span>        } else {<a name="line.1060"></a>
+<span class="sourceLineNo">1061</span>            return joined;<a name="line.1061"></a>
+<span class="sourceLineNo">1062</span>        }<a name="line.1062"></a>
+<span class="sourceLineNo">1063</span>    }<a name="line.1063"></a>
+<span class="sourceLineNo">1064</span>}<a name="line.1064"></a>
 
 
 
