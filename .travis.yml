@@ -3,6 +3,7 @@ jdk: [ openjdk7 ]
 branches:
   except:
     - gh-pages
+sudo: false
 env:
   global:
     - secure: "lkC+9PeVPx0sFEAITPszoHvPV9jnavsJdA3Slo4FakzTB5AlERHszto4RdenAhPf347r8xKL120YvDxDeYvmffpG7NUcRXfQZxod1SRyFEFUUBC0zGHkLiJlBjAqkSEDacruldT4+1BCqRc/A96zj17knmUkvKnyutQtasOGKxk="
