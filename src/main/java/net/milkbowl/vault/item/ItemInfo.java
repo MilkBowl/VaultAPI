@@ -91,7 +91,7 @@ public class ItemInfo {
     }
 
     public ItemStack toStack() {
-        return item;
+        return item != null ? item : new ItemStack(this.material, 1, subTypeId);
     }
 
     @SuppressWarnings("deprecation")
