@@ -35,7 +35,7 @@ public class ItemTest {
         ignoreMats.add(Material.CAKE_BLOCK);
         ignoreMats.add(Material.DIODE_BLOCK_OFF);
         ignoreMats.add(Material.DIODE_BLOCK_ON);
-        ignoreMats.add(Material.LOCKED_CHEST);
+        // ignoreMats.add(Material.LOCKED_CHEST); Material removed in 1.9
         ignoreMats.add(Material.PUMPKIN_STEM);
         ignoreMats.add(Material.MELON_STEM);
         ignoreMats.add(Material.REDSTONE_LAMP_ON);
