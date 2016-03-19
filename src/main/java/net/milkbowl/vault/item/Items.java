@@ -24,6 +24,8 @@ import java.util.regex.Pattern;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionType;
 
 public class Items {
 
@@ -334,8 +336,10 @@ public class Items {
         items.add(new ItemInfo("Ghast Tear", new String[][] {{"ghas", "tear"}}, Material.GHAST_TEAR));
         items.add(new ItemInfo("Gold Nugget", new String[][] {{"nugg", "gold"}}, Material.GOLD_NUGGET));
         items.add(new ItemInfo("Glass Bottle", new String[][] {{"bottl"}, {"glas", "bott"}, {"empt", "bott"}}, Material.GLASS_BOTTLE));
-        items.add(new ItemInfo("Potion", new String[][] {{"potio"}}, Material.POTION));
-        items.add(new ItemInfo("Water Bottle", new String[][] {{"wat", "bot"}}, Material.POTION, (short) 0));
+        items.add(new ItemInfo("Water Bottle", new String[][] {{"wat", "bot"}}, Material.POTION));
+        ItemStack awkwardPotion = new ItemStack(Material.POTION, 1);
+        PotionMeta pm = (PotionMeta) awkwardPotion.getItemMeta();
+        pm.
         items.add(new ItemInfo("Awkward Potion", new String[][] {{"poti", "awk"}}, Material.POTION, (short) 16));
         items.add(new ItemInfo("Thick Potion", new String[][] {{"poti", "thic"}}, Material.POTION, (short) 32));
         items.add(new ItemInfo("Mundane Potion (Extended)", new String[][] {{"poti", "mund", "ext"}}, Material.POTION, (short) 64));
