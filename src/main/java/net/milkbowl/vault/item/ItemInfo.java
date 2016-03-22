@@ -24,6 +24,7 @@ public class ItemInfo {
     public final short subTypeId;
     public final String name;
     public final String[][] search;
+    public ItemStack item;
     
     public ItemInfo(String name, String[][] search, Material material) {
         this.material = material;
@@ -36,6 +37,15 @@ public class ItemInfo {
         this.name = name;
         this.material = material;
         this.subTypeId = subTypeId;
+        this.search = search.clone();
+    }
+
+    public ItemInfo(String name, String[][] search, ItemStack is)
+    {
+        this.name = name;
+        this.material = is.getType();
+        this.subTypeId = is.getDurability();
+        this.item = is;
         this.search = search.clone();
     }
 
@@ -81,7 +91,7 @@ public class ItemInfo {
     }
 
     public ItemStack toStack() {
-        return new ItemStack(this.material, 1, subTypeId);
+        return item != null ? item : new ItemStack(material, 1, subTypeId);
     }
 
     @SuppressWarnings("deprecation")
