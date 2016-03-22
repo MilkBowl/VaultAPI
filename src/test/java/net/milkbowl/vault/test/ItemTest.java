@@ -19,6 +19,13 @@ public class ItemTest {
     // Static list of materials we shouldn't be testing for as they are now longer able to be held in inventory.
     private static final Set<Material> ignoreMats = EnumSet.noneOf(Material.class);
     {
+        // 1.9
+        ignoreMats.add(Material.GRASS_PATH);
+        ignoreMats.add(Material.END_GATEWAY);
+        ignoreMats.add(Material.FROSTED_ICE);
+        ignoreMats.add(Material.STRUCTURE_BLOCK);
+        //
+        //ignoreMats.add(Material.LOCKED_CHEST); invalid material as of 1.9
         ignoreMats.add(Material.STATIONARY_WATER);
         ignoreMats.add(Material.STATIONARY_LAVA);
         ignoreMats.add(Material.PISTON_EXTENSION);
@@ -35,7 +42,6 @@ public class ItemTest {
         ignoreMats.add(Material.CAKE_BLOCK);
         ignoreMats.add(Material.DIODE_BLOCK_OFF);
         ignoreMats.add(Material.DIODE_BLOCK_ON);
-        ignoreMats.add(Material.LOCKED_CHEST);
         ignoreMats.add(Material.PUMPKIN_STEM);
         ignoreMats.add(Material.MELON_STEM);
         ignoreMats.add(Material.REDSTONE_LAMP_ON);
