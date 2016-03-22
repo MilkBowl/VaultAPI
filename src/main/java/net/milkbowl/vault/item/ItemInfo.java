@@ -50,7 +50,7 @@ public class ItemInfo {
     }
 
     public Material getType() {
-        return material;
+        return this.material;
     }
 
     public short getSubTypeId() {
