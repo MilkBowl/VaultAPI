@@ -5,12 +5,12 @@ How to use with maven: note that the VaultAPI version is 2 numerals, unlike Vaul
     <repositories>
         <repository>
 	        <id>vault-repo</id>
-	        <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+	        <url>https://dl.bintray.com/scarsz/maven</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
-            <groupId>net.milkbowl.vault</groupId>
+            <groupId>com.scarsz</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>1.5</version>
             <scope>provided</scope>
