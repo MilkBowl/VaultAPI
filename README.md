@@ -71,28 +71,22 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ExamplePlugin extends JavaPlugin {
-    
-    private static final Logger log = Logger.getLogger("Minecraft");
-    public static Economy econ = null;
-    public static Permission perms = null;
-    public static Chat chat = null;
 
-    @Override
-    public void onDisable() {
-        log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
-    }
+    private Economy econ = null;
+    private Permission perms = null;
+    private Chat chat = null;
 
     @Override
     public void onEnable() {
         if (!setupEconomy() ) {
-            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+            getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
         setupPermissions();
         setupChat();
     }
-    
+
     private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
@@ -104,28 +98,40 @@ public class ExamplePlugin extends JavaPlugin {
         econ = rsp.getProvider();
         return econ != null;
     }
-    
+
     private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
         chat = rsp.getProvider();
         return chat != null;
     }
-    
+
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         perms = rsp.getProvider();
         return perms != null;
     }
     
+    public Economy getEconomy() {
+        return econ;
+    }
+    
+    public Permission getPermissions() {
+        return perms;
+    }
+    
+    public Chat getChat() {
+        return chat;
+    }
+
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         if(!(sender instanceof Player)) {
-            log.info("Only players are supported for this Example Plugin, but you should not do this!!!");
+            getLogger().info("Only players are supported for this Example Plugin, but you should not do this!!!");
             return true;
         }
-        
+
         Player player = (Player) sender;
-        
-        if(command.getLabel().equals("test-economy")) {
+
+        if(command.getName().equals("test-economy")) {
             // Lets give the player 1.05 currency (note that SOME economic plugins require rounding!)
             sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getName()))));
             EconomyResponse r = econ.depositPlayer(player, 1.05);
@@ -135,7 +141,7 @@ public class ExamplePlugin extends JavaPlugin {
                 sender.sendMessage(String.format("An error occured: %s", r.errorMessage));
             }
             return true;
-        } else if(command.getLabel().equals("test-permission")) {
+        } else if(command.getName().equals("test-permission")) {
             // Lets test if user has the node "example.plugin.awesome" to determine if they are awesome or just suck
             if(perms.has(player, "example.plugin.awesome")) {
                 sender.sendMessage("You are awesome!");
