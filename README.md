@@ -5,14 +5,14 @@ How to use with maven: note that the VaultAPI version is 2 numerals, unlike Vaul
     <repositories>
         <repository>
 	        <id>vault-repo</id>
-	        <url>http://nexus.theyeticave.net/content/repositories/pub_releases</url>
+	        <url>http://nexus.hc.to/content/repositories/pub_releases</url>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
-            <version>1.5</version>
+            <version>1.6</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
