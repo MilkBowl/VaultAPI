@@ -73,9 +73,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class ExamplePlugin extends JavaPlugin {
     
     private static final Logger log = Logger.getLogger("Minecraft");
-    public static Economy econ = null;
-    public static Permission perms = null;
-    public static Chat chat = null;
+    private static Economy econ = null;
+    private static Permission perms = null;
+    private static Chat chat = null;
 
     @Override
     public void onDisable() {
@@ -146,6 +146,18 @@ public class ExamplePlugin extends JavaPlugin {
         } else {
             return false;
         }
+    }
+    
+    public static Economy getEcononomy() {
+        return econ;
+    }
+    
+    public static Permission getPermissions() {
+        return perms;
+    }
+    
+    public static Chat getChat() {
+        return chat;
     }
 }
 ```
