@@ -818,7 +818,7 @@ public class Items {
 
         for (ItemInfo item : items) {
             if (itemStack.getType().equals(item.getType())) {
-                if (itemStack.getType().isSolid() && item.getType.isSolid()) {
+                if (itemStack.getType().isSolid() && item.getType().isSolid()) {
                     //Solid, so check durability (Podzol, Colored Wool, et al.)
                     if (itemStack.getDurability() == item.getDurability()) {
                         return item;
