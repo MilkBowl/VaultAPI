@@ -826,6 +826,7 @@ public class Items {
                 } else {
                     //Not solid, so ignore durability (Stick, Stone Button, et al.)
                     return item;
+                }
             }
         }
 
