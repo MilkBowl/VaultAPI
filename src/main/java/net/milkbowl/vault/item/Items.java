@@ -817,10 +817,16 @@ public class Items {
         }
 
         for (ItemInfo item : items) {
-            if (itemStack.getType().equals(item.getType()) && item.isDurable()) {
-                return item;
-            } else if (itemStack.getType().equals(item.getType()) && item.getSubTypeId() == itemStack.getDurability()) {
-                return item;
+            if (itemStack.getType().equals(item.getType())) {
+                if (itemStack.getType().isSolid() && item.getType().isSolid()) {
+                    //Solid, so check durability (Podzol, Colored Wool, et al.)
+                    if (item.isDurable()) {
+                        return item;
+                    }
+                } else {
+                    //Not solid, so ignore durability (Stick, Stone Button, et al.)
+                    return item;
+                }
             }
         }
 
