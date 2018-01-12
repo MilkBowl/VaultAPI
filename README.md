@@ -148,7 +148,7 @@ public class ExamplePlugin extends JavaPlugin {
         }
     }
     
-    public static Economy getEcononomy() {
+    public static Economy getEconomy() {
         return econ;
     }
     
