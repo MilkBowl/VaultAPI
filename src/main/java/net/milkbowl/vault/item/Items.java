@@ -215,6 +215,7 @@ public class Items {
         items.add(new ItemInfo("Stone Pressure Plate", new String[][]{{"pres", "plat", "ston"}}, Material.STONE_PLATE));
         items.add(new ItemInfo("Wooden Pressure Plate", new String[][]{{"pres", "plat", "wood"}}, Material.WOOD_PLATE));
         items.add(new ItemInfo("Redstone Ore", new String[][]{{"redst", "ore"}}, Material.REDSTONE_ORE));
+        items.add(new ItemInfo("Lit Redstone Ore", new String[][]{{"litredst", "ore"}}, Material.GLOWING_REDSTONE_ORE));
         items.add(new ItemInfo("Redstone Torch", new String[][]{{"torc", "red"}, {"torc", "rs"}}, Material.REDSTONE_TORCH_ON));
         items.add(new ItemInfo("Stone Button", new String[][]{{"stone", "button"}, {"button"}}, Material.STONE_BUTTON));
         items.add(new ItemInfo("Snow", new String[][]{{"tile", "snow"}, {"snow", "slab"}, {"snow"}}, Material.SNOW));
@@ -317,7 +318,8 @@ public class Items {
         items.add(new ItemInfo("Golden Apple", new String[][]{{"appl", "go"}}, Material.GOLDEN_APPLE));
         items.add(new ItemInfo("Enchanted Golden Apple", new String[][]{{"appl", "go", "ench"}}, Material.GOLDEN_APPLE, (short) 1));
         items.add(new ItemInfo("Sign", new String[][]{{"sign"}}, Material.SIGN));
-        items.add(new ItemInfo("Wooden Door", new String[][]{{"door", "wood"}, {"door"}}, Material.WOOD_DOOR));
+        items.add(new ItemInfo("Wood Door", new String[][]{{"door", "wood"}, {"door"}}, Material.WOOD_DOOR));
+        items.add(new ItemInfo("Wooden Door", new String[][]{{"door", "wooden"}, {"door"}}, Material.WOODEN_DOOR));
         items.add(new ItemInfo("Bucket", new String[][]{{"buck"}, {"bukk"}}, Material.BUCKET));
         items.add(new ItemInfo("Water Bucket", new String[][]{{"water", "buck"}}, Material.WATER_BUCKET));
         items.add(new ItemInfo("Lava Bucket", new String[][]{{"lava", "buck"}}, Material.LAVA_BUCKET));
