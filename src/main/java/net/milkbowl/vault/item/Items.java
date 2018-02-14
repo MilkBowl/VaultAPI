@@ -107,6 +107,7 @@ public class Items {
         items.add(new ItemInfo("Grass", new String[][]{{"gras"}}, Material.GRASS));
         items.add(new ItemInfo("Dirt", new String[][]{{"dirt"}}, Material.DIRT));
         items.add(new ItemInfo("Cobblestone", new String[][]{{"cobb", "sto"}, {"cobb"}}, Material.COBBLESTONE));
+        items.add(new ItemInfo("Crops", new String[][]{{"crop"}, {"crop"}}, Material.CROPS));
         items.add(new ItemInfo("Oak Plank", new String[][]{{"wood"}, {"oak", "plank"}, {"oak", "wood"}}, Material.WOOD));
         items.add(new ItemInfo("Spruce Plank", new String[][]{{"spru", "plank"}, {"spruc", "wood"}}, Material.WOOD, (short) 1));
         items.add(new ItemInfo("Birch Plank", new String[][]{{"birch", "plank"}, {"birch", "wood"}}, Material.WOOD, (short) 2));
