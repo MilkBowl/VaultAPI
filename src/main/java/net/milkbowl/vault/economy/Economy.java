@@ -146,7 +146,7 @@ public interface Economy {
      * @param player of the player
      * @return Amount currently held in players account
      */
-    public BigDecimal getBalance(OfflinePlayer player);
+    public BigDecimal getBigDecimalBalance(OfflinePlayer player);
 
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #getBalance(OfflinePlayer, String)} instead.
@@ -171,7 +171,7 @@ public interface Economy {
      * @param world name of the world
      * @return Amount currently held in players account
      */
-    public BigDecimal getBalance(OfflinePlayer player, String world);
+    public BigDecimal getBigDecimalBalance(OfflinePlayer player, String world);
     
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #has(OfflinePlayer, double)} instead.
