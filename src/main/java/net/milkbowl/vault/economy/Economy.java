@@ -18,6 +18,8 @@ package net.milkbowl.vault.economy;
 
 import java.util.List;
 
+import java.math.BigDecimal;
+
 import org.bukkit.OfflinePlayer;
 
 /**
