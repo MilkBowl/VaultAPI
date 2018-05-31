@@ -114,6 +114,7 @@ public class ExamplePlugin extends JavaPlugin {
         return perms != null;
     }
     
+    @Override
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         if(!(sender instanceof Player)) {
             sender.sendMessage("Only players are supported for this Example Plugin, but you should not do this!!!");
