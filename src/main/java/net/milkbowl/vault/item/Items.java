@@ -27,7 +27,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class Items {
 
-    private static final List<ItemInfo> items = new CopyOnWriteArrayList<ItemInfo>();
+    private static final List<ItemInfo> items = new CopyOnWriteArrayList<>();
 
     /**
      * Returns the list of ItemInfo's registered in Vault as an UnmodifiableList.
