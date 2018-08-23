@@ -1,23 +1,24 @@
-# VaultAPI - Abstraction Library API for Bukkit Plugins - ![Travis-ci](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)
+# VaultAPI - Abstraction Library API for Bukkit Plugins - [![](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)](https://travis-ci.org/MilkBowl/VaultAPI)
 
-How to use with maven: note that the VaultAPI version is 2 numerals, unlike Vault versions which are 3.  The 2 numerals in the VaultAPI will always correspond to the 2 beginning numerals in a Vault version to make it clear what versions your plugin will for sure work with.
+How to include the API with Maven: 
 ```
-    <repositories>
-        <repository>
-	        <id>vault-repo</id>
-	        <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-        </repository>
-    </repositories>
-    <dependencies>
-        <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.6</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+<repositories>
+    <repository>
+	    <id>vault-repo</id>
+	    <url>http://nexus.hc.to/content/repositories/pub_releases</url>
+    </repository>
+</repositories>
+<dependencies>
+    <dependency>
+        <groupId>net.milkbowl.vault</groupId>
+        <artifactId>VaultAPI</artifactId>
+        <version>1.6</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
+```
 
-```
+**Note**: The VaultAPI version has 2 numbers (major.minor), unlike Vault, which has 3. The 2 numbers in the VaultAPI will always correspond to the 2 beginning numbers in a Vault version to make it clear what versions your plugin will for sure work with.
 
 ## Why Vault?
 I have no preference which library suits your plugin and development efforts
@@ -32,7 +33,7 @@ So, what features do I _think_ you'll like the most?
  * Choice!
 
 ## License
-Copyright (C) 2011 Morgan Humes <morgan@lanaddict.com>
+Copyright (C) 2011-2018 Morgan Humes <morgan@lanaddict.com>
 
 Vault is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
@@ -49,7 +50,6 @@ along with Vault.  If not, see <http://www.gnu.org/licenses/>.
 
 ## Building
 VaultAPI comes with all libraries needed to build from the current branch.
-
 
 ## Implementing Vault
 Implementing Vault is quite simple. It requires getting the Economy, Permission, or Chat service from the Bukkit ServiceManager. See the example below:
