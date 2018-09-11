@@ -199,19 +199,7 @@ public abstract class Permission {
     public boolean playerAdd(Player player, String permission) {
         return playerAdd(player.getWorld().getName(), player, permission);
     }
-    
-    /**
-     * @deprecated As of VaultAPI 1.4 use {@link #playerAddTransient(OfflinePlayer, String)} instead.
-     */
-    @Deprecated
-    public boolean playerAddTransient(String player, String permission) throws UnsupportedOperationException {
-		Player p = plugin.getServer().getPlayer(player);
-		if (p == null) {
-			throw new UnsupportedOperationException(getName() + " does not support offline player transient permissions!");
-		}
-		return playerAddTransient(p, permission);
-	}
-    
+ 
     /**
      * Add transient permission to a player.
      * This implementation can be used by any subclass which implements a "pure" superperms plugin, i.e. 
@@ -260,7 +248,7 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerAddTransient(String worldName, OfflinePlayer player, String permission) {
-    	return playerAddTransient(worldName, player.getName(), permission);
+    	return playerAddTransient(worldName, player, permission);
     }
     
     /**
@@ -274,18 +262,6 @@ public abstract class Permission {
      */
     public boolean playerAddTransient(String worldName, Player player, String permission) {
     	return playerAddTransient(player, permission);
-    }
-    
-    /**
-     * @deprecated As of VaultAPI 1.4 use {@link #playerAddTransient(String, OfflinePlayer, String)} instead.
-     */
-    @Deprecated
-    public boolean playerAddTransient(String worldName, String player, String permission) {
-		Player p = plugin.getServer().getPlayer(player);
-		if (p == null) {
-			throw new UnsupportedOperationException(getName() + " does not support offline player transient permissions!");
-		}
-		return playerAddTransient(p, permission);
     }
     
     /**
@@ -310,7 +286,7 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemoveTransient(String worldName, OfflinePlayer player, String permission) {
-    	return playerRemoveTransient(worldName, player.getName(), permission);
+    	return playerRemoveTransient(player, permission);
     }
 	
     /**
@@ -323,7 +299,7 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerRemoveTransient(String worldName, Player player, String permission) {
-    	return playerRemoveTransient(worldName, (OfflinePlayer) player, permission);
+    	return playerRemoveTransient((OfflinePlayer) player, permission);
     }
     
     /**
@@ -378,18 +354,7 @@ public abstract class Permission {
     public boolean playerRemove(Player player, String permission) {
         return playerRemove(player.getWorld().getName(), player, permission);
     }
-    
-    /**
-     * @deprecated As of VaultAPI 1.4 use {@link #playerRemoveTransient(OfflinePlayer, String)} instead.
-     */
-    @Deprecated
-	public boolean playerRemoveTransient(String player, String permission) {
-		Player p = plugin.getServer().getPlayer(player);
-		if (p == null)
-			return false;
-		
-		return playerRemoveTransient(p, permission);
-	}
+   
 
     /**
      * Remove transient permission from a player.
