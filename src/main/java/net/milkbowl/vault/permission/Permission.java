@@ -263,18 +263,6 @@ public abstract class Permission {
     public boolean playerAddTransient(String worldName, Player player, String permission) {
     	return playerAddTransient(player, permission);
     }
-    
-    /**
-     * @deprecated As of VaultAPI 1.4 use {@link #playerRemoveTransient(String, OfflinePlayer, String)} instead.
-     */
-    @Deprecated
-	public boolean playerRemoveTransient(String worldName, String player, String permission) {
-		Player p = plugin.getServer().getPlayer(player);
-		if (p == null)
-			return false;
-		
-		return playerRemoveTransient(p, permission);
-	}
 	
     /**
      * Removes a world specific transient permission from the player, may only work with some permission managers.
