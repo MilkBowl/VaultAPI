@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.milkbowl.vault</groupId>
 	<artifactId>VaultAPI</artifactId>
-	<version>1.6</version>
+	<version>1.7</version>
 
 	<name>VaultAPI</name>
 	<description>Vault is a Permissions &amp; Economy API to allow plugins to more easily hook into these systems without needing to hook each individual system themselves.
@@ -14,7 +14,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<bukkitVersion>1.9-R0.1-SNAPSHOT</bukkitVersion>
+		<bukkitVersion>1.13.1-R0.1-SNAPSHOT</bukkitVersion>
 	</properties>
 
 	<!-- Organization -->
@@ -78,21 +78,21 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.8.0</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>3.0.1</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>3.0.1</version>
 				<configuration>
 					<show>public</show>
 					<windowtitle>Vault</windowtitle>
@@ -101,7 +101,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 					<version>true</version>
 					<linksource>true</linksource>
 					<notimestamp>true</notimestamp>
-					<bottom><![CDATA[<b>Milkbowl, 2014</b>]]></bottom>
+					<bottom><![CDATA[<b>Milkbowl, 2018</b>]]></bottom>
 					<reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
 					<destDir>javadoc-latest</destDir>
 				</configuration>
