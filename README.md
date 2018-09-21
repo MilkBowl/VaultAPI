@@ -12,7 +12,7 @@ How to include the API with Maven:
     <dependency>
         <groupId>net.milkbowl.vault</groupId>
         <artifactId>VaultAPI</artifactId>
-        <version>1.6</version>
+        <version>1.7</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
