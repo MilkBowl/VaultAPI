@@ -1,7 +1,7 @@
 # VaultAPI - Abstraction Library API for Bukkit Plugins - [![](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)](https://travis-ci.org/MilkBowl/VaultAPI)
 
 How to include the API with Maven: 
-```
+```xml
 <repositories>
     <repository>
 	    <id>vault-repo</id>
@@ -16,6 +16,18 @@ How to include the API with Maven:
         <scope>provided</scope>
     </dependency>
 </dependencies>
+```
+How to include the API with Gradle:
+```groovy
+repositories {
+    maven {
+        url "http://nexus.hc.to/content/repositories/pub_releases"
+    }
+}
+
+dependencies {
+    compileOnly "net.milkbowl.vault:VaultAPI:1.7"
+}
 ```
 
 **Note**: The VaultAPI version has 2 numbers (major.minor), unlike Vault, which has 3. The 2 numbers in the VaultAPI will always correspond to the 2 beginning numbers in a Vault version to make it clear what versions your plugin will for sure work with.
