@@ -348,7 +348,7 @@ public interface Economy {
     
     /**
      * Attempts to create a player account for the given player on the specified world
-     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
+     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this then false will always be returned.
      * @param player OfflinePlayer
      * @param worldName String name of the world
      * @return if the account creation was successful
