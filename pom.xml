@@ -14,7 +14,6 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<bukkitVersion>1.13.1-R0.1-SNAPSHOT</bukkitVersion>
 	</properties>
 
 	<!-- Organization -->
@@ -60,6 +59,13 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 			<artifactId>bukkit</artifactId>
 			<version>${bukkitVersion}</version>
 			<type>jar</type>
+		</dependency>
+		<!-- Spigot -->
+		<dependency>
+			<groupId>org.spigotmc</groupId>
+			<artifactId>spigot-api</artifactId>
+			<version>1.13.2-R0.1-SNAPSHOT</version>
+			<scope>provided</scope>
 		</dependency>
 		<!-- Test Dependency -->
 		<dependency>
