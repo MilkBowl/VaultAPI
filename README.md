@@ -3,30 +3,28 @@
 How to include the API with Maven: 
 ```xml
 <repositories>
-    <repository>
-	    <id>vault-repo</id>
-	    <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-    </repository>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
 </repositories>
 <dependencies>
     <dependency>
-        <groupId>net.milkbowl.vault</groupId>
+        <groupId>com.github.MilkBowl</groupId>
         <artifactId>VaultAPI</artifactId>
         <version>1.7</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
+
 How to include the API with Gradle:
 ```groovy
 repositories {
-    maven {
-        url "http://nexus.hc.to/content/repositories/pub_releases"
-    }
+	maven { url 'https://jitpack.io' }
 }
-
 dependencies {
-    compileOnly "net.milkbowl.vault:VaultAPI:1.7"
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
 }
 ```
 
