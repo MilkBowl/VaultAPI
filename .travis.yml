@@ -1,13 +1,20 @@
 language: java
-jdk: [ openjdk8 ]
+
+jdk:
+  - openjdk8
+
 branches:
   except:
     - gh-pages
-sudo: false
+
+script:
+  - mvn clean install
+
+after_success:
+- .utility/do-publish.sh
+
 env:
   global:
     - secure: "lkC+9PeVPx0sFEAITPszoHvPV9jnavsJdA3Slo4FakzTB5AlERHszto4RdenAhPf347r8xKL120YvDxDeYvmffpG7NUcRXfQZxod1SRyFEFUUBC0zGHkLiJlBjAqkSEDacruldT4+1BCqRc/A96zj17knmUkvKnyutQtasOGKxk="
     - secure: "UxxyRTgZFxEbzxfpEKFC6bYVKkhVp/kOCy5QZwbctkwQP33l3eEwDUquDVXewwLWgM6yJvWdUq9Va/f2kJ8Z7NMHLj5UTj3zIWdqJ/dZIrZ32Vb6tTawXV56627ANLsGHfw55uqIIHFs3u3HUlucyYhBAxLsxJNR4XbU2IeA8fA="
     - secure: "ljUPRZkuNEqck8RIHONVD7lCr1a/aslagOQ27uB0EpuOMGfeBlDdAlpo+GnRSs2bsfvUGX9nmcgGPR6mTcV0fzHaSBg+p/BPWBuzo9wEs39H4wn8yVU70pu/wCEuRhGlFw4GE0mYp8pbHMHrc8WdxsF3dt4kAGsdVhivXuz9HHI="
-after_success:
-- .utility/do-publish.sh
