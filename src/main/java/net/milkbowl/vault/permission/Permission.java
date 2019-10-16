@@ -248,7 +248,7 @@ public abstract class Permission {
      * @return Success or Failure
      */
     public boolean playerAddTransient(String worldName, OfflinePlayer player, String permission) {
-    	return playerAddTransient(worldName, player, permission);
+    	return playerAddTransient(player, permission);
     }
     
     /**
