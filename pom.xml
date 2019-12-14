@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.milkbowl.vault</groupId>
 	<artifactId>VaultAPI</artifactId>
-	<version>1.7</version>
+	<version>1.7.1</version>
 
 	<name>VaultAPI</name>
 	<description>Vault is a Permissions &amp; Economy API to allow plugins to more easily hook into these systems without needing to hook each individual system themselves.
@@ -59,7 +59,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 			<groupId>org.bukkit</groupId>
 			<artifactId>bukkit</artifactId>
 			<version>${bukkitVersion}</version>
-			<type>jar</type>
+			<scope>provided</scope>
 		</dependency>
 		<!-- Test Dependency -->
 		<dependency>
