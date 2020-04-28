@@ -4,16 +4,16 @@ How to include the API with Maven:
 ```xml
 <repositories>
 	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
+        	<id>spigot-vault-api</id>
+        	<url>https://ci.ender.zone/plugin/repository/everything/</url>
+    </repository>
 </repositories>
 <dependencies>
     <dependency>
-        <groupId>com.github.MilkBowl</groupId>
+        <groupId>net.milkbowl.vault</groupId>
         <artifactId>VaultAPI</artifactId>
         <version>1.7</version>
-        <scope>provided</scope>
+	<scope>provided</scope>
     </dependency>
 </dependencies>
 ```
