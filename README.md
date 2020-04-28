@@ -21,10 +21,10 @@ How to include the API with Maven:
 How to include the API with Gradle:
 ```groovy
 repositories {
-	maven { url 'https://jitpack.io' }
+	maven { url 'https://ci.ender.zone/plugin/repository/everything/' }
 }
 dependencies {
-    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+    compileOnly "net.milkbowl.vault:VaultAPI:1.7"
 }
 ```
 
