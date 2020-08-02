@@ -20,7 +20,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          mvn -B javadoc:javadoc deploy
+          mvn -B javadoc:javadoc
+#         mvn -B deploy
       - name: Commit javadocs
         run: |
           git config --local user.email "action@github.com"
