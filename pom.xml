@@ -110,7 +110,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 					<version>true</version>
 					<linksource>true</linksource>
 					<notimestamp>true</notimestamp>
-					<bottom><![CDATA[<b>Milkbowl, 2018</b>]]></bottom>
+					<bottom><![CDATA[<b>Milkbowl, 2020</b>]]></bottom>
 					<reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
 					<destDir>javadoc-latest</destDir>
 				</configuration>
