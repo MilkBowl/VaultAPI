@@ -24,10 +24,10 @@ jobs:
 #         mvn -B deploy
       - name: Commit javadocs
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           cp -Rfv target/javadoc-latest/* gh-pages/
           cd gh-pages
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git commit -m "Update javadoc pages for latest release" -a
       - name: Push javadoc changes
         uses: ad-m/github-push-action@master
