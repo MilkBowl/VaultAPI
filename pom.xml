@@ -50,7 +50,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
  		<repository>
       		<id>github</id>
       		<name>GitHub Packages</name>
-      		<url>https://maven.pkg.github.com/Milkbowl/github-release/</url>
+      		<url>https://maven.pkg.github.com/milkbowl/github-releases</url>
     	</repository>
 	</distributionManagement>
 
