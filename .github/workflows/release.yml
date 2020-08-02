@@ -1,0 +1,36 @@
+name: Publish VaultAPI to GitHub Packages
+on:
+  release:
+    types: [created]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: gh-pages
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Build and publish package
+        run: mvn -B javadoc:javadoc javadoc:jar deploy
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit javadocs
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          cp -Rfv target/javadoc-latest/* gh-pages/
+          cd gh-pages
+          commit -m "Update javadoc pages for latest release" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          directory: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
