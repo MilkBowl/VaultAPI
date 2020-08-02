@@ -26,11 +26,13 @@ jobs:
         path: ~/.m2
         key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
         restore-keys: ${{ runner.os }}-m2
-    - name: Build with Maven
+    - name: Build Release
       run: mvn -B package --file pom.xml
+    - name: Build javadoc
+      run: mvn -B javadoc:javadoc javadoc:jar --file pom.xml
     - name: Stage the artifact
       run: mkdir staging && cp target/*.jar staging
     - uses: actions/upload-artifact@v2
       with:
-        name: Package
+        name: VaultAPI
         path: staging
