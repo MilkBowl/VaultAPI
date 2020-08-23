@@ -79,11 +79,6 @@ public class EconomyResponse {
      * @return Value
      */
     public boolean transactionSuccess() {
-        switch (type) {
-        case SUCCESS:
-            return true;
-        default:
-            return false;
-        }
+        return type == ResponseType.SUCCESS;
     }
 }
