@@ -7,7 +7,7 @@ import java.util.Collections;
 * Abstract class that removes the responsibility of implement
 * Bank methods for child classes that doesn't support banks
 */
-public abstract class NoBankSupportEconomy extends AbstractEconomy {
+public abstract class NoBankSupportAbstractEconomy extends AbstractEconomy {
 
     // EconomyResponse class is immutable, it doesn't require the creation
     // of more objects to return the same response
