@@ -13,11 +13,11 @@ public abstract class NoBankSupportAbstractEconomy extends AbstractEconomy {
     // of more objects to return the same response
     private final EconomyResponse response;
 
-    public NoBankSupportEconomy(String unsupportedMessage) {
+    public NoBankSupportAbstractEconomy(String unsupportedMessage) {
         this.response = new EconomyResponse(0, 0, EconomyResponse.ResponseType.NOT_IMPLEMENTED, unsupportedMessage);
     }
 
-    public NoBankSupportEconomy() {
+    public NoBankSupportAbstractEconomy() {
         this("This economy manager doesn't support banks!");
     }
 
