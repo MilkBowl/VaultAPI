@@ -1,5 +1,6 @@
 package net.milkbowl.vault.events;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
@@ -11,11 +12,13 @@ public class BalanceUpdateEvent extends Event {
     
     private double previousBalance; //The balance before update
     private EconomyResponse response;
+    private String accountName;
     
     public BalanceUpdateEvent(EconomyResponse response) {
         
-        this.previousBalance = response.balance + response.amount;
         this.response  = response;
+        this.previousBalance = response.balance + response.amount;
+        this.accountName = response.accountName;
         
     }
        
@@ -34,6 +37,14 @@ public class BalanceUpdateEvent extends Event {
 
     public EconomyResponse getEconomyResponse() {  
         return response;    
+    }
+    
+    public String getAccountName() {  
+        return accountName;
+    }
+    
+    public boolean isPlayer(String player) {
+        return Bukkit.getOfflinePlayer(player).isOnline();
     }
 
 }

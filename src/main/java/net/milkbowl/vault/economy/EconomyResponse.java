@@ -63,6 +63,11 @@ public class EconomyResponse {
      * Error message if the variable 'type' is ResponseType.FAILURE
      */
     public final String errorMessage;
+    
+    /**
+     * Name of account
+     */
+    public final String accountName;
 
     /**
      * Constructor for EconomyResponse
@@ -71,7 +76,8 @@ public class EconomyResponse {
      * @param type Success or failure type of the operation
      * @param errorMessage Error message if necessary (commonly null)
      */
-    public EconomyResponse(double amount, double balance, ResponseType type, String errorMessage) {
+    public EconomyResponse(String accountName, double amount, double balance, ResponseType type, String errorMessage) {
+        this.accountName = accountName;
         this.amount = amount;
         this.balance = balance;
         this.type = type;
