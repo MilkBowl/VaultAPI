@@ -82,7 +82,7 @@ public class EconomyResponse {
         this.balance = balance;
         this.type = type;
         this.errorMessage = errorMessage;
-        Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
+        if(type == ResponseType.SUCCESS) Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
     }
 
     /**
