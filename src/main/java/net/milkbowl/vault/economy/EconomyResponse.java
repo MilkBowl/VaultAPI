@@ -15,6 +15,10 @@
  */
 package net.milkbowl.vault.economy;
 
+import org.bukkit.Bukkit;
+
+import net.milkbowl.vault.events.BalanceUpdateEvent;
+
 /**
  * Indicates a typical Return for an Economy method.  
  * It includes a {@link ResponseType} indicating whether the plugin currently being used for Economy actually allows
@@ -72,6 +76,7 @@ public class EconomyResponse {
         this.balance = balance;
         this.type = type;
         this.errorMessage = errorMessage;
+        Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
     }
 
     /**
