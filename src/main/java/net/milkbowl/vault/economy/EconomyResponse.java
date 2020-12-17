@@ -1,15 +1,12 @@
 /* This file is part of Vault.
-
     Vault is free software: you can redistribute it and/or modify
     it under the terms of the GNU Lesser General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     Vault is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU Lesser General Public License for more details.
-
     You should have received a copy of the GNU Lesser General Public License
     along with Vault.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -82,7 +79,16 @@ public class EconomyResponse {
         this.balance = balance;
         this.type = type;
         this.errorMessage = errorMessage;
-        if(type == ResponseType.SUCCESS) Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
+        if(transactionSuccess()) Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
+    }
+    
+    public EconomyResponse(double amount, double balance, ResponseType type, String errorMessage) {
+        this.accountName = "";
+        this.amount = amount;
+        this.balance = balance;
+        this.type = type;
+        this.errorMessage = errorMessage;
+        if(transactionSuccess()) Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
     }
 
     /**
