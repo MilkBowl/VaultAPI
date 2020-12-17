@@ -68,6 +68,7 @@ public class EconomyResponse {
 
     /**
      * Constructor for EconomyResponse
+     * @param accountName Name of the account
      * @param amount Amount modified during operation
      * @param balance New balance of account
      * @param type Success or failure type of the operation
@@ -82,6 +83,13 @@ public class EconomyResponse {
         if(transactionSuccess()) Bukkit.getServer().getPluginManager().callEvent(new BalanceUpdateEvent(this));
     }
     
+    /**
+     * Constructor for EconomyResponse
+     * @param amount Amount modified during operation
+     * @param balance New balance of account
+     * @param type Success or failure type of the operation
+     * @param errorMessage Error message if necessary (commonly null)
+     */
     public EconomyResponse(double amount, double balance, ResponseType type, String errorMessage) {
         this.accountName = "";
         this.amount = amount;
