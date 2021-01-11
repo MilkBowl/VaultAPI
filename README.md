@@ -3,10 +3,10 @@
 How to include the API with Maven: 
 ```xml
 <repositories>
-	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
 </repositories>
 <dependencies>
     <dependency>
@@ -21,7 +21,7 @@ How to include the API with Maven:
 How to include the API with Gradle:
 ```groovy
 repositories {
-	maven { url 'https://jitpack.io' }
+    maven { url 'https://jitpack.io' }
 }
 dependencies {
     compileOnly "com.github.MilkBowl:VaultAPI:1.7"
