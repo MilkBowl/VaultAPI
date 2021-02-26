@@ -80,7 +80,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class ExamplePlugin extends JavaPlugin {
+public class ExamplePlugin extends JavaPlugin implements CommandExecutor {
     
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
