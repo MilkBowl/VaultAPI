@@ -87,12 +87,12 @@ public abstract class AbstractEconomy implements Economy {
 	}
 
 	@Override
-	public EconomyResponse withdrawPlayer(UUID uuid, double amount) {
+	public EconomyResponse withdraw(UUID uuid, double amount) {
 		return withdrawPlayer(Bukkit.getOfflinePlayer(uuid), amount);
 	}
 	
 	@Override
-	public EconomyResponse withdrawPlayer(UUID uuid, String worldName, double amount) {
+	public EconomyResponse withdraw(UUID uuid, String worldName, double amount) {
 		return withdrawPlayer(Bukkit.getOfflinePlayer(uuid), worldName, amount);
 	}
 	
@@ -107,12 +107,12 @@ public abstract class AbstractEconomy implements Economy {
 	}
 
 	@Override
-	public EconomyResponse depositPlayer(UUID uuid, double amount) {
+	public EconomyResponse deposit(UUID uuid, double amount) {
 		return depositPlayer(Bukkit.getOfflinePlayer(uuid), amount);
 	}
 	
 	@Override
-	public EconomyResponse depositPlayer(UUID uuid, String worldName, double amount) {
+	public EconomyResponse deposit(UUID uuid, String worldName, double amount) {
 		return depositPlayer(Bukkit.getOfflinePlayer(uuid), worldName, amount);
 	}
 	
@@ -157,12 +157,12 @@ public abstract class AbstractEconomy implements Economy {
 	}
 
 	@Override
-	public boolean createPlayerAccount(UUID uuid) {
+	public boolean createAccount(UUID uuid) {
 		return createPlayerAccount(Bukkit.getOfflinePlayer(uuid));
 	}
 
 	@Override
-	public boolean createPlayerAccount(UUID uuid, String worldName) {
+	public boolean createAccount(UUID uuid, String worldName) {
 		return createPlayerAccount(Bukkit.getOfflinePlayer(uuid), worldName);
 	}
 }

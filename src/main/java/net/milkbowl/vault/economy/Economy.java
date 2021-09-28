@@ -250,7 +250,7 @@ public interface Economy {
      * @param amount Amount to withdraw
      * @return Detailed response of transaction
      */
-    public EconomyResponse withdrawPlayer(UUID uuid, double amount);
+    public EconomyResponse withdraw(UUID uuid, double amount);
 
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #withdrawPlayer(OfflinePlayer, String, double)} or {@link #withdrawPlayer(UUID, String, double)} instead.
@@ -276,7 +276,7 @@ public interface Economy {
      * @param amount Amount to withdraw
      * @return Detailed response of transaction
      */
-    public EconomyResponse withdrawPlayer(UUID uuid, String worldName, double amount);
+    public EconomyResponse withdraw(UUID uuid, String worldName, double amount);
     
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, double)} or {@link #depositPlayer(UUID, double)} instead.
@@ -300,7 +300,7 @@ public interface Economy {
      * @param amount Amount to deposit
      * @return Detailed response of transaction
      */
-    public EconomyResponse depositPlayer(UUID uuid, double amount);
+    public EconomyResponse deposit(UUID uuid, double amount);
     
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, String, double)} or {@link #depositPlayer(UUID, String, double)} instead.
@@ -328,7 +328,7 @@ public interface Economy {
      * @param amount Amount to deposit
      * @return Detailed response of transaction
      */
-    public EconomyResponse depositPlayer(UUID uuid, String worldName, double amount);
+    public EconomyResponse deposit(UUID uuid, String worldName, double amount);
     
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #createBank(String, OfflinePlayer)} or {@link #createBank(String, UUID)} instead.
@@ -465,7 +465,7 @@ public interface Economy {
      * @param uuid associated with the account
      * @return if the account creation was successful
      */
-    public boolean createPlayerAccount(UUID uuid);
+    public boolean createAccount(UUID uuid);
     
     /**
      * @deprecated As of VaultAPI 1.4 use {@link #createPlayerAccount(OfflinePlayer, String)} or {@link #createPlayerAccount(UUID, String)} instead.
@@ -489,5 +489,5 @@ public interface Economy {
      * @param worldName String name of the world
      * @return if the account creation was successful
      */
-    public boolean createPlayerAccount(UUID uuid, String worldName);
+    public boolean createAccount(UUID uuid, String worldName);
 }
