@@ -20,6 +20,7 @@ package net.milkbowl.vault.economy;
  * It includes a {@link ResponseType} indicating whether the plugin currently being used for Economy actually allows
  * the method, or if the operation was a success or failure.
  *
+ * @deprecated in lieu of the modern Vault2. To update alter your import to new.milkbowl.vault2.economy.
  */
 public class EconomyResponse {
 

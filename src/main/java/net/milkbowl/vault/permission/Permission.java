@@ -28,6 +28,7 @@ import org.bukkit.plugin.Plugin;
 /**
  * The main Permission API - allows for group and player based permission tests
  *
+ * @deprecated in lieu of the modern Vault2. To update alter your import to new.milkbowl.vault2.permission.
  */
 public abstract class Permission {
 

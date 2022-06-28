@@ -24,6 +24,7 @@ import org.bukkit.entity.Player;
 /**
  * The main Chat API - allows for Prefix/Suffix nodes along with generic Info nodes if the linked Chat system supports them
  *
+ * @deprecated in lieu of the modern Vault2. To update alter your import to new.milkbowl.vault2.chat.
  */
 public abstract class Chat {
 	
