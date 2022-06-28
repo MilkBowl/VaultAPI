@@ -1,6 +1,6 @@
-# VaultAPI - Abstraction Library API for Bukkit Plugins - [![](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)](https://travis-ci.org/MilkBowl/VaultAPI)
+# VaultAPI - Abstraction Library API for Bukkit Plugins [![](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)](https://travis-ci.org/MilkBowl/VaultAPI)
 
-How to include the API with Maven:
+**How to include the API with Maven:**
 ```xml
 <repositories>
     <repository>
@@ -19,7 +19,7 @@ How to include the API with Maven:
 </dependencies>
 ```
 
-How to include the API with Gradle:
+**How to include the API with Gradle:**
 ```groovy
 repositories {
     maven { url 'https://jitpack.io' }
