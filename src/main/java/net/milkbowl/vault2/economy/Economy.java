@@ -99,9 +99,10 @@ public interface Economy {
      * Attempts to create a account for the given uuid
      * 
      * @param uuid associated with the account
+     * @param name associated with the account.
      * @return if the account creation was successful
      */
-    public boolean createAccount(UUID uuid);
+    public boolean createAccount(UUID uuid, String name);
 
     /**
      * Attempts to create an account for the given UUID on the specified world
@@ -109,10 +110,11 @@ public interface Economy {
      * false will always be returned.
      * 
      * @param uuid      associated with the account
+     * @param name      associated with the account.
      * @param worldName String name of the world
      * @return if the account creation was successful
      */
-    public boolean createAccount(UUID uuid, String worldName);
+    public boolean createAccount(UUID uuid, String name, String worldName);
 
     /**
      * Returns a map that represents all of the UUIDs which have accounts in the
