@@ -8,7 +8,8 @@
         <url>https://jitpack.io</url>
     </repository>
 </repositories>
-
+```
+```xml
 <dependencies>
     <dependency>
         <groupId>com.github.MilkBowl</groupId>
@@ -24,7 +25,8 @@
 repositories {
     maven { url 'https://jitpack.io' }
 }
-
+```
+```groovy
 dependencies {
     compileOnly "com.github.MilkBowl:VaultAPI:1.7"
 }
