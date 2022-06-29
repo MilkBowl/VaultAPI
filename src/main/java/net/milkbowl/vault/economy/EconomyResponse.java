@@ -52,7 +52,7 @@ public class EconomyResponse {
     public final double balance;
     /**
      * Success or failure of call. Using Enum of ResponseType to determine valid
-     * outcomes
+     * outcomes.
      */
     public final ResponseType type;
     /**
@@ -61,7 +61,7 @@ public class EconomyResponse {
     public final String errorMessage;
 
     /**
-     * Constructor for EconomyResponse
+     * Constructor for EconomyResponse.
      * @param amount Amount modified during operation
      * @param balance New balance of account
      * @param type Success or failure type of the operation
@@ -75,7 +75,7 @@ public class EconomyResponse {
     }
 
     /**
-     * Checks if an operation was successful
+     * Checks if an operation was successful.
      * @return Value
      */
     public boolean transactionSuccess() {
