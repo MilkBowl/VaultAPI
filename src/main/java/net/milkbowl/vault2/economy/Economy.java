@@ -20,8 +20,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import org.jetbrains.annotations.Nullable;
-
 /**
  * The main economy API
  *
@@ -29,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 public interface Economy {
 
     /*
-     * Economy plugin-related methods follow. 
+     * Economy plugin-related methods follow.
      */
 
     /**
@@ -118,23 +116,21 @@ public interface Economy {
 
     /**
      * Returns a map that represents all of the UUIDs which have accounts in the
-     * plugin, as well as their last-known-name whether it is null or not. This is
-     * used for Vault's economy converter and should be given every account
-     * available.
+     * plugin, as well as their last-known-name. This is used for Vault's economy
+     * converter and should be given every account available.
      * 
      * @return a {@link Map} composed of the accounts keyed by their UUID, along
-     *         with their associated last-known-name (null or not.)
+     *         with their associated last-known-name.
      */
-    public Map<UUID, @Nullable String> getUUIDNameMap();
+    public Map<UUID, String> getUUIDNameMap();
 
     /**
      * Gets the last known name of an account owned by the given UUID. Required for
      * messages to be more human-readable than UUIDs alone can provide.
      * 
      * @param uuid UUID to look up.
-     * @return name of the account owner or null.
+     * @return name of the account owner.
      */
-    @Nullable
     public String getAccountName(UUID uuid);
 
     /**
@@ -153,6 +149,17 @@ public interface Economy {
      * @return if the uuid has an account
      */
     public boolean hasAccount(UUID uuid, String worldName);
+
+    /**
+     * A method which changes the name associated with the given UUID in the
+     * Map<UUID, String> received from {@link #getUUIDNameMap()}.
+     * 
+     * @param uuid which is having a name change.
+     * @param name name that will be associated with the UUID in the 
+     *             Map<UUID, String> map.
+     * @return true if the name change is successful.
+     */
+    public boolean renameAccount(UUID uuid, String name);
 
     /**
      * Gets balance of a UUID

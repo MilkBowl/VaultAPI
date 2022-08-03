@@ -23,7 +23,7 @@ import org.bukkit.OfflinePlayer;
 /**
  * The main economy API
  *
- * @deprecated in lieu of the modern Vault2. To update alter your import to new.milkbowl.vault2.economy and update to use the new UUID-based methods where available.
+ * @deprecated in lieu of the modern Vault2. To update alter your import to net.milkbowl.vault2.economy and update to use the new UUID-based methods where available.
  */
 public interface Economy {
 
