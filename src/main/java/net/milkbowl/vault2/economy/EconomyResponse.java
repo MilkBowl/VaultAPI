@@ -13,14 +13,13 @@
     You should have received a copy of the GNU Lesser General Public License
     along with Vault.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.milkbowl.vault.economy;
+package net.milkbowl.vault2.economy;
 
 /**
  * Indicates a typical Return for an Economy method.  
  * It includes a {@link ResponseType} indicating whether the plugin currently being used for Economy actually allows
  * the method, or if the operation was a success or failure.
  *
- * @deprecated in lieu of the modern Vault2. To update alter your import to net.milkbowl.vault2.economy.
  */
 public class EconomyResponse {
 
@@ -80,6 +79,11 @@ public class EconomyResponse {
      * @return Value
      */
     public boolean transactionSuccess() {
-        return type == ResponseType.SUCCESS;
+        switch (type) {
+        case SUCCESS:
+            return true;
+        default:
+            return false;
+        }
     }
 }

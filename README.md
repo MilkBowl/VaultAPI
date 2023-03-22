@@ -12,7 +12,7 @@ How to include the API with Maven:
     <dependency>
         <groupId>com.github.MilkBowl</groupId>
         <artifactId>VaultAPI</artifactId>
-        <version>1.7</version>
+        <version>2.0</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -24,7 +24,7 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+    compileOnly "com.github.MilkBowl:VaultAPI:2.0"
 }
 ```
 
@@ -69,10 +69,10 @@ package com.example.plugin;
 
 import java.util.logging.Logger;
 
-import net.milkbowl.vault.chat.Chat;
-import net.milkbowl.vault.economy.Economy;
-import net.milkbowl.vault.economy.EconomyResponse;
-import net.milkbowl.vault.permission.Permission;
+import net.milkbowl.vault2.chat.Chat;
+import net.milkbowl.vault2.economy.Economy;
+import net.milkbowl.vault2.economy.EconomyResponse;
+import net.milkbowl.vault2.permission.Permission;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -137,8 +137,8 @@ public class ExamplePlugin extends JavaPlugin {
         
         if(command.getLabel().equals("test-economy")) {
             // Lets give the player 1.05 currency (note that SOME economic plugins require rounding!)
-            sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getName()))));
-            EconomyResponse r = econ.depositPlayer(player, 1.05);
+            sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getUniqueId()))));
+            EconomyResponse r = econ.depositPlayer(player.getUniqueId(), 1.05);
             if(r.transactionSuccess()) {
                 sender.sendMessage(String.format("You were given %s and now have %s", econ.format(r.amount), econ.format(r.balance)));
             } else {

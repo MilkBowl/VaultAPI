@@ -23,6 +23,7 @@ import org.bukkit.OfflinePlayer;
 /**
  * The main economy API
  *
+ * @deprecated in lieu of the modern Vault2. To update alter your import to net.milkbowl.vault2.economy and update to use the new UUID-based methods where available.
  */
 public interface Economy {
 
@@ -157,7 +158,7 @@ public interface Economy {
     public boolean has(OfflinePlayer player, double amount);
 
     /**
-     * @deprecated As of VaultAPI 1.4 use @{link {@link #has(OfflinePlayer, String, double)} instead.
+     * @deprecated As of VaultAPI 1.4 use {@link #has(OfflinePlayer, String, double)} instead.
      */
     @Deprecated
     public boolean has(String playerName, String worldName, double amount);
@@ -169,7 +170,7 @@ public interface Economy {
      * @param player to check
      * @param worldName to check with
      * @param amount to check for
-     * @return True if <b>player</b> has <b>amount</b>, False else wise
+     * @return True if <b>player</b> has <b>amount</b> in the given <b>world</b>, False else wise
      */
     public boolean has(OfflinePlayer player, String worldName, double amount);
 
@@ -226,7 +227,7 @@ public interface Economy {
     public EconomyResponse depositPlayer(String playerName, String worldName, double amount);
    
     /**
-     * Deposit an amount to a player - DO NOT USE NEGATIVE AMOUNTS
+     * Deposit an amount to a player on a given world - DO NOT USE NEGATIVE AMOUNTS
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this the global balance will be returned.
      * 
      * @param player to deposit to
@@ -307,7 +308,7 @@ public interface Economy {
     public EconomyResponse isBankOwner(String name, OfflinePlayer player);
 
     /**
-     * @deprecated As of VaultAPI 1.4 use {{@link #isBankMember(String, OfflinePlayer)} instead.
+     * @deprecated As of VaultAPI 1.4 use {@link #isBankMember(String, OfflinePlayer)} instead.
      */
     @Deprecated
     public EconomyResponse isBankMember(String name, String playerName);
@@ -328,7 +329,7 @@ public interface Economy {
     public List<String> getBanks();
 
     /**
-     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer)} instead.
+     * @deprecated As of VaultAPI 1.4 use {@link #createPlayerAccount(OfflinePlayer)} instead.
      */
     @Deprecated
     public boolean createPlayerAccount(String playerName);
@@ -341,7 +342,7 @@ public interface Economy {
     public boolean createPlayerAccount(OfflinePlayer player);
     
     /**
-     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer, String)} instead.
+     * @deprecated As of VaultAPI 1.4 use {@link #createPlayerAccount(OfflinePlayer, String)} instead.
      */
     @Deprecated
     public boolean createPlayerAccount(String playerName, String worldName);
