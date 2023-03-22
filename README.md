@@ -203,7 +203,7 @@ public class ExamplePlugin extends JavaPlugin {
     public static Permission getPermissions() {
         return perms;
     }
-    
+
     public static Chat getChat() {
         return chat;
     }

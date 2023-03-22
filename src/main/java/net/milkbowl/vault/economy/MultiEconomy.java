@@ -7,6 +7,7 @@ import java.util.Collection;
 /**
  * This interface is used to provide multi-world, multi-currency support for the economy.
  * It allows disabling currencies/economies.
+ * It forces currencies to support UUIDs.
  */
 public interface MultiEconomy {
 
@@ -47,7 +48,7 @@ public interface MultiEconomy {
      * @param name The name of the implementation to get.
      * @return The implementation with the specified name.
      */
-    public Economy getImplementation(String name);
+    public IdentityEconomy getImplementation(String name);
 
     /**
      * Used to get the default implementation. This could be the default implementation for the server globally or
@@ -56,7 +57,7 @@ public interface MultiEconomy {
      * @return The implementation that is the default for the server if multi-world support is not available
      * otherwise the default for the default world.
      */
-    public Economy getDefault();
+    public IdentityEconomy getDefault();
 
     /**
      * Checks to see if the default implementation is not null.
@@ -75,7 +76,7 @@ public interface MultiEconomy {
      * @return The default implementation for the specified world if this implementation has multi-world
      * support, otherwise the default implementation for the server.
      */
-    public Economy getDefault(String world);
+    public IdentityEconomy getDefault(String world);
 
     /**
      * Checks to see if the default implementation for the specified world is not null.
@@ -92,15 +93,15 @@ public interface MultiEconomy {
      *
      * @return A collection of every implementation identifier that is available for the server.
      */
-    public Collection<Economy> getAllImplementations();
+    public Collection<IdentityEconomy> getAllImplementations();
 
     /**
-     * Used to get a collection of every {@link Economy} object that is available in the specified world if
-     * this implementation has multi-world support, otherwise all {@link Economy} objects for the server.
+     * Used to get a collection of every {@link IdentityEconomy} object that is available in the specified world if
+     * this implementation has multi-world support, otherwise all {@link IdentityEconomy} objects for the server.
      *
-     * @param world The world we want to get the {@link Economy} objects for.
+     * @param world The world we want to get the {@link IdentityEconomy} objects for.
      * @return A collection of every implementation identifier that is available in the specified world if
      * this implementation has multi-world support, otherwise all implementation identifiers for the server.
      */
-    public Collection<Economy> getAllImplementations(String world);
+    public Collection<IdentityEconomy> getAllImplementations(String world);
 }
