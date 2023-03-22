@@ -2,18 +2,11 @@
 
 How to include the API with Maven: 
 ```xml
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
 <dependencies>
     <dependency>
-        <groupId>com.github.MilkBowl</groupId>
-        <artifactId>VaultAPI</artifactId>
-        <version>2.0</version>
-        <scope>provided</scope>
+        <groupId>net.milkbowl.vault</groupId>
+        <artifactId>vaultapi</artifactId>
+        <version>2.0-SNAPSHOT</version>
     </dependency>
 </dependencies>
 ```

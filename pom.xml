@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.milkbowl.vault</groupId>
-	<artifactId>VaultAPI</artifactId>
+	<artifactId>vaultapi</artifactId>
 	<version>2.0-SNAPSHOT</version>
 
 	<name>VaultAPI</name>
@@ -24,9 +24,9 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 	</organization>
 
 	<scm>
-		<url>https://github.com/MilkBowl/VaultAPI</url>
-		<connection>scm:git:git://github.com:MilkBowl/VaultAPI.git</connection>
-		<developerConnection>scm:git:git@github.com:MilkBowl/VaultAPI.git</developerConnection>
+		<url>https://github.com/anjoismysign/VaultAPI2</url>
+		<connection>scm:git:git://github.com:MilkBanjoismysign/VaultAPI2.git</connection>
+		<developerConnection>scm:git:git@github.com:anjoismysign/VaultAPI2.git</developerConnection>
 	</scm>
 
 	<ciManagement>
@@ -36,7 +36,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 
 	<issueManagement>
 		<system>GitHub</system>
-		<url>https://github.com/MilkBowl/VaultAPI/issues</url>
+		<url>https://github.com/anjoismysign/VaultAPI2/issues</url>
 	</issueManagement>
 
 	<repositories>
@@ -50,7 +50,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
  		<repository>
       		<id>github</id>
       		<name>GitHub Packages</name>
-      		<url>https://maven.pkg.github.com/milkbowl/github-releases</url>
+      		<url>https://maven.pkg.github.com/anjoismysign/VaultAPI2</url>
     	</repository>
 	</distributionManagement>
 
