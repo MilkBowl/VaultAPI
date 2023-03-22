@@ -11,6 +11,20 @@ import java.util.Collection;
 public interface MultiEconomy {
 
     /**
+     * Checks if MultiEconomy method is enabled.
+     *
+     * @return Success or Failure
+     */
+    public boolean isEnabled();
+
+    /**
+     * Gets name of MultiEconomy method
+     *
+     * @return Name of Economy Method
+     */
+    public String getName();
+
+    /**
      * Checks to see if a name of the implementation exists with this name.
      *
      * @param name The name of the name of the implementation to search for.
