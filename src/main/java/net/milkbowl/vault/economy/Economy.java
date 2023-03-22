@@ -16,6 +16,8 @@
 
 package net.milkbowl.vault.economy;
 
+import org.bukkit.OfflinePlayer;
+
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -138,6 +140,21 @@ public interface Economy {
     public boolean hasAccount(UUID uuid);
 
     /**
+     * Checks if this player has an account yet
+     * @param player to check
+     */
+    public default boolean hasAccount(OfflinePlayer player){
+        return hasAccount(player.getUniqueId());
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #hasAccount(OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public boolean hasAccount(String playerName);
+
+    /**
      * Checks if this uuid has an account yet on the given world
      * 
      * @param uuid      to check
@@ -145,6 +162,22 @@ public interface Economy {
      * @return if the uuid has an account
      */
     public boolean hasAccount(UUID uuid, String worldName);
+
+    /**
+     * Checks if this player has an account yet on the given world
+     * @param player to check
+     * @param worldName world-specific account
+     */
+    public default boolean hasAccount(OfflinePlayer player, String worldName){
+        return hasAccount(player.getUniqueId(), worldName);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #hasAccount(OfflinePlayer, String)} instead.
+     */
+    @Deprecated
+    public boolean hasAccount(String playerName, String worldName);
 
     /**
      * A method which changes the name associated with the given UUID in the
@@ -166,6 +199,21 @@ public interface Economy {
     public double getBalance(UUID uuid);
 
     /**
+     * Gets balance of a player
+     * @param player to check
+     */
+    public default double getBalance(OfflinePlayer player){
+        return getBalance(player.getUniqueId());
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #getBalance(OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public double getBalance(String playerName);
+
+    /**
      * Gets balance of a UUID on the specified world. IMPLEMENTATION SPECIFIC - if
      * an economy plugin does not support this the global balance will be returned.
      * 
@@ -176,6 +224,23 @@ public interface Economy {
     public double getBalance(UUID uuid, String world);
 
     /**
+     * Gets balance of a player on the specified world. IMPLEMENTATION SPECIFIC - if
+     * an economy plugin does not support this the global balance will be returned.
+     * @param player to check
+     * @param world name of the world
+     */
+    public default double getBalance(OfflinePlayer player, String world){
+        return getBalance(player.getUniqueId(), world);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #getBalance(OfflinePlayer, String)} instead.
+     */
+    @Deprecated
+    public double getBalance(String playerName, String world);
+
+    /**
      * Checks if the account associated with the given UUID has the amount - DO NOT
      * USE NEGATIVE AMOUNTS
      * 
@@ -184,6 +249,23 @@ public interface Economy {
      * @return True if <b>UUID</b> has <b>amount</b>, False else wise
      */
     public boolean has(UUID uuid, double amount);
+
+    /**
+     * Checks if the account associated with the given player has the amount - DO NOT
+     * USE NEGATIVE AMOUNTS
+     * @param player to check
+     * @param amount to check for
+     */
+    public default boolean has(OfflinePlayer player, double amount){
+        return has(player.getUniqueId(), amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #has(OfflinePlayer, double)} instead.
+     */
+    @Deprecated
+    public boolean has(String playerName, double amount);
 
     /**
      * Checks if the account associated with the given UUID has the amount in the
@@ -199,6 +281,25 @@ public interface Economy {
     public boolean has(UUID uuid, String worldName, double amount);
 
     /**
+     * Checks if the account associated with the given player has the amount in the
+     * given world - DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an
+     * economy plugin does not support this the global balance will be returned.
+     * @param player to check
+     * @param worldName to check with
+     * @param amount to check for
+     */
+    public default boolean has(OfflinePlayer player, String worldName, double amount){
+        return has(player.getUniqueId(), worldName, amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #has(OfflinePlayer, String, double)} instead.
+     */
+    @Deprecated
+    public boolean has(String playerName, String worldName, double amount);
+
+    /**
      * Withdraw an amount from an account associated with a UUID - DO NOT USE
      * NEGATIVE AMOUNTS
      * 
@@ -207,6 +308,23 @@ public interface Economy {
      * @return Detailed response of transaction
      */
     public EconomyResponse withdraw(UUID uuid, double amount);
+
+    /**
+     * Withdraw an amount from an account associated with a player - DO NOT USE
+     * NEGATIVE AMOUNTS
+     * @param player to withdraw from
+     * @param amount Amount to withdraw
+     */
+    public default EconomyResponse withdrawPlayer(OfflinePlayer player, double amount){
+        return withdraw(player.getUniqueId(), amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #withdrawPlayer(OfflinePlayer, double)} instead.
+     */
+    @Deprecated
+    public EconomyResponse withdrawPlayer(String playerName, double amount);
 
     /**
      * Withdraw an amount from an account associated with a UUID on a given world -
@@ -221,6 +339,25 @@ public interface Economy {
     public EconomyResponse withdraw(UUID uuid, String worldName, double amount);
 
     /**
+     * Withdraw an amount from an account associated with a player on a given world -
+     * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
+     * does not support this the global balance will be returned.
+     * @param player to withdraw from
+     * @param worldName - name of the world
+     * @param amount Amount to withdraw
+     */
+    public default EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount){
+        return withdraw(player.getUniqueId(), worldName, amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #withdrawPlayer(OfflinePlayer, String, double)} instead.
+     */
+    @Deprecated
+    public EconomyResponse withdrawPlayer(String playerName, String worldName, double amount);
+
+    /**
      * Deposit an amount to an account associated with the given UUID - DO NOT USE
      * NEGATIVE AMOUNTS
      * 
@@ -229,6 +366,23 @@ public interface Economy {
      * @return Detailed response of transaction
      */
     public EconomyResponse deposit(UUID uuid, double amount);
+
+    /**
+     * Deposit an amount to an account associated with the given player - DO NOT USE
+     * NEGATIVE AMOUNTS
+     * @param player to deposit to
+     * @param amount Amount to deposit
+     */
+    public default EconomyResponse depositPlayer(OfflinePlayer player, double amount){
+        return deposit(player.getUniqueId(), amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, double)} instead.
+     */
+    @Deprecated
+    public EconomyResponse depositPlayer(String playerName, double amount);
 
     /**
      * Deposit an amount from an account associated with a UUID on a given world -
@@ -241,6 +395,25 @@ public interface Economy {
      * @return Detailed response of transaction
      */
     public EconomyResponse deposit(UUID uuid, String worldName, double amount);
+
+    /**
+     * Deposit an amount from an account associated with a player on a given world -
+     * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
+     * does not support this the global balance will be returned.
+     * @param player to deposit to
+     * @param worldName name of the world
+     * @param amount Amount to deposit
+     */
+    public default EconomyResponse depositPlayer(OfflinePlayer player, String worldName, double amount){
+        return deposit(player.getUniqueId(), worldName, amount);
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #depositPlayer(OfflinePlayer, String, double)} instead.
+     */
+    @Deprecated
+    public EconomyResponse depositPlayer(String playerName, String worldName, double amount);
 
     /*
      * Bank methods follow.
@@ -255,6 +428,25 @@ public interface Economy {
      * @return EconomyResponse Object
      */
     public EconomyResponse createBank(String name, UUID uuid);
+
+    /**
+     * Creates a bank account with the specified name and the given player as the
+     * owner
+     *
+     * @param name of account
+     * @param player the account should be linked to
+     * @return EconomyResponse Object
+     */
+    public default EconomyResponse createBank(String name, OfflinePlayer player){
+        return createBank(name, player.getUniqueId());
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #createBank(String, OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public EconomyResponse createBank(String name, String player);
 
     /**
      * Deletes a bank account with the specified name.
@@ -310,6 +502,24 @@ public interface Economy {
     public EconomyResponse isBankOwner(String name, UUID uuid);
 
     /**
+     * Check if a player is the owner of a bank account
+     *
+     * @param name of the account
+     * @param player to check for ownership
+     * @return EconomyResponse Object
+     */
+    public default EconomyResponse isBankOwner(String name, OfflinePlayer player){
+        return isBankOwner(name, player.getUniqueId());
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #isBankOwner(String, OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public EconomyResponse isBankOwner(String name, String playerName);
+
+    /**
      * Check if the uuid is a member of the bank account
      * 
      * @param name of the account
@@ -319,9 +529,59 @@ public interface Economy {
     public EconomyResponse isBankMember(String name, UUID uuid);
 
     /**
+     * Check if the player is a member of the bank account
+     *
+     * @param name of the account
+     * @param player to check membership
+     * @return EconomyResponse Object
+     */
+    public default EconomyResponse isBankMember(String name, OfflinePlayer player){
+        return isBankMember(name, player.getUniqueId());
+    }
+
+    /**
+     *
+     * @deprecated As of VaultAPI 1.4 use {@link #isBankMember(String, OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public EconomyResponse isBankMember(String name, String playerName);
+
+    /**
      * Gets the list of banks
      * 
      * @return the List of Banks
      */
     public List<String> getBanks();
+
+    /**
+     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer)} instead.
+     */
+    @Deprecated
+    public boolean createPlayerAccount(String playerName);
+
+    /**
+     * Attempts to create a player account for the given player
+     * @param player OfflinePlayer
+     * @return if the account creation was successful
+     */
+    public default boolean createPlayerAccount(OfflinePlayer player){
+        return createAccount(player.getUniqueId(),player.getName());
+    }
+
+    /**
+     * @deprecated As of VaultAPI 1.4 use {{@link #createPlayerAccount(OfflinePlayer, String)} instead.
+     */
+    @Deprecated
+    public boolean createPlayerAccount(String playerName, String worldName);
+
+    /**
+     * Attempts to create a player account for the given player on the specified world
+     * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this then false will always be returned.
+     * @param player OfflinePlayer
+     * @param worldName String name of the world
+     * @return if the account creation was successful
+     */
+    public default boolean createPlayerAccount(OfflinePlayer player, String worldName){
+        return createAccount(player.getUniqueId(),player.getName(),worldName);
+    }
 }
