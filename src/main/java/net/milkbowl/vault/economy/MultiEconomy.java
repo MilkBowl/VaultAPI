@@ -13,7 +13,8 @@ import java.util.Collection;
  * In order to register/provide it, you should use {@link MultiEconomyWrapper#registerProviders()}
  * Inside this interface, we make use of the term "implementation" to refer to an actual currency.
  * You should expect that these currencies/implementations might
- * return true for {@link IdentityEconomy#isLegacy()} in case plugin's author preference!
+ * return false for both {@link IdentityEconomy#supportsAllRecordsOperation()} and
+ * {@link IdentityEconomy#supportsAllOnlineOperation()} in case of plugin's author preference!
  */
 public interface MultiEconomy {
 

@@ -25,9 +25,10 @@ import java.util.UUID;
 
 /**
  * Adds UUID support to the Economy interface.
- * In case of {@link #isLegacy()} returning false, methods such as:
+ * In case of {@link #supportsAllRecordsOperation()} or {@link #supportsAllOnlineOperation()}
+ * returning true, methods such as
  * {@link #getAllRecords()} and {@link #getAllOnline()}
- * should be expected to work.
+ * should not be expected to work.
  * <p>
  * In order to register/provide it, you should use {@link IdentityEconomyWrapper#registerProviders()}
  */
@@ -35,15 +36,22 @@ public interface IdentityEconomy extends Economy{
     /**
      * Used to determine if IdentityEconomy was built through
      * the EconomyWrapper as a LegacyEconomy.
-     * If true, methods such as {@link #getAllRecords()} and {@link #getAllOnline()} (UUID)}
-     * will not be work.
+     * If true, method {@link #getAllRecords()} will not be work.
      * This was made in order to support plugins which use older versions of VaultAPI/Vault.
      * You can also use it / override it to disable previous mentioned methods!
-     * @return if this is a legacy economy
+     * @return true if operation is supported
      */
-    public default boolean isLegacy(){
-        return false;
-    }
+    public boolean supportsAllRecordsOperation();
+
+    /**
+     * Used to determine if IdentityEconomy was built through
+     * the EconomyWrapper as a LegacyEconomy.
+     * If true, the method {@link #getAllOnline()} (UUID)} will not be work.
+     * This was made in order to support plugins which use older versions of VaultAPI/Vault.
+     * You can also use it / override it to disable previous mentioned methods!
+     * @return true if operation is supported
+     */
+    public boolean supportsAllOnlineOperation();
 
     /*
      * Account-related methods follow.

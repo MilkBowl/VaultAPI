@@ -14,8 +14,13 @@ public class LegacyEconomy implements IdentityEconomy {
     }
 
     @Override
-    public boolean isLegacy() {
-        return true;
+    public boolean supportsAllRecordsOperation() {
+        return false;
+    }
+
+    @Override
+    public boolean supportsAllOnlineOperation() {
+        return false;
     }
 
     @Override
