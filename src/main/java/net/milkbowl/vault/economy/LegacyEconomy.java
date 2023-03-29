@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-public class LegacyEconomy implements IdentityEconomy{
+public class LegacyEconomy implements IdentityEconomy {
     private final Economy economy;
-    protected LegacyEconomy(Economy economy){
+    public LegacyEconomy(Economy economy){
         this.economy = economy;
     }
 

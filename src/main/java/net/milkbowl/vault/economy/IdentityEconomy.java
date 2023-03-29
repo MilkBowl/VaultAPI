@@ -16,17 +16,20 @@
 
 package net.milkbowl.vault.economy;
 
+import net.milkbowl.vault.economy.wrappers.IdentityEconomyWrapper;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 /**
- * Its provider needs to be registered before Economy.class
- * This is because Vault2 will attempt to do it automatically
+ * Adds UUID support to the Economy interface.
+ * In case of {@link #isLegacy()} returning false, methods such as:
+ * {@link #getAllRecords()} and {@link #getAllOnline()}
+ * should be expected to work.
  * <p>
- * If not understood, register using either {@link IdentityEconomyWrapper#registerProviders()}
- * or {@link EconomyWrapper#registerProviders()}
+ * In order to register/provide it, you should use {@link IdentityEconomyWrapper#registerProviders()}
  */
 public interface IdentityEconomy extends Economy{
     /**

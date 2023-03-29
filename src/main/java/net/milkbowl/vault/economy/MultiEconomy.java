@@ -1,5 +1,6 @@
 package net.milkbowl.vault.economy;
 
+import net.milkbowl.vault.economy.wrappers.MultiEconomyWrapper;
 import org.bukkit.World;
 
 import java.util.Collection;
@@ -8,6 +9,11 @@ import java.util.Collection;
  * This interface is used to provide multi-world, multi-currency support for the economy.
  * It allows disabling currencies/economies.
  * It forces currencies to support UUIDs.
+ * <p>
+ * In order to register/provide it, you should use {@link MultiEconomyWrapper#registerProviders()}
+ * Inside this interface, we make use of the term "implementation" to refer to an actual currency.
+ * You should expect that these currencies/implementations might
+ * return true for {@link IdentityEconomy#isLegacy()} in case plugin's author preference!
  */
 public interface MultiEconomy {
 

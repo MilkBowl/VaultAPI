@@ -1,5 +1,8 @@
-package net.milkbowl.vault.economy;
+package net.milkbowl.vault.economy.wrappers;
 
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.economy.IdentityEconomy;
+import net.milkbowl.vault.economy.LegacyEconomy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.ServicesManager;
@@ -21,8 +24,8 @@ public class EconomyWrapper {
     }
 
     /**
-     * Will register both IdentityEconomy and legacy Economy to Vault
-     * @return true registered successfully, false already registered
+     * Will register IdentityEconomy and legacy Economy to Vault
+     * @return true if registered successfully, false if already registered
      */
     public boolean registerProviders(){
         ServicesManager manager = Bukkit.getServicesManager();

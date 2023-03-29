@@ -22,7 +22,6 @@ import org.bukkit.OfflinePlayer;
 
 /**
  * The main economy API
- *
  */
 public interface Economy {
 
