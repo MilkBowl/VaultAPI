@@ -22,7 +22,11 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * The main economy API
+ * Its provider needs to be registered before Economy.class
+ * This is because Vault2 will attempt to do it automatically
+ * <p>
+ * If not understood, register using either {@link IdentityEconomyWrapper#registerProviders()}
+ * or {@link EconomyWrapper#registerProviders()}
  */
 public interface IdentityEconomy extends Economy{
     /**

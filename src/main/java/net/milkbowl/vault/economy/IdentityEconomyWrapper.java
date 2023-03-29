@@ -4,20 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.ServicePriority;
 import org.bukkit.plugin.ServicesManager;
 
-public class EconomyWrapper {
-    private final Economy economy;
-    public EconomyWrapper(Economy economy){
-        this.economy = economy;
-    }
+public class IdentityEconomyWrapper {
+    private final IdentityEconomy economy;
 
-    /**
-     * Will convert the Economy to a new IdentityEconomy
-     * which IdentityEconomy#isLegacy() returns true.
-     * Methods regarding UUID will fail fast.
-     * @return a legacy economy
-     */
-    public LegacyEconomy legacy(){
-        return new LegacyEconomy(economy);
+    public IdentityEconomyWrapper(IdentityEconomy economy){
+        this.economy = economy;
     }
 
     /**
@@ -30,8 +21,7 @@ public class EconomyWrapper {
             return false;
         if (manager.isProvidedFor(Economy.class))
             return false;
-        LegacyEconomy legacy = legacy();
-        manager.register(IdentityEconomy.class, legacy,
+        manager.register(IdentityEconomy.class, economy,
                 Bukkit.getPluginManager().getPlugin("Vault"), ServicePriority.Normal);
         manager.register(Economy.class, economy,
                 Bukkit.getPluginManager().getPlugin("Vault"), ServicePriority.Normal);

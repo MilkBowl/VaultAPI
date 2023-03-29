@@ -25,7 +25,7 @@ Vault currently supports the following: Permissions 3, PEX, GroupManager, bPerms
 
 	<scm>
 		<url>https://github.com/anjoismysign/VaultAPI2</url>
-		<connection>scm:git:git://github.com:MilkBanjoismysign/VaultAPI2.git</connection>
+		<connection>scm:git:git://github.com:anjoismysign/VaultAPI2.git</connection>
 		<developerConnection>scm:git:git@github.com:anjoismysign/VaultAPI2.git</developerConnection>
 	</scm>
 

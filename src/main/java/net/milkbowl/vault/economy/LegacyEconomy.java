@@ -1,6 +1,5 @@
 package net.milkbowl.vault.economy;
 
-import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 
 import java.util.Collection;
