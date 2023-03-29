@@ -25,13 +25,14 @@ public class EconomyWrapper {
 
     /**
      * Will register IdentityEconomy and legacy Economy to Vault
+     * @param force if true, will override existing Economy and IdentityEconomy providers
      * @return true if registered successfully, false if already registered
      */
-    public boolean registerProviders(){
+    public boolean registerProviders(boolean force){
         ServicesManager manager = Bukkit.getServicesManager();
-        if (manager.isProvidedFor(IdentityEconomy.class))
+        if (!force && manager.isProvidedFor(IdentityEconomy.class))
             return false;
-        if (manager.isProvidedFor(Economy.class))
+        if (!force && manager.isProvidedFor(Economy.class))
             return false;
         LegacyEconomy legacy = legacy();
         manager.register(IdentityEconomy.class, legacy,
@@ -39,5 +40,14 @@ public class EconomyWrapper {
         manager.register(Economy.class, economy,
                 Bukkit.getPluginManager().getPlugin("Vault"), ServicePriority.Normal);
         return true;
+    }
+
+    /**
+     * Will register IdentityEconomy and legacy Economy to Vault
+     * If any provider is already registered, it won't proceed
+     * @return true if registered successfully, false if already registered
+     */
+    public boolean registerProviders(){
+        return registerProviders(false);
     }
 }
