@@ -30,10 +30,12 @@ public class EconomyWrapper {
      */
     public boolean registerProviders(boolean force){
         ServicesManager manager = Bukkit.getServicesManager();
-        if (!force && manager.isProvidedFor(IdentityEconomy.class))
-            return false;
-        if (!force && manager.isProvidedFor(Economy.class))
-            return false;
+        if (!force){
+            if (manager.isProvidedFor(IdentityEconomy.class))
+                return false;
+            if (manager.isProvidedFor(Economy.class))
+                return false;
+        }
         LegacyEconomy legacy = legacy();
         manager.register(IdentityEconomy.class, legacy,
                 Bukkit.getPluginManager().getPlugin("Vault"), ServicePriority.Normal);
