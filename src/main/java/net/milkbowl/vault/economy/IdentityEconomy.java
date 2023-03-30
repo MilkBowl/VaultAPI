@@ -36,7 +36,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Used to determine if IdentityEconomy was built through
      * the EconomyWrapper as a LegacyEconomy.
-     * If true, method {@link #getAllRecords()} will not be work.
+     * If false, method {@link #getAllRecords()} will not be work.
      * This was made in order to support plugins which use older versions of VaultAPI/Vault.
      * You can also use it / override it to disable previous mentioned methods!
      * @return true if operation is supported
@@ -46,12 +46,23 @@ public interface IdentityEconomy extends Economy{
     /**
      * Used to determine if IdentityEconomy was built through
      * the EconomyWrapper as a LegacyEconomy.
-     * If true, the method {@link #getAllOnline()} (UUID)} will not be work.
+     * If false, the method {@link #getAllOnline()} (UUID)} will not be work.
      * This was made in order to support plugins which use older versions of VaultAPI/Vault.
      * You can also use it / override it to disable previous mentioned methods!
      * @return true if operation is supported
      */
     public boolean supportsAllOnlineOperation();
+
+    /**
+     * Used to determine if IdentityEconomy was built through
+     * the EconomyWrapper as a LegacyEconomy.
+     * If false, all operations must be done with players that
+     * are online/connected to the server in real time.
+     * If true, you should expect to call these operations
+     * asynchronously.
+     * @return true if operation is supported
+     */
+    public boolean supportsOfflineOperations();
 
     /*
      * Account-related methods follow.

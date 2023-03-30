@@ -24,6 +24,11 @@ public class LegacyEconomy implements IdentityEconomy {
     }
 
     @Override
+    public boolean supportsOfflineOperations(){
+        return false;
+    }
+
+    @Override
     public boolean isEnabled() {
         return economy.isEnabled();
     }
