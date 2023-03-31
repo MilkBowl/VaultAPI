@@ -11,8 +11,6 @@ How to include the API with Maven:
 </dependencies>
 ```
 
-**Note**: The VaultAPI version has 2 numbers (major.minor), unlike Vault, which has 3. The 2 numbers in the VaultAPI will always correspond to the 2 beginning numbers in a Vault version to make it clear what versions your plugin will for sure work with.
-
 ## Why VaultAPI2?
 Multiple developers have been waiting for a pull request which
 would increase performance (by using UUIDs) while at the same time,
