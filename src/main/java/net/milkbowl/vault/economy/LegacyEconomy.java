@@ -29,6 +29,11 @@ public class LegacyEconomy implements IdentityEconomy {
     }
 
     @Override
+    public boolean supportsUUIDOperations(){
+        return false;
+    }
+
+    @Override
     public boolean isEnabled() {
         return economy.isEnabled();
     }

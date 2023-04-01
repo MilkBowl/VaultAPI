@@ -64,6 +64,15 @@ public interface IdentityEconomy extends Economy{
      */
     public boolean supportsOfflineOperations();
 
+    /**
+     * Used to determine if IdentityEconomy was built through
+     * the EconomyWrapper as a LegacyEconomy.
+     * If false, you should expect UnsupportedOperationException
+     * being thrown when calling these methods.
+     * @return true if operation is supported
+     */
+    public boolean supportsUUIDOperations();
+
     /*
      * Account-related methods follow.
      */
