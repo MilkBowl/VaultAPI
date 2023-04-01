@@ -1,70 +1,34 @@
 # VaultAPI - Abstraction Library API for Bukkit Plugins - [![](https://travis-ci.org/MilkBowl/VaultAPI.svg?branch=master)](https://travis-ci.org/MilkBowl/VaultAPI)
 
-How to include the API with Maven: 
+How to include the API with Maven:
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 <dependencies>
-    <dependency>
-        <groupId>net.milkbowl.vault</groupId>
-        <artifactId>vaultapi</artifactId>
-        <version>1.7.4</version>
-    </dependency>
+<dependency>
+    <groupId>com.github.MilkBowl</groupId>
+    <artifactId>VaultAPI</artifactId>
+    <version>1.7</version>
+    <scope>provided</scope>
+</dependency>
 </dependencies>
 ```
 
-## Why VaultAPI2?
-Multiple developers have been waiting for a pull request which
-would increase performance (by using UUIDs) while at the same time,
-I and a fellow creatorfromhell have been waiting for multicurrency support.
-There's a bunch of multicurrency plugins and none of them have a bridge
-that allows them to communicate with other plugins without having a hell
-of a lot of code to maintain...
-I (anjoismysign) took the iniciative to continue a what seems a dead repository.
-I am open for new team members as long as the mission is to keep supporting
-'legacy' plugins while improving the API.
-
-## What are legacy plugins?
-They are plugins which were designed with the old VaultAPI in mind.
-The idea is to not hardfork if not needed 👍🏻
-
-## How to implement VaultAPI2?
-Here two examples:
-
-```java
-    /**
-     * Checks if the economy provider is available.
-     * If using MultiEconomy, it will return the default economy provider.
-     *
-     * @return The economy provider, or null if not available.
-     */
-    public static Economy hasEconomyProvider() {
-        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
-            return null;
-        }
-        RegisteredServiceProvider<Economy> economyServiceProvider = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
-        if (economyServiceProvider != null)
-            return economyServiceProvider.getProvider();
-        RegisteredServiceProvider<MultiEconomy> multiEconomyServiceProvider =
-                Bukkit.getServer().getServicesManager().getRegistration(MultiEconomy.class);
-        if (multiEconomyServiceProvider == null)
-            return null;
-        return multiEconomyServiceProvider.getProvider().getDefault();
-    }
-
-    /**
-     * @return True if the there's no economy provider registered and no multi-economy provider registered.
-     */
-    public static boolean canRegisterEconomy() {
-        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
-            return false;
-        }
-        RegisteredServiceProvider<Economy> economyServiceProvider = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
-        if (economyServiceProvider != null)
-            return false;
-        RegisteredServiceProvider<MultiEconomy> multiEconomyServiceProvider =
-                Bukkit.getServer().getServicesManager().getRegistration(MultiEconomy.class);
-        return multiEconomyServiceProvider == null;
-    }
+How to include the API with Gradle:
+```groovy
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+dependencies {
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+}
 ```
+
+**Note**: The VaultAPI version has 2 numbers (major.minor), unlike Vault, which has 3. The 2 numbers in the VaultAPI will always correspond to the 2 beginning numbers in a Vault version to make it clear what versions your plugin will for sure work with.
 
 ## Why Vault?
 I have no preference which library suits your plugin and development efforts
@@ -74,9 +38,9 @@ the idea for Vault came into play.
 
 So, what features do I _think_ you'll like the most?
 
- * No need to include my source code in your plugin
- * Broad range of supported plugins
- * Choice!
+* No need to include my source code in your plugin
+* Broad range of supported plugins
+* Choice!
 
 ## License
 Copyright (C) 2011-2018 Morgan Humes <morgan@lanaddict.com>
@@ -117,7 +81,7 @@ import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ExamplePlugin extends JavaPlugin {
-
+    
     private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
     private static Permission perms = null;
@@ -130,7 +94,7 @@ public class ExamplePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        if (!setupEconomy()) {
+        if (!setupEconomy() ) {
             log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
@@ -138,7 +102,7 @@ public class ExamplePlugin extends JavaPlugin {
         setupPermissions();
         setupChat();
     }
-
+    
     private boolean setupEconomy() {
         if (getServer().getPluginManager().getPlugin("Vault") == null) {
             return false;
@@ -150,40 +114,40 @@ public class ExamplePlugin extends JavaPlugin {
         econ = rsp.getProvider();
         return econ != null;
     }
-
+    
     private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
         chat = rsp.getProvider();
         return chat != null;
     }
-
+    
     private boolean setupPermissions() {
         RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
         perms = rsp.getProvider();
         return perms != null;
     }
-
+    
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
-        if (!(sender instanceof Player)) {
+        if(!(sender instanceof Player)) {
             log.info("Only players are supported for this Example Plugin, but you should not do this!!!");
             return true;
         }
-
+        
         Player player = (Player) sender;
-
-        if (command.getLabel().equals("test-economy")) {
+        
+        if(command.getLabel().equals("test-economy")) {
             // Lets give the player 1.05 currency (note that SOME economic plugins require rounding!)
-            sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getUniqueId()))));
-            EconomyResponse r = econ.depositPlayer(player.getUniqueId(), 1.05);
-            if (r.transactionSuccess()) {
+            sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getName()))));
+            EconomyResponse r = econ.depositPlayer(player, 1.05);
+            if(r.transactionSuccess()) {
                 sender.sendMessage(String.format("You were given %s and now have %s", econ.format(r.amount), econ.format(r.balance)));
             } else {
                 sender.sendMessage(String.format("An error occured: %s", r.errorMessage));
             }
             return true;
-        } else if (command.getLabel().equals("test-permission")) {
+        } else if(command.getLabel().equals("test-permission")) {
             // Lets test if user has the node "example.plugin.awesome" to determine if they are awesome or just suck
-            if (perms.has(player, "example.plugin.awesome")) {
+            if(perms.has(player, "example.plugin.awesome")) {
                 sender.sendMessage("You are awesome!");
             } else {
                 sender.sendMessage("You suck!");
@@ -193,15 +157,15 @@ public class ExamplePlugin extends JavaPlugin {
             return false;
         }
     }
-
+    
     public static Economy getEconomy() {
         return econ;
     }
-
+    
     public static Permission getPermissions() {
         return perms;
     }
-
+    
     public static Chat getChat() {
         return chat;
     }
