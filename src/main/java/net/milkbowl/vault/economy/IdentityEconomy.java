@@ -32,13 +32,14 @@ import java.util.UUID;
  * <p>
  * In order to register/provide it, you should use {@link IdentityEconomyWrapper#registerProviders()}
  */
-public interface IdentityEconomy extends Economy{
+public interface IdentityEconomy extends Economy {
     /**
      * Used to determine if IdentityEconomy was built through
      * the EconomyWrapper as a LegacyEconomy.
      * If false, method {@link #getAllRecords()} will not be work.
      * This was made in order to support plugins which use older versions of VaultAPI/Vault.
      * You can also use it / override it to disable previous mentioned methods!
+     *
      * @return true if operation is supported
      */
     public boolean supportsAllRecordsOperation();
@@ -49,6 +50,7 @@ public interface IdentityEconomy extends Economy{
      * If false, the method {@link #getAllOnline()} (UUID)} will not be work.
      * This was made in order to support plugins which use older versions of VaultAPI/Vault.
      * You can also use it / override it to disable previous mentioned methods!
+     *
      * @return true if operation is supported
      */
     public boolean supportsAllOnlineOperation();
@@ -60,6 +62,7 @@ public interface IdentityEconomy extends Economy{
      * are online/connected to the server in real time.
      * If true, you should expect to call these operations
      * asynchronously.
+     *
      * @return true if operation is supported
      */
     public boolean supportsOfflineOperations();
@@ -69,6 +72,7 @@ public interface IdentityEconomy extends Economy{
      * the EconomyWrapper as a LegacyEconomy.
      * If false, you should expect UnsupportedOperationException
      * being thrown when calling these methods.
+     *
      * @return true if operation is supported
      */
     public boolean supportsUUIDOperations();
@@ -79,7 +83,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Attempts to create a account for the given uuid
-     * 
+     *
      * @param uuid associated with the account
      * @param name associated with the account.
      * @return if the account creation was successful
@@ -90,7 +94,7 @@ public interface IdentityEconomy extends Economy{
      * Attempts to create an account for the given UUID on the specified world
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this then
      * false will always be returned.
-     * 
+     *
      * @param uuid      associated with the account
      * @param name      associated with the account.
      * @param worldName String name of the world
@@ -103,9 +107,9 @@ public interface IdentityEconomy extends Economy{
      * plugin (in the database, not memory), as well as their last-known-name. This is used for Vault's economy
      * converter and should be given every account available.
      * Needs IdentityEconomy#hasUUIDSupport() to be true.
-     * 
+     *
      * @return a {@link Map} composed of the accounts keyed by their UUID, along
-     *         with their associated last-known-name.
+     * with their associated last-known-name.
      */
     public Map<UUID, String> getAllRecords();
 
@@ -114,6 +118,7 @@ public interface IdentityEconomy extends Economy{
      * online/connected to the server.
      * This is used for Vault's economy converter and should
      * Needs IdentityEconomy#hasUUIDSupport() to be true.
+     *
      * @return a {@link Collection} of all UUIDs which have accounts in the plugin
      */
     public Collection<UUID> getAllOnline();
@@ -121,14 +126,15 @@ public interface IdentityEconomy extends Economy{
     /**
      * Gets the last known name of an account owned by the given UUID. Required for
      * messages to be more human-readable than UUIDs alone can provide.
-     * 
+     *
      * @param uuid UUID to look up.
+     * @return the last known name of the account associated with the given UUID.
      */
     public String getAccountName(UUID uuid);
 
     /**
      * Checks if this uuid has an account yet
-     * 
+     *
      * @param uuid to check
      * @return if the uuid has an account
      */
@@ -136,7 +142,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Checks if this uuid has an account yet on the given world
-     * 
+     *
      * @param uuid      to check
      * @param worldName world-specific account
      * @return if the uuid has an account
@@ -145,18 +151,18 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * A method which changes the name associated with the given UUID in the
-     * Map<UUID, String> received from {@link #getAllRecords()}
-     * 
+     * Map&lt;UUID, String&gt; received from {@link #getAllRecords()}
+     *
      * @param uuid which is having a name change.
-     * @param name name that will be associated with the UUID in the 
-     *             Map<UUID, String> map.
+     * @param name name that will be associated with the UUID in the
+     *             Map&lt;UUID, String&gt; map.
      * @return true if the name change is successful.
      */
     public boolean renameAccount(UUID uuid, String name);
 
     /**
      * Gets balance of a UUID
-     * 
+     *
      * @param uuid of the account to get a balance for
      * @return Amount currently held in account associated with the given UUID
      */
@@ -165,7 +171,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Gets balance of a UUID on the specified world. IMPLEMENTATION SPECIFIC - if
      * an economy plugin does not support this the global balance will be returned.
-     * 
+     *
      * @param uuid  of the account to get a balance for
      * @param world name of the world
      * @return Amount currently held in account associated with the given UUID
@@ -175,7 +181,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Checks if the account associated with the given UUID has the amount - DO NOT
      * USE NEGATIVE AMOUNTS
-     * 
+     *
      * @param uuid   to check
      * @param amount to check for
      * @return True if <b>UUID</b> has <b>amount</b>, False else wise
@@ -186,19 +192,19 @@ public interface IdentityEconomy extends Economy{
      * Checks if the account associated with the given UUID has the amount in the
      * given world - DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an
      * economy plugin does not support this the global balance will be returned.
-     * 
+     *
      * @param uuid      to check
      * @param worldName to check with
      * @param amount    to check for
      * @return True if <b>UUID</b> has <b>amount</b> in the given <b>world</b>,
-     *         False else wise
+     * False else wise
      */
     public boolean has(UUID uuid, String worldName, double amount);
 
     /**
      * Withdraw an amount from an account associated with a UUID - DO NOT USE
      * NEGATIVE AMOUNTS
-     * 
+     *
      * @param uuid   to withdraw from
      * @param amount Amount to withdraw
      * @return Detailed response of transaction
@@ -209,7 +215,7 @@ public interface IdentityEconomy extends Economy{
      * Withdraw an amount from an account associated with a UUID on a given world -
      * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
      * does not support this the global balance will be returned.
-     * 
+     *
      * @param uuid      to withdraw from
      * @param worldName - name of the world
      * @param amount    Amount to withdraw
@@ -220,7 +226,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Deposit an amount to an account associated with the given UUID - DO NOT USE
      * NEGATIVE AMOUNTS
-     * 
+     *
      * @param uuid   to deposit to
      * @param amount Amount to deposit
      * @return Detailed response of transaction
@@ -231,7 +237,7 @@ public interface IdentityEconomy extends Economy{
      * Deposit an amount from an account associated with a UUID on a given world -
      * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
      * does not support this the global balance will be returned.
-     * 
+     *
      * @param uuid      to deposit to
      * @param worldName name of the world
      * @param amount    Amount to deposit
@@ -246,7 +252,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Creates a bank account with the specified name and the given UUID as the
      * owner
-     * 
+     *
      * @param name of account
      * @param uuid the account should be linked to
      * @return EconomyResponse Object
@@ -255,7 +261,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Deletes a bank account with the specified name.
-     * 
+     *
      * @param name of the back to delete
      * @return if the operation completed successfully
      */
@@ -263,7 +269,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Returns the amount the bank has
-     * 
+     *
      * @param name of the account
      * @return EconomyResponse Object
      */
@@ -272,7 +278,7 @@ public interface IdentityEconomy extends Economy{
     /**
      * Returns true or false whether the bank has the amount specified - DO NOT USE
      * NEGATIVE AMOUNTS
-     * 
+     *
      * @param name   of the account
      * @param amount to check for
      * @return EconomyResponse Object
@@ -281,7 +287,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Withdraw an amount from a bank account - DO NOT USE NEGATIVE AMOUNTS
-     * 
+     *
      * @param name   of the account
      * @param amount to withdraw
      * @return EconomyResponse Object
@@ -290,7 +296,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Deposit an amount into a bank account - DO NOT USE NEGATIVE AMOUNTS
-     * 
+     *
      * @param name   of the account
      * @param amount to deposit
      * @return EconomyResponse Object
@@ -299,7 +305,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Check if a uuid is the owner of a bank account
-     * 
+     *
      * @param name of the account
      * @param uuid to check for ownership
      * @return EconomyResponse Object
@@ -308,7 +314,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Check if the uuid is a member of the bank account
-     * 
+     *
      * @param name of the account
      * @param uuid to check membership
      * @return EconomyResponse Object
@@ -317,7 +323,7 @@ public interface IdentityEconomy extends Economy{
 
     /**
      * Gets the list of banks
-     * 
+     *
      * @return the List of Banks
      */
     public List<String> getBanks();
