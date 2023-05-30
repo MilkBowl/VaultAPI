@@ -67,8 +67,6 @@ Implementing Vault is quite simple. It requires getting the Economy, Permission,
 ```java
 package com.example.plugin;
 
-import java.util.logging.Logger;
-
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
@@ -82,20 +80,19 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class ExamplePlugin extends JavaPlugin {
     
-    private static final Logger log = Logger.getLogger("Minecraft");
     private static Economy econ = null;
     private static Permission perms = null;
     private static Chat chat = null;
 
     @Override
     public void onDisable() {
-        log.info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
+        getLogger().info(String.format("[%s] Disabled Version %s", getDescription().getName(), getDescription().getVersion()));
     }
 
     @Override
     public void onEnable() {
         if (!setupEconomy() ) {
-            log.severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
+            getLogger().severe(String.format("[%s] - Disabled due to no Vault dependency found!", getDescription().getName()));
             getServer().getPluginManager().disablePlugin(this);
             return;
         }
@@ -129,7 +126,7 @@ public class ExamplePlugin extends JavaPlugin {
     
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
         if(!(sender instanceof Player)) {
-            log.info("Only players are supported for this Example Plugin, but you should not do this!!!");
+            getLogger().info("Only players are supported for this Example Plugin, but you should not do this!!!");
             return true;
         }
         
