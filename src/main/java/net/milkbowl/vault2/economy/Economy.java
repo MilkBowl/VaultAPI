@@ -16,9 +16,12 @@
 
 package net.milkbowl.vault2.economy;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
+import net.milkbowl.vault2.economy.EconomyResponse.ResponseType;
 
 /**
  * The main economy API
@@ -33,21 +36,21 @@ public interface Economy {
     /**
      * Checks if economy plugin is enabled.
      * 
-     * @return Success or Failure
+     * @return true if the server's economy plugin has properly enabled.
      */
     public boolean isEnabled();
 
     /**
-     * Gets name of economy plugin.
+     * Gets name of the economy plugin.
      * 
-     * @return Name of Economy plugin.
+     * @return Name of the active economy plugin on the server.
      */
     public String getName();
 
     /**
-     * Returns true if the given implementation supports banks.
+     * Returns true if the economy plugin supports banks.
      * 
-     * @return true if the implementation supports banks
+     * @return true if the economy plugin supports banks.
      */
     public boolean hasBankSupport();
 
@@ -60,24 +63,25 @@ public interface Economy {
      * function returns the number of digits the plugin keeps or -1 if no rounding
      * occurs.
      * 
-     * @return number of digits after the decimal point kept
+     * @return number of digits after the decimal point this plugin supports or -1
+     *         if no rounding occurs.
      */
     public int fractionalDigits();
 
     /**
-     * Format amount into a human readable String This provides translation into
-     * economy specific formatting to improve consistency between plugins.
+     * Plugins use this method to format a given BigDecimal amount into a human
+     * readable amount using your economy plugin's currency names/conventions.
      *
-     * @param amount to format
-     * @return Human readable string describing amount
+     * @param amount to format.
+     * @return Human readable string describing amount, ie 5 Dollars or 5.55 Pounds.
      */
-    public String format(double amount);
+    public String format(BigDecimal amount);
 
     /**
      * Returns the name of the currency in plural form. If the economy being used
      * does not support currency names then an empty string will be returned.
      * 
-     * @return name of the currency (plural)
+     * @return name of the currency (plural) ie: Dollars or Pounds.
      */
     public String currencyNamePlural();
 
@@ -85,7 +89,7 @@ public interface Economy {
      * Returns the name of the currency in singular form. If the economy being used
      * does not support currency names then an empty string will be returned.
      * 
-     * @return name of the currency (singular)
+     * @return name of the currency (singular) ie: Dollar or Pound.
      */
     public String currencyNameSingular();
 
@@ -94,11 +98,11 @@ public interface Economy {
      */
 
     /**
-     * Attempts to create a account for the given uuid
+     * Attempts to create a account for the given UUID.
      * 
-     * @param uuid associated with the account
-     * @param name associated with the account.
-     * @return if the account creation was successful
+     * @param uuid UUID associated with the account.
+     * @param name UUID associated with the account.
+     * @return true if the account creation was successful.
      */
     public boolean createAccount(UUID uuid, String name);
 
@@ -107,9 +111,9 @@ public interface Economy {
      * IMPLEMENTATION SPECIFIC - if an economy plugin does not support this then
      * false will always be returned.
      * 
-     * @param uuid      associated with the account
-     * @param name      associated with the account.
-     * @param worldName String name of the world
+     * @param uuid      UUID associated with the account.
+     * @param name      UUID associated with the account.
+     * @param worldName String name of the world.
      * @return if the account creation was successful
      */
     public boolean createAccount(UUID uuid, String name, String worldName);
@@ -128,25 +132,25 @@ public interface Economy {
      * Gets the last known name of an account owned by the given UUID. Required for
      * messages to be more human-readable than UUIDs alone can provide.
      * 
-     * @param uuid UUID to look up.
+     * @param uuid UUID associated with the account.
      * @return name of the account owner.
      */
     public String getAccountName(UUID uuid);
 
     /**
-     * Checks if this uuid has an account yet
+     * Checks if this UUID has an account yet.
      * 
-     * @param uuid to check
-     * @return if the uuid has an account
+     * @param uuid UUID to check for an existing account.
+     * @return true if the UUID has an account.
      */
     public boolean hasAccount(UUID uuid);
 
     /**
-     * Checks if this uuid has an account yet on the given world
+     * Checks if this UUID has an account yet on the given world.
      * 
-     * @param uuid      to check
-     * @param worldName world-specific account
-     * @return if the uuid has an account
+     * @param uuid      UUID to check for an existing account.
+     * @param worldName world-specific account.
+     * @return if the UUID has an account.
      */
     public boolean hasAccount(UUID uuid, String worldName);
 
@@ -154,97 +158,109 @@ public interface Economy {
      * A method which changes the name associated with the given UUID in the
      * Map<UUID, String> received from {@link #getUUIDNameMap()}.
      * 
-     * @param uuid which is having a name change.
-     * @param name name that will be associated with the UUID in the 
+     * @param uuid UUID whose account is having a name change.
+     * @param name String name that will be associated with the UUID in the 
      *             Map<UUID, String> map.
      * @return true if the name change is successful.
      */
     public boolean renameAccount(UUID uuid, String name);
 
-    /**
-     * Gets balance of a UUID
-     * 
-     * @param uuid of the account to get a balance for
-     * @return Amount currently held in account associated with the given UUID
+    /*
+     * Account balance related methods follow.
      */
-    public double getBalance(UUID uuid);
+
+    /**
+     * Gets balance of an account associated with a UUID.
+     * 
+     * @param uuid UUID of the account to get a balance for.
+     * @return Amount currently held in account associated with the given UUID.
+     */
+    public BigDecimal getBalance(UUID uuid);
 
     /**
      * Gets balance of a UUID on the specified world. IMPLEMENTATION SPECIFIC - if
      * an economy plugin does not support this the global balance will be returned.
      * 
-     * @param uuid  of the account to get a balance for
-     * @param world name of the world
-     * @return Amount currently held in account associated with the given UUID
+     * @param uuid  UUID of the account to get a balance for.
+     * @param world name of the world.
+     * @return Amount currently held in account associated with the given UUID.
      */
-    public double getBalance(UUID uuid, String world);
+    public BigDecimal getBalance(UUID uuid, String world);
 
     /**
      * Checks if the account associated with the given UUID has the amount - DO NOT
-     * USE NEGATIVE AMOUNTS
+     * USE NEGATIVE AMOUNTS.
      * 
-     * @param uuid   to check
-     * @param amount to check for
-     * @return True if <b>UUID</b> has <b>amount</b>, False else wise
+     * @param uuid   the UUID associated with the account to check the balance of.
+     * @param amount the amount to check for.
+     * @return True if <b>UUID</b> has <b>amount</b>, False else wise.
      */
-    public boolean has(UUID uuid, double amount);
+    public boolean has(UUID uuid, BigDecimal amount);
 
     /**
      * Checks if the account associated with the given UUID has the amount in the
      * given world - DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an
      * economy plugin does not support this the global balance will be returned.
      * 
-     * @param uuid      to check
-     * @param worldName to check with
-     * @param amount    to check for
+     * @param uuid      the UUID associated with the account to check the balance of.
+     * @param worldName the name of the world to check in.
+     * @param amount    the amount to check for.
      * @return True if <b>UUID</b> has <b>amount</b> in the given <b>world</b>,
-     *         False else wise
+     *         False else wise.
      */
-    public boolean has(UUID uuid, String worldName, double amount);
+    public boolean has(UUID uuid, String worldName, BigDecimal amount);
 
     /**
      * Withdraw an amount from an account associated with a UUID - DO NOT USE
-     * NEGATIVE AMOUNTS
+     * NEGATIVE AMOUNTS.
      * 
-     * @param uuid   to withdraw from
-     * @param amount Amount to withdraw
-     * @return Detailed response of transaction
+     * @param uuid   the UUID associated with the account to withdraw from.
+     * @param amount Amount to withdraw.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse withdraw(UUID uuid, double amount);
+    public EconomyResponse withdraw(UUID uuid, BigDecimal amount);
 
     /**
      * Withdraw an amount from an account associated with a UUID on a given world -
      * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
      * does not support this the global balance will be returned.
      * 
-     * @param uuid      to withdraw from
-     * @param worldName - name of the world
-     * @param amount    Amount to withdraw
-     * @return Detailed response of transaction
+     * @param uuid      the UUID associated with the account to withdraw from.
+     * @param worldName the name of the world to check in.
+     * @param amount    Amount to withdraw.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse withdraw(UUID uuid, String worldName, double amount);
+    public EconomyResponse withdraw(UUID uuid, String worldName, BigDecimal amount);
 
     /**
      * Deposit an amount to an account associated with the given UUID - DO NOT USE
-     * NEGATIVE AMOUNTS
+     * NEGATIVE AMOUNTS.
      * 
-     * @param uuid   to deposit to
-     * @param amount Amount to deposit
-     * @return Detailed response of transaction
+     * @param uuid   the UUID associated with the account to deposit to.
+     * @param amount Amount to deposit.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse deposit(UUID uuid, double amount);
+    public EconomyResponse deposit(UUID uuid, BigDecimal amount);
 
     /**
-     * Deposit an amount from an account associated with a UUID on a given world -
+     * Deposit an amount to an account associated with a UUID on a given world -
      * DO NOT USE NEGATIVE AMOUNTS IMPLEMENTATION SPECIFIC - if an economy plugin
      * does not support this the global balance will be returned.
      * 
-     * @param uuid      to deposit to
-     * @param worldName name of the world
-     * @param amount    Amount to deposit
-     * @return Detailed response of transaction
+     * @param uuid      the UUID associated with the account to deposit to.
+     * @param worldName the name of the world to check in.
+     * @param amount    Amount to deposit.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse deposit(UUID uuid, String worldName, double amount);
+    public EconomyResponse deposit(UUID uuid, String worldName, BigDecimal amount);
 
     /*
      * Bank methods follow.
@@ -252,80 +268,122 @@ public interface Economy {
 
     /**
      * Creates a bank account with the specified name and the given UUID as the
-     * owner
+     * owner.
      * 
-     * @param name of account
-     * @param uuid the account should be linked to
-     * @return EconomyResponse Object
+     * @param name Name of account.
+     * @param uuid UUID of the account should be linked to.
+     * @return true if bank creation is successful.
      */
-    public EconomyResponse createBank(String name, UUID uuid);
+    public boolean createBank(String name, UUID uuid);
 
     /**
-     * Deletes a bank account with the specified name.
+     * Deletes a bank account with the specified UUID.
      * 
-     * @param name of the back to delete
-     * @return if the operation completed successfully
+     * @param uuid UUID of the bank to be deleted.
+     * @return true if the operation completed successfully
      */
-    public EconomyResponse deleteBank(String name);
+    public boolean deleteBank(UUID uuid);
 
     /**
-     * Returns the amount the bank has
+     * Returns a map that represents all of the UUIDs which have banks in the
+     * plugin, as well as their last-known-name. This is used for Vault's economy
+     * converter and should be given every account available.
      * 
-     * @param name of the account
-     * @return EconomyResponse Object
+     * @return a {@link Map} composed of the accounts keyed by their UUID, along
+     *         with their associated last-known-name.
      */
-    public EconomyResponse bankBalance(String name);
+    public Map<UUID, String> getBankUUIDNameMap();
+
+    /**
+     * Gets the last known name of an bank with the given UUID. Required for
+     * messages to be more human-readable than UUIDs alone can provide.
+     * 
+     * @param uuid UUID to look up.
+     * @return name of the bank.
+     */
+    public String getBankAccountName(UUID uuid);
+
+    /**
+     * Checks if this UUID has a bank yet.
+     * 
+     * @param uuid UUID to check.
+     * @return true if the UUID has an account.
+     */
+    public boolean hasBankAccount(UUID uuid);
+
+    /**
+     * A method which changes the name associated with the given UUID in the
+     * Map<UUID, String> received from {@link #getBankUUIDNameMap()}.
+     * 
+     * @param uuid UUID which is having a name change.
+     * @param name name that will be associated with the UUID in the 
+     *             Map<UUID, String> map.
+     * @return true if the name change is successful.
+     */
+    public boolean renameBankAccount(UUID uuid, String name);
+
+    /**
+     * Returns the amount the bank has.
+     * 
+     * @param uuid UUID of the account.
+     * @return amount which the bank holds as a balance.
+     */
+    public BigDecimal bankBalance(UUID uuid);
 
     /**
      * Returns true or false whether the bank has the amount specified - DO NOT USE
-     * NEGATIVE AMOUNTS
+     * NEGATIVE AMOUNTS.
      * 
-     * @param name   of the account
+     * @param uuid   UUID of the account.
      * @param amount to check for
-     * @return EconomyResponse Object
+     * @return true if the bank has the given amount.
      */
-    public EconomyResponse bankHas(String name, double amount);
+    public boolean bankHas(UUID uuid, BigDecimal amount);
 
     /**
-     * Withdraw an amount from a bank account - DO NOT USE NEGATIVE AMOUNTS
+     * Withdraw an amount from a bank account - DO NOT USE NEGATIVE AMOUNTS.
      * 
-     * @param name   of the account
-     * @param amount to withdraw
-     * @return EconomyResponse Object
+     * @param uuid   UUID of the account.
+     * @param amount to withdraw.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse bankWithdraw(String name, double amount);
+    public EconomyResponse bankWithdraw(String name, BigDecimal amount);
 
     /**
-     * Deposit an amount into a bank account - DO NOT USE NEGATIVE AMOUNTS
+     * Deposit an amount into a bank account - DO NOT USE NEGATIVE AMOUNTS.
      * 
-     * @param name   of the account
-     * @param amount to deposit
-     * @return EconomyResponse Object
+     * @param uuid   UUID of the account.
+     * @param amount to deposit.
+     * @return {@link EconomyResponse} which includes the Economy plugin's
+     *         {@link ResponseType} as to whether the transaction was a Success,
+     *         Failure, Unsupported.
      */
-    public EconomyResponse bankDeposit(String name, double amount);
+    public EconomyResponse bankDeposit(String name, BigDecimal amount);
 
     /**
-     * Check if a uuid is the owner of a bank account
+     * Check if a UUID is the owner of a bank account.
      * 
-     * @param name of the account
-     * @param uuid to check for ownership
-     * @return EconomyResponse Object
+     * @param uuid     UUID of the player/object who might be an owner.
+     * @param bankUUID UUID of the bank account to check ownership of.
+     * @return true if the uuid is the owner of the bank associated with bankUUID.
      */
-    public EconomyResponse isBankOwner(String name, UUID uuid);
+    public boolean isBankOwner(UUID uuid, UUID bankUUID);
 
     /**
-     * Check if the uuid is a member of the bank account
+     * Check if the UUID is a member of the bank account
      * 
-     * @param name of the account
-     * @param uuid to check membership
-     * @return EconomyResponse Object
+     * @param uuid     UUID of the player/object who might be a member..
+     * @param bankUUID UUID of the bank account to check membership of.
+     * @return @return true if the uuid is a member of the bank associated with bankUUID.
      */
-    public EconomyResponse isBankMember(String name, UUID uuid);
+    public boolean isBankMember(UUID uuid, UUID bankUUID);
 
     /**
-     * Gets the list of banks
+     * Gets the list of banks' UUIDs.
      * 
-     * @return the List of Banks
+     * @return the List of Banks' UUIDs.
      */
-    public List<String> getBanks();
+    public List<UUID> getBanks();
 }
