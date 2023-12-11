@@ -13,7 +13,7 @@
     You should have received a copy of the GNU Lesser General Public License
     along with Vault.  If not, see <http://www.gnu.org/licenses/>.
  */
-package net.milkbowl.vault.permission;
+package net.milkbowl.vault2.permission;
 
 import java.util.logging.Logger;
 
@@ -28,7 +28,6 @@ import org.bukkit.plugin.Plugin;
 /**
  * The main Permission API - allows for group and player based permission tests
  *
- * @deprecated in lieu of the modern Vault2. To update alter your import to net.milkbowl.vault2.permission.
  */
 public abstract class Permission {
 

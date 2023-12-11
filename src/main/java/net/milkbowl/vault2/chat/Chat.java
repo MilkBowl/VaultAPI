@@ -13,9 +13,9 @@
     You should have received a copy of the GNU Lesser General Public License
     along with Vault.  If not, see <http://www.gnu.org/licenses/>.
 */
-package net.milkbowl.vault.chat;
+package net.milkbowl.vault2.chat;
 
-import net.milkbowl.vault.permission.Permission;
+import net.milkbowl.vault2.permission.Permission;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
@@ -24,8 +24,6 @@ import org.bukkit.entity.Player;
 /**
  * The main Chat API - allows for Prefix/Suffix nodes along with generic Info nodes if the linked Chat system supports them
  *
- * @deprecated in lieu of the modern Vault2. To update alter your import to net.milkbowl.vault2.chat.
-
  */
 public abstract class Chat {
 	
