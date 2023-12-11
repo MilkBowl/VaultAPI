@@ -137,7 +137,7 @@ public class ExamplePlugin extends JavaPlugin {
         if(command.getLabel().equals("test-economy")) {
             // Lets give the player 1.05 currency (note that SOME economic plugins require rounding!)
             sender.sendMessage(String.format("You have %s", econ.format(econ.getBalance(player.getUniqueId()))));
-            EconomyResponse r = econ.depositPlayer(player.getUniqueId(), 1.05);
+            EconomyResponse r = econ.depositPlayer(player.getUniqueId(), new BigDecimal("1.05"));
             if(r.transactionSuccess()) {
                 sender.sendMessage(String.format("You were given %s and now have %s", econ.format(r.amount), econ.format(r.balance)));
             } else {
