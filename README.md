@@ -12,7 +12,7 @@ How to include the API with Maven:
     <dependency>
         <groupId>com.github.MilkBowl</groupId>
         <artifactId>VaultAPI</artifactId>
-        <version>1.7</version>
+        <version>1.7.1</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
@@ -24,11 +24,9 @@ repositories {
     maven { url 'https://jitpack.io' }
 }
 dependencies {
-    compileOnly "com.github.MilkBowl:VaultAPI:1.7"
+    compileOnly "com.github.MilkBowl:VaultAPI:1.7.1"
 }
 ```
-
-**Note**: The VaultAPI version has 2 numbers (major.minor), unlike Vault, which has 3. The 2 numbers in the VaultAPI will always correspond to the 2 beginning numbers in a Vault version to make it clear what versions your plugin will for sure work with.
 
 ## Why Vault?
 I have no preference which library suits your plugin and development efforts
